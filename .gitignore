@@ -16,6 +16,7 @@
 # production
 /build
 
+
 # misc
 .DS_Store
 *.pem
@@ -35,4 +36,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# storybook
 *storybook.log
+/storybook-static

@@ -4,7 +4,7 @@ import {
     colorArgTypes,
     weightArgTypes,
     headingsArgTypes
-  } from '@/storybook/argTypes'
+  } from '@/stories/argTypes'
 
 export default {
   title: "Atoms/Heading",

@@ -1,0 +1,155 @@
+@mixin colors() {
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--light-gray {
+    color: $light-gray;
+  }
+
+  &--dim-gray {
+    color: $dim-gray;
+  }
+
+  &--gunmetal {
+    color: $gunmetal;
+  }
+
+  &--light-blue {
+    color: $light-blue;
+  }
+
+  &--red {
+    color: $red;
+  }
+
+  &--light-red {
+    color: $light-red;
+  }
+
+  &--bittersweet {
+    color: $bittersweet;
+  }
+
+  &--cosmos {
+    color: $cosmos;
+  }
+
+  &--cordovan {
+    color: $cordovan;
+  }
+
+  &--yellow {
+    color: $yellow;
+  }
+}
+
+@mixin align() {
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+@mixin weight() {
+  &--300 {
+    font-weight: 300;
+  }
+
+  &--400 {
+    font-weight: 400;
+  }
+
+  &--500 {
+    font-weight: 500;
+  }
+
+  &--600 {
+    font-weight: 600;
+  }
+
+  &--700 {
+    font-weight: 700;
+  }
+
+  &--800 {
+    font-weight: 800;
+  }
+
+  &--900 {
+    font-weight: 900;
+  }
+}
+
+@mixin headings() {
+  &--h1 {
+    font-size: 3.6rem;
+    @include screen-size("tablet") {
+      font-size: 4rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 4.4rem;
+    }
+  }
+
+  &--h2 {
+    font-size: 3.2rem;
+    @include screen-size("tablet") {
+      font-size: 3.6rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 4rem;
+    }
+  }
+
+  &--h3 {
+    font-size: 2.8rem;
+    @include screen-size("tablet") {
+      font-size: 3.2rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 3.6rem;
+    }
+  }
+
+  &--h4 {
+    font-size: 2.4rem;
+    @include screen-size("tablet") {
+      font-size: 2.8rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 3.2rem;
+    }
+  }
+
+  &--h5 {
+    font-size: 2rem;
+    @include screen-size("tablet") {
+      font-size: 2.4rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 2.8rem;
+    }
+  }
+
+  &--h6 {
+    font-size: 1.6rem;
+    @include screen-size("tablet") {
+      font-size: 2rem;
+    }
+    @include screen-size("desktop") {
+      font-size: 2.4rem;
+    }
+  }
+}

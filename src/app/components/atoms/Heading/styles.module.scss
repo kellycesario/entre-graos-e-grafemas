@@ -1,0 +1,9 @@
+.heading {
+  @include headings();
+
+  @include colors();
+
+  @include align();
+  
+  @include weight();
+}

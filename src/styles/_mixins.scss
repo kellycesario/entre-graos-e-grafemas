@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @mixin colors() {
   &--white {
     color: $white;
@@ -48,6 +50,56 @@
   }
 }
 
+@mixin backgroundColor() {
+  &--white {
+    background-color: $white;
+  }
+
+  &--black {
+    background-color: $black;
+  }
+
+  &--light-gray {
+    background-color: $light-gray;
+  }
+
+  &--dim-gray {
+    background-color: $dim-gray;
+  }
+
+  &--gunmetal {
+    background-color: $gunmetal;
+  }
+
+  &--light-blue {
+    background-color: $light-blue;
+  }
+
+  &--red {
+    background-color: $red;
+  }
+
+  &--light-red {
+    background-color: $light-red;
+  }
+
+  &--bittersweet {
+    background-color: $bittersweet;
+  }
+
+  &--cosmos {
+    background-color: $cosmos;
+  }
+
+  &--cordovan {
+    background-color: $cordovan;
+  }
+
+  &--yellow {
+    background-color: $yellow;
+  }
+}
+
 @mixin align() {
   &--left {
     text-align: left;
@@ -95,61 +147,68 @@
 @mixin headings() {
   &--h1 {
     font-size: 3.6rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 4rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 4.4rem;
     }
   }
 
   &--h2 {
     font-size: 3.2rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 3.6rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 4rem;
     }
   }
 
   &--h3 {
     font-size: 2.8rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 3.2rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 3.6rem;
     }
   }
 
   &--h4 {
     font-size: 2.4rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 2.8rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 3.2rem;
     }
   }
 
   &--h5 {
     font-size: 2rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 2.4rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 2.8rem;
     }
   }
 
   &--h6 {
     font-size: 1.6rem;
-    @include screen-size("tablet") {
+    @include screen-size('tablet') {
       font-size: 2rem;
     }
-    @include screen-size("desktop") {
+    @include screen-size('desktop') {
       font-size: 2.4rem;
     }
   }
 }
+
+@mixin inter() {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+

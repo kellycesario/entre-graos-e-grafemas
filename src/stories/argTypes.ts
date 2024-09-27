@@ -25,6 +25,26 @@ export const colorArgTypes = {
   },
 }
 
+export const backgroundColorArgTypes = {
+  backgroundColor: {
+    control: { type: 'select' },
+    options: [
+      'white',
+      'black',
+      'dark-gray',
+      'light-gray',
+      'dim-gray',
+      'gunmetal',
+      'light-blue',
+      'red',
+      'bittersweet',
+      'cosmos',
+      'cordovan',
+      'yellow',
+    ],
+  },
+}
+
 export const weightArgTypes = {
   weight: {
     control: { type: 'select' },

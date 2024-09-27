@@ -20,9 +20,10 @@
    "baseUrl": "./src/",
     "paths": {
       "@/*": ["./*"],
-      "@/atoms/*": ["components/atoms/*"],
-      "@/molecules/*": ["components/molecules/*"],
-      "@/organisms/*": ["components/organisms/*"],
+      "@/ions/*": ["app/components/ions/*"],
+      "@/atoms/*": ["app/components/atoms/*"],
+      "@/molecules/*": ["app/components/molecules/*"],
+      "@/organisms/*": ["app/components/organisms/*"],
       "@/styles/*": ["styles/*"],
       "@/stories/*":["stories/*"]
     }

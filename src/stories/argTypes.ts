@@ -47,7 +47,7 @@ export const backgroundColorArgTypes = {
 
 export const weightArgTypes = {
   weight: {
-    control: { type: 'select' },
+    control: { type: 'inline-radio' },
     options: ['300', '400', '500', '600', '700', '800', '900'],
   },
 }

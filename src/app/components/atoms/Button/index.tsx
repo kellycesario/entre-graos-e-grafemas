@@ -3,45 +3,64 @@ import styles from './styles.module.scss'
 import { Icon as CustomIcon } from '@/ions/Icon'
 
 interface ButtonProps {
-  aria?: string
-  color?: string
   hasIcon?: boolean
-  href?: string
   icon?: React.ComponentType<{ color?: string; size?: number; stroke?: number }>
+  iconColor?: string
+  iconSize?: number
+  iconPosition?: 'left' | 'right'
+  href?: string
   isButton?: boolean
+  aria?: string
   label?: string
-  level?: string
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>
   ) => void
   role?: string
-  size?: number
   target?: string
   weight?: string
+  variant?: string
+  secondaryBackgroundColor?: string
+  secondaryColor?: string
+  secondaryBorderColor?: string
 }
 
 export const Button = ({
-  aria,
-  color,
   hasIcon,
-  href,
   icon: Icon,
+  iconColor,
+  iconSize,
+  iconPosition,
+  href,
   isButton = true,
+  aria,
   label,
-  level,
   onClick,
   role,
-  size,
   target,
   weight,
+  variant,
+  secondaryBackgroundColor,
+  secondaryColor,
+  secondaryBorderColor,
 }: ButtonProps) => {
-  const buttonStyle = [styles.button, styles[`button--${level}`]].join(' ')
+  const buttonStyle = [
+    styles.button,
+    styles[`button--${iconPosition}`],
+    styles[`button--${variant}`],
+    variant === 'secondary' && secondaryBackgroundColor
+      ? styles[`button--secondary`]
+      : '',
+  ].join(' ')
 
   const linkStyle = [
     styles.link,
     styles[`link--${weight}`],
-    !isButton && level ? styles[`link--${level}`] : '',
-    !isButton && !level && styles[`link--hover`],
+    styles[`link--${iconPosition}`],
+    !isButton && variant ? styles[`link--${variant}`] : '',
+    variant === 'secondary' && secondaryBackgroundColor
+      ? styles[`link--secondary`]
+      : '',
+    !isButton && !variant && styles[`link--hover`],
   ].join(' ')
 
   return (
@@ -52,10 +71,19 @@ export const Button = ({
           className={buttonStyle}
           aria-label={aria}
           role={role}
+          style={
+            variant === 'secondary'
+              ? {
+                  backgroundColor: secondaryBackgroundColor,
+                  color: secondaryColor,
+                  borderColor: secondaryBorderColor,
+                }
+              : {}
+          }
         >
           {label}
           {hasIcon && Icon && (
-            <CustomIcon Icon={Icon} color={color} size={size} />
+            <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />
           )}
         </button>
       ) : (
@@ -65,9 +93,18 @@ export const Button = ({
           className={linkStyle}
           role={role}
           onClick={onClick}
+          style={
+            variant === 'secondary'
+              ? {
+                  backgroundColor: secondaryBackgroundColor,
+                  color: secondaryColor,
+                  borderColor: secondaryBorderColor,
+                }
+              : {}
+          }
         >
           {hasIcon && Icon && (
-            <CustomIcon Icon={Icon} color={color} size={size} />
+            <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />
           )}
           {label}
         </Link>

@@ -1,5 +1,6 @@
 import { Button } from './index'
-import { IconArrowRight  } from '@tabler/icons-react'
+import { IconArrowRight } from '@tabler/icons-react'
+import { weightArgTypes } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Button',
@@ -8,24 +9,199 @@ export default {
   parameters: {
     layout: 'padded',
   },
+  args: {
+    iconSize: 24,
+    aria: '',
+    weight: '',
+  },
+  argTypes: {
+    variant: {
+      control: { type: 'inline-radio' },
+      options: ['primary', 'secondary'],
+    },
+    icon: {
+      table: {
+        disable: true,
+      },
+    },
+    role: {
+      table: {
+        disable: true,
+      },
+    },
+    target: {
+      table: {
+        disable: true,
+      },
+    },
+    onClick: {
+      table: {
+        disable: true,
+      },
+    },
+    href: {
+      table: {
+        disable: true,
+      },
+    },
+    isButton: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 }
 
-export const Buttonn = {
+export const PrimaryButton = {
   args: {
     hasIcon: true,
-    icon: IconArrowRight ,
-    color: 'red',
-    size: 24,
-    label: 'Run',
-    level: 'primary'
+    icon: IconArrowRight,
+    iconColor: 'white',
+    label: 'Sobre mim',
+    variant: 'primary',
+  },
+  argTypes: {
+    weight: {
+      table: {
+        disable: true,
+      },
+    },
+    aria: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBackgroundColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBorderColor: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+}
+
+export const SecondaryButton = {
+  args: {
+    hasIcon: false,
+    icon: IconArrowRight,
+    iconColor: 'white',
+    label: 'Entre em contato',
+    variant: 'secondary',
+  },
+  argTypes: {
+    weight: {
+      table: {
+        disable: true,
+      },
+    },
+    aria: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+}
+
+export const IconButton = {
+  args: {
+    hasIcon: true,
+    icon: IconArrowRight,
+    iconColor: 'white',
+    variant: 'primary',
+    aria: 'página inicial',
+  },
+  argTypes: {
+    weight: {
+      table: {
+        disable: true,
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
+      },
+    },
+    iconPosition: {
+      table: {
+        disable: true,
+      },
+    },
+    label: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBackgroundColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBorderColor: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 
 export const Link = {
   args: {
     hasIcon: false,
+    icon: IconArrowRight,
     href: '',
     isButton: false,
-    label: 'Run',
+    label: 'Início',
+  },
+  argTypes: {
+    ...weightArgTypes,
+    aria: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBackgroundColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryColor: {
+      table: {
+        disable: true,
+      },
+    },
+    secondaryBorderColor: {
+      table: {
+        disable: true,
+      },
+    },
+    iconPosition: {
+      table: {
+        disable: true,
+      },
+    },
+    variant: {
+      table: {
+        disable: true,
+      },
+    },
+    iconSize: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }

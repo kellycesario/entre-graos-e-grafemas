@@ -1,16 +1,35 @@
-.button {
+.button,
+.link {
   display: flex;
   align-items: center;
   gap: 1.2rem;
   font-size: 1.6rem;
   line-height: 2rem;
+  transition: all 0.3s ease-in-out;
+
+  @include inter();
+  @include buttonVariants();
+  @include buttonWithIconDirections();
+}
+
+.button {
   padding: 1.8rem;
+
   cursor: pointer;
   border-radius: 0.8rem;
   font-weight: 800;
-  @include inter();
 }
 
 .link {
   @include weight;
+  color: $dark-gray;
+
+  &:hover {
+    text-decoration: underline $cordovan 0.2rem;
+    text-underline-offset: 0.4rem;
+  }
+
+  @include screen-size('desktop') {
+    font-size: 2rem;
+  }
 }

@@ -212,3 +212,41 @@
   font-style: normal;
 }
 
+@mixin buttonStyles($level) {
+  $secondary-background-color: transparent;
+  $secondary-color: $cordovan;
+  $secondary-border-color: $cordovan;
+
+  @if $level == 'primary' {
+    background-color: $cordovan;
+    color: $white;
+  } @else if $level == 'secondary' {
+    background-color: $secondary-background-color;
+    color: $secondary-color;
+    border: 0.1rem solid $secondary-border-color;
+  }
+}
+
+@mixin buttonVariants() {
+  &--primary {
+    @include buttonStyles('primary');
+
+    &:hover, &:focus {
+      background-color: $bittersweet;
+    }
+  }
+
+  &--secondary {
+    @include buttonStyles('secondary');
+  }
+}
+
+@mixin buttonWithIconDirections() {
+  &--right {
+    flex-direction: row;
+  }
+
+  &--left {
+    flex-direction: row-reverse;
+  }
+}

@@ -10,7 +10,7 @@ export default {
   },
   args: {
     Icon: IconBook,
-    color: 'red',
+    color: '#8c4949',
     size: 40,
     stroke: 2,
   },

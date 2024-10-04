@@ -14,10 +14,22 @@
 
 .button {
   padding: 1.8rem;
-
   cursor: pointer;
   border-radius: 0.8rem;
   font-weight: 800;
+
+  &--disabled {
+    background-color: $black;
+    color: $gunmetal;
+    border-color: $black;
+    cursor: none;
+
+    &:hover {
+      background-color: $black;
+      border-color: $black;
+      color: $gunmetal;
+    }
+  }
 }
 
 .link {

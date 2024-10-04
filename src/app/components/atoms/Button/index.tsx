@@ -15,13 +15,13 @@ interface ButtonProps {
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>
   ) => void
-  role?: string
   target?: string
   weight?: string
   variant?: string
   secondaryBackgroundColor?: string
   secondaryColor?: string
   secondaryBorderColor?: string
+  disabled?: boolean
 }
 
 export const Button = ({
@@ -35,17 +35,18 @@ export const Button = ({
   aria,
   label,
   onClick,
-  role,
   target,
   weight,
   variant,
   secondaryBackgroundColor,
   secondaryColor,
   secondaryBorderColor,
+  disabled
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,
     styles[`button--${iconPosition}`],
+    disabled ? styles['button--disabled'] : '',
     styles[`button--${variant}`],
     variant === 'secondary' && secondaryBackgroundColor
       ? styles[`button--secondary`]
@@ -67,10 +68,10 @@ export const Button = ({
     <>
       {isButton ? (
         <button
-          onClick={onClick}
+          onClick={disabled ? undefined : onClick}
           className={buttonStyle}
           aria-label={aria}
-          role={role}
+          disabled={disabled}
           style={
             variant === 'secondary'
               ? {
@@ -83,7 +84,11 @@ export const Button = ({
         >
           {label}
           {hasIcon && Icon && (
-            <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />
+            <CustomIcon
+              Icon={Icon}
+              color={disabled ? '#292f36' : iconColor}
+              size={iconSize}
+            />
           )}
         </button>
       ) : (
@@ -91,7 +96,6 @@ export const Button = ({
           href={href ?? ''}
           target={target}
           className={linkStyle}
-          role={role}
           onClick={onClick}
           style={
             variant === 'secondary'
@@ -103,10 +107,10 @@ export const Button = ({
               : {}
           }
         >
+          {label}
           {hasIcon && Icon && (
             <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />
           )}
-          {label}
         </Link>
       )}
     </>

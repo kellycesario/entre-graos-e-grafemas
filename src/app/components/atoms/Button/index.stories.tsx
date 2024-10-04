@@ -13,6 +13,7 @@ export default {
     iconSize: 24,
     aria: '',
     weight: '',
+    disabled: false
   },
   argTypes: {
     variant: {

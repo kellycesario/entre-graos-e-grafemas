@@ -1,0 +1,50 @@
+.accordion {
+  &__summary {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  &__heading {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2.4rem;
+  }
+
+  &__number {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $bittersweet;
+
+    @include screen-size('desktop') {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $gunmetal;
+    @include inter();
+
+    @include screen-size('desktop') {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    color: $gunmetal;
+    padding-left: 2.9rem;
+    margin-top: 1.6rem;
+    line-height: 2.2rem;
+
+    @include screen-size('desktop') {
+      font-size: 1.6rem;
+    }
+  }
+}

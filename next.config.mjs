@@ -5,8 +5,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, ".src/styles")],
-    prependData: `@import "./src/styles/index.scss";`,
+    includePaths: [path.join(__dirname, ".src/app/styles")],
+    prependData: `@import "./src/app/styles/index.scss";`,
   },
   images: {
     remotePatterns: [

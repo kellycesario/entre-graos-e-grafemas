@@ -33,8 +33,7 @@
 }
 
 .link {
-  @include weight;
-  color: $dark-gray;
+  @include weight();
 
   &:hover {
     text-decoration: underline $cordovan 0.2rem;

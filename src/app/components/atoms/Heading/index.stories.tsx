@@ -1,23 +1,23 @@
-import { Heading } from "./index";
+import { Heading } from './index'
 import {
-    alignmentArgTypes,
-    colorArgTypes,
-    weightArgTypes,
-    headingsArgTypes
-  } from '@/stories/argTypes'
+  alignmentArgTypes,
+  colorArgTypes,
+  weightArgTypes,
+  headingsArgTypes,
+} from '@/app/stories/argTypes'
 
 export default {
-  title: "Atoms/Heading",
+  title: 'Atoms/Heading',
   component: Heading,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    layout: "padded",
+    layout: 'padded',
   },
   args: {
-    level: "1",
-    align: "center",
-    color: "dark-gray",
-    children: "Title example",
+    level: '1',
+    align: 'center',
+    color: 'dark-gray',
+    children: 'Title example',
   },
   argTypes: {
     ...alignmentArgTypes,
@@ -25,6 +25,6 @@ export default {
     ...weightArgTypes,
     ...headingsArgTypes,
   },
-};
+}
 
-export const Default = {};
+export const Default = {}

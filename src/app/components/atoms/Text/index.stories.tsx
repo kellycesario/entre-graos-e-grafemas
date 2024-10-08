@@ -2,8 +2,8 @@ import { Text } from './index'
 import {
   alignmentArgTypes,
   colorArgTypes,
-  weightArgTypes
-} from '@/stories/argTypes'
+  weightArgTypes,
+} from '@/app/stories/argTypes'
 
 export default {
   title: 'Atoms/Text',
@@ -21,7 +21,7 @@ export default {
   argTypes: {
     ...alignmentArgTypes,
     ...colorArgTypes,
-    ...weightArgTypes
+    ...weightArgTypes,
   },
 }
 

@@ -1,6 +1,6 @@
 import { Button } from './index'
 import { IconArrowRight } from '@tabler/icons-react'
-import { weightArgTypes } from '@/stories/argTypes'
+import { weightArgTypes } from '@/app/stories/argTypes'
 
 export default {
   title: 'Atoms/Button',
@@ -13,7 +13,7 @@ export default {
     iconSize: 24,
     aria: '',
     weight: '',
-    disabled: false
+    disabled: false,
   },
   argTypes: {
     variant: {

@@ -1,5 +1,5 @@
 import { Tag } from './index'
-import { colorArgTypes, backgroundColorArgTypes } from '@/app/stories/argTypes'
+import { colorArgTypes, backgroundColorArgTypes } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Tag',

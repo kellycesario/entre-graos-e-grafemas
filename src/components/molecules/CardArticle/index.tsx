@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import { Tag } from '@/atoms/Tag'
-import { limitText } from '@/app/utils/limitText/limitText'
+import { Tag } from '@/components/atoms/Tag'
+import { limitText } from '@/utils/limitText/limitText'
 
 interface CardProps {
   image?: string

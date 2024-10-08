@@ -4,7 +4,7 @@ import {
   colorArgTypes,
   weightArgTypes,
   headingsArgTypes,
-} from '@/app/stories/argTypes'
+} from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Heading',

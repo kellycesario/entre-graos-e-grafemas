@@ -1,6 +1,6 @@
 import { Button } from './index'
 import { IconArrowRight } from '@tabler/icons-react'
-import { weightArgTypes } from '@/app/stories/argTypes'
+import { weightArgTypes } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Button',

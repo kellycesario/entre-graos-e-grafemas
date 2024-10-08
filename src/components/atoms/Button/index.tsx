@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import { Icon as CustomIcon } from '@/ions/Icon'
+import { Icon as CustomIcon } from '@/components/ions/Icon'
 
 interface ButtonProps {
   hasIcon?: boolean
@@ -41,7 +41,7 @@ export const Button = ({
   secondaryBackgroundColor,
   secondaryColor,
   secondaryBorderColor,
-  disabled
+  disabled,
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,

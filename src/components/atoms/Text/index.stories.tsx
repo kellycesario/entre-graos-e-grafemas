@@ -3,7 +3,7 @@ import {
   alignmentArgTypes,
   colorArgTypes,
   weightArgTypes,
-} from '@/app/stories/argTypes'
+} from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Text',

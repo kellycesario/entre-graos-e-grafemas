@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './styles.module.scss'
-import { Icon as CustomIcon } from '@/components/ions/Icon'
+import { Icon as CustomIcon } from '@/ions/Icon'
 
 interface ButtonProps {
   hasIcon?: boolean

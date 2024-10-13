@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import styles from './styles.module.scss'
 
 interface TextProps {
   align?: string
-  children?: string
+  children?: ReactNode
   color?: string
   weight?: string
 }

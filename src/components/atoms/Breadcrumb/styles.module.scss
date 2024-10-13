@@ -1,0 +1,29 @@
+.breadcrumb {
+  &__list {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $light-gray;
+
+    @include screen-size('desktop') {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    @include inter();
+
+    &:hover {
+      text-decoration: underline $gunmetal 0.2rem;
+      text-underline-offset: 0.4rem;
+    }
+  }
+
+  &__lastItem {
+    color: $gunmetal;
+  }
+}

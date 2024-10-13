@@ -5,7 +5,7 @@ export default {
   component: Hero,
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
   },
   args: {
     title: 'Entre grãos e grafemas',

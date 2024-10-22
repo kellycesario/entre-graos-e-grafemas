@@ -249,6 +249,12 @@
 
   &--secondary {
     @include buttonStyles('secondary');
+
+    &:hover,
+    &:focus {
+      color: $bittersweet;
+      border-color: $bittersweet;
+    }
   }
 }
 

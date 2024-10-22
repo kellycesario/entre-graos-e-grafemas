@@ -50,12 +50,21 @@ export const Hero = ({
             href=""
             label="Explore projetos"
             variant="primary"
+            isButton={false}
+            useButtonStyle={true}
           />
-          <Button href="" label="Entre em contato" variant="secondary" />
+          <Button
+            href=""
+            label="Entre em contato"
+            variant="secondary"
+            isButton={false}
+            useButtonStyle={true}
+          />
         </div>
       </div>
       <video autoPlay loop className={styles.hero__video}>
         <source src={video} type="video/mp4" />
+        <track kind="captions" label="no captions" />
       </video>
     </section>
   )

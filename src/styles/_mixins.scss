@@ -114,6 +114,16 @@
   }
 }
 
+@mixin direction() {
+  &--row {
+    flex-direction: row;
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
 @mixin weight() {
   &--300 {
     font-weight: 300;
@@ -231,7 +241,8 @@
   &--primary {
     @include buttonStyles('primary');
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: $bittersweet;
     }
   }

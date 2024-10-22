@@ -21,13 +21,19 @@ export const Hero = ({
   items,
 }: HeroProps) => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.hero__heading}>
         {hasBreadcrumb && items && items.length > 0 && (
           <Breadcrumb items={items} />
         )}
 
-        <Heading align="left" color="cordovan" level="1" weight="800">
+        <Heading
+          align="left"
+          color="cordovan"
+          level="1"
+          weight="800"
+          id="hero-title"
+        >
           {title}
         </Heading>
         <Text align="left" color="gunmetal" weight="400">
@@ -45,7 +51,11 @@ export const Hero = ({
             label="Explore projetos"
             variant="primary"
           />
-          <Button href="" label="Entre em contato" variant="secondary" />
+          <Button
+            href=""
+            label="Entre em contato"
+            variant="secondary"
+          />
         </div>
       </div>
       <video autoPlay loop className={styles.hero__video}>

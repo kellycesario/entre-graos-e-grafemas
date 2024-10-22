@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import styles from './styles.module.scss'
 
 interface TextProps {
@@ -7,7 +7,12 @@ interface TextProps {
   color?: string
   weight?: string
 }
-export const Text = ({ align, children, color, weight }: TextProps) => {
+export const Text = ({
+  align = 'left',
+  children,
+  color = 'gunmetal',
+  weight = '400',
+}: TextProps) => {
   const textStyle = [
     styles[`text`],
     styles[`text--${align}`],

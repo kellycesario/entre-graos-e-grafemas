@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import '@/styles/main.scss'
+import styles from './layout.module.scss'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,9 +20,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const layoutStyle = [poppins.className, styles.layout].join(' ')
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>{children}</body>
+      <body className={layoutStyle}>{children}</body>
     </html>
   )
 }

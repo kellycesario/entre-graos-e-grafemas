@@ -50,6 +50,11 @@ export default {
         disable: true,
       },
     },
+    useButtonStyle: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 
@@ -72,17 +77,7 @@ export const PrimaryButton = {
         disable: true,
       },
     },
-    secondaryBackgroundColor: {
-      table: {
-        disable: true,
-      },
-    },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
-    },
-    secondaryBorderColor: {
       table: {
         disable: true,
       },
@@ -141,17 +136,7 @@ export const IconButton = {
         disable: true,
       },
     },
-    secondaryBackgroundColor: {
-      table: {
-        disable: true,
-      },
-    },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
-    },
-    secondaryBorderColor: {
       table: {
         disable: true,
       },
@@ -174,17 +159,7 @@ export const Link = {
         disable: true,
       },
     },
-    secondaryBackgroundColor: {
-      table: {
-        disable: true,
-      },
-    },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
-    },
-    secondaryBorderColor: {
       table: {
         disable: true,
       },

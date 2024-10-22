@@ -4,9 +4,9 @@ import { Icon as CustomIcon } from '@/ions/Icon'
 
 interface ButtonProps {
   hasIcon?: boolean
-  icon?: React.ComponentType<{ color?: string; size?: number; stroke?: number }>
+  icon?: React.ComponentType<{ color?: string; size?: number | string; stroke?: number | string }>
   iconColor?: string
-  iconSize?: number
+  iconSize?: number | string
   iconPosition?: 'left' | 'right'
   href?: string
   isButton?: boolean
@@ -18,10 +18,9 @@ interface ButtonProps {
   target?: string
   weight?: string
   variant?: string
-  secondaryBackgroundColor?: string
   secondaryColor?: string
-  secondaryBorderColor?: string
   disabled?: boolean
+  useButtonStyle?: boolean
 }
 
 export const Button = ({
@@ -38,30 +37,24 @@ export const Button = ({
   target,
   weight,
   variant,
-  secondaryBackgroundColor,
   secondaryColor,
-  secondaryBorderColor,
   disabled,
+  useButtonStyle,
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,
-    styles[`button--${iconPosition}`],
-    disabled ? styles['button--disabled'] : '',
     styles[`button--${variant}`],
-    variant === 'secondary' && secondaryBackgroundColor
-      ? styles[`button--secondary`]
-      : '',
+    styles[`button--${iconPosition}`],
+    disabled && styles['button--disabled'],
   ].join(' ')
 
   const linkStyle = [
     styles.link,
-    styles[`link--${weight}`],
     styles[`link--${iconPosition}`],
+    styles[`link--${weight}`],
     !isButton && variant ? styles[`link--${variant}`] : '',
-    variant === 'secondary' && secondaryBackgroundColor
-      ? styles[`link--secondary`]
-      : '',
     !isButton && !variant && styles[`link--hover`],
+    useButtonStyle && styles[`link--buttonStyle`],
   ].join(' ')
 
   return (
@@ -72,15 +65,12 @@ export const Button = ({
           className={buttonStyle}
           aria-label={aria}
           disabled={disabled}
-          style={
-            variant === 'secondary'
-              ? {
-                  backgroundColor: secondaryBackgroundColor,
-                  color: secondaryColor,
-                  borderColor: secondaryBorderColor,
-                }
-              : {}
-          }
+          style={{
+            ...(variant === 'secondary' && {
+              color: secondaryColor,
+              border: `1px solid ${secondaryColor}`,
+            }),
+          }}
         >
           {label}
           {hasIcon && Icon && (
@@ -97,15 +87,12 @@ export const Button = ({
           target={target}
           className={linkStyle}
           onClick={onClick}
-          style={
-            variant === 'secondary'
-              ? {
-                  backgroundColor: secondaryBackgroundColor,
-                  color: secondaryColor,
-                  borderColor: secondaryBorderColor,
-                }
-              : {}
-          }
+          style={{
+            ...(variant === 'secondary' && {
+              color: secondaryColor,
+              border: `1px solid ${secondaryColor}`,
+            }),
+          }}
         >
           {label}
           {hasIcon && Icon && (

@@ -41,7 +41,15 @@
     text-underline-offset: 0.4rem;
   }
 
-  @include screen-size('desktop') {
-    font-size: 2rem;
+  &--buttonStyle {
+    @extend .button;
+
+    @include screen-size('desktop') {
+      font-size: 1.6rem;
+    }
+
+    &:hover {
+      text-decoration: unset;
+    }
   }
 }

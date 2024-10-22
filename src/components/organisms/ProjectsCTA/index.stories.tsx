@@ -21,6 +21,16 @@ export default {
         disable: true,
       },
     },
+    firstButtonHref: {
+      table: {
+        disable: true,
+      },
+    },
+    secondButtonHref: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 

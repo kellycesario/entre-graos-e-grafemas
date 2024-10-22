@@ -27,9 +27,9 @@ interface ButtonProps {
 export const Button = ({
   hasIcon,
   icon: Icon,
-  iconColor,
-  iconSize,
-  iconPosition,
+  iconColor = 'white',
+  iconSize = 24,
+  iconPosition = 'right',
   href,
   isButton = true,
   aria,

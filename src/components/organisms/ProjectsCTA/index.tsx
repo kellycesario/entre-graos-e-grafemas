@@ -50,11 +50,15 @@ export const ProjectsCTA = ({
             label={firstButtonLabel}
             variant="primary"
             href={firstButtonHref}
+            isButton={false}
+            useButtonStyle={true}
           />
           <Button
             label={secondButtonLabel}
             variant="secondary"
             href={secondButtonHref}
+            isButton={false}
+            useButtonStyle={true}
           />
         </div>
       </div>

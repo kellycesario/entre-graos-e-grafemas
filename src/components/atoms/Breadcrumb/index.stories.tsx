@@ -8,18 +8,7 @@ export default {
     layout: 'centered',
   },
   args: {
-    items: [
-      { label: 'Início', path: '/' },
-      { label: 'Categoria', path: '/' },
-      { label: 'Produto', path: '/' },
-    ],
-  },
-  argTypes: {
-    items: {
-      table: {
-        disable: true,
-      },
-    },
+    pathname: 'Elinc',
   },
 }
 

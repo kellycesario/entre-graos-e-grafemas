@@ -1,16 +1,17 @@
+'use client'
+import { usePathname } from 'next/navigation'
+import { IconArrowRight, IconCoffee } from '@tabler/icons-react'
 import { Text } from '@/atoms/Text'
 import { Button } from '@/atoms/Button'
 import { Heading } from '@/atoms/Heading'
+import { Breadcrumb } from '@/atoms/Breadcrumb'
 import styles from './styles.module.scss'
-import { IconArrowRight, IconCoffee } from '@tabler/icons-react'
-import { Breadcrumb, BreadcrumbItem } from '@/atoms/Breadcrumb'
 
 interface HeroProps {
   title?: string
   text?: string
   video?: string
   hasBreadcrumb?: boolean
-  items?: BreadcrumbItem[]
 }
 
 export const Hero = ({
@@ -18,14 +19,13 @@ export const Hero = ({
   text,
   video,
   hasBreadcrumb = true,
-  items,
 }: HeroProps) => {
+  const pathname = usePathname()
+
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.hero__heading}>
-        {hasBreadcrumb && items && items.length > 0 && (
-          <Breadcrumb items={items} />
-        )}
+        {hasBreadcrumb && <Breadcrumb pathname={pathname} />}
 
         <Heading
           align="left"
@@ -51,11 +51,7 @@ export const Hero = ({
             label="Explore projetos"
             variant="primary"
           />
-          <Button
-            href=""
-            label="Entre em contato"
-            variant="secondary"
-          />
+          <Button href="" label="Entre em contato" variant="secondary" />
         </div>
       </div>
       <video autoPlay loop className={styles.hero__video}>

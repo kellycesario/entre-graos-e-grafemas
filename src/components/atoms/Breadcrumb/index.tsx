@@ -8,15 +8,32 @@ export interface BreadcrumbItem {
 }
 
 interface BreadcrumbProps {
-  items: BreadcrumbItem[]
+  pathname: string
 }
 
-export const Breadcrumb = ({ items }: BreadcrumbProps) => {
+export const Breadcrumb = ({ pathname }: BreadcrumbProps) => {
+  const createBreadcrumbItems = (path: string) => {
+    const segments = path.split('/').filter(Boolean)
+    const items: BreadcrumbItem[] = [{ label: 'Início', path: '/' }]
+
+    segments.forEach((segment, index) => {
+      const label = segment.replace(/-/g, ' ')
+      const formattedLabel =
+        label.charAt(0).toUpperCase() + label.slice(1).toLowerCase()
+      const fullPath = '/' + segments.slice(0, index + 1).join('/')
+      items.push({ label: formattedLabel, path: fullPath })
+    })
+
+    return items
+  }
+
+  const items = createBreadcrumbItems(pathname)
+
   return (
     <nav className={styles.breadcrumb}>
       <ul className={styles.breadcrumb__list}>
         {items.map((item, index) => (
-          <li key={index} className={styles.breadcrumb__item}>
+          <li key={item.label} className={styles.breadcrumb__item}>
             <Link
               href={item.path}
               className={

@@ -24,6 +24,11 @@ export default {
     ...colorArgTypes,
     ...weightArgTypes,
     ...headingsArgTypes,
+    id: {
+      table: {
+        disable: true,
+      },
+    },
   },
 }
 

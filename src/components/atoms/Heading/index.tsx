@@ -7,8 +7,9 @@ interface HeadingsProps {
   color?: string
   level?: string
   weight?: string
+  id?: string
 }
-export const Heading = ({ align, children, color, level, weight }: HeadingsProps) => {
+export const Heading = ({ align, children, color, level, weight, id }: HeadingsProps) => {
   const headingStyle = [
     styles.heading,
     styles[`heading--${align}`],
@@ -17,7 +18,7 @@ export const Heading = ({ align, children, color, level, weight }: HeadingsProps
     styles[`heading--${weight}`],
   ].join(' ')
 
-  const props = { className: headingStyle }
+  const props = { className: headingStyle, id }
   const element = createElement('h' + level, props, children)
 
   return element

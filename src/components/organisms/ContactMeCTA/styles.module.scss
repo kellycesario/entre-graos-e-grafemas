@@ -1,0 +1,76 @@
+.contactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include screen-size('tablet') {
+    margin: 0 auto;
+  }
+
+  @include screen-size('desktop') {
+    height: 25.8rem;
+    flex-direction: row;
+    gap: 6rem;
+  }
+
+  &__firstDecorator,
+  &__secondDecorator {
+    position: sticky;
+    z-index: 1;
+  }
+
+  &__firstDecorator {
+    bottom: 19rem;
+    left: 90rem;
+
+    @include screen-size('desktop') {
+      bottom: 24rem;
+    }
+  }
+
+  &__secondDecorator {
+    top: 20rem;
+    right: 90rem;
+
+    @include screen-size('desktop') {
+      top: 30rem;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+  }
+
+  &__title,
+  &__button {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1.6rem;
+
+    @include screen-size('desktop') {
+      font-size: 3rem;
+      text-align: left;
+      max-width: 40rem;
+    }
+  }
+}

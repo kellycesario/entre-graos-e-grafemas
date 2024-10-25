@@ -1,4 +1,6 @@
 import { Hero } from '@/organisms/Hero'
+import { ContactMeCTA } from '@/organisms/ContactMeCTA'
+import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 
 export default function Pesquisas() {
@@ -11,6 +13,11 @@ export default function Pesquisas() {
           video="/videos/coffee-02.mp4"
           hasBreadcrumb={true}
         />
+        <ContactMeCTA
+          backgroundImage="/images/coffee/3.png"
+          backgroundColor="#5C6B6B"
+        />
+        <MoreProjects />
       </main>
       <Footer />
     </>

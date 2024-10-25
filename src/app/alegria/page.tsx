@@ -1,4 +1,6 @@
 import { Hero } from '@/organisms/Hero'
+import { ContactMeCTA } from '@/organisms/ContactMeCTA'
+import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 
 export default function Alegria() {
@@ -11,6 +13,11 @@ export default function Alegria() {
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={true}
         />
+        <ContactMeCTA
+          backgroundImage="/images/coffee/3.png"
+          backgroundColor="#177F9C"
+        />
+        <MoreProjects />
       </main>
       <Footer />
     </>

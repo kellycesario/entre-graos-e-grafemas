@@ -3,10 +3,10 @@
   flex-direction: column;
   gap: 4rem;
 
-  @include screen-size('desktop') {
+  @include screen-size('tablet') {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     @include direction();
   }
 
@@ -18,13 +18,13 @@
   }
 
   &__heading {
-    @include screen-size('desktop') {
+    @include screen-size('tablet') {
       max-width: 51.4rem;
     }
   }
 
   &__buttons {
-    @include screen-size('desktop') {
+    @include screen-size('tablet') {
       flex-direction: row;
     }
   }
@@ -35,9 +35,13 @@
     border-radius: 0.8rem;
     object-fit: cover;
 
+    @include screen-size('tablet') {
+      max-width: 50%;
+      height: 45.2rem;
+    }
+
     @include screen-size('desktop') {
       max-width: 54.2rem;
-      height: 45.2rem;
     }
   }
 }

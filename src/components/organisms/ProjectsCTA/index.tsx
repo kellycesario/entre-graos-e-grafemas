@@ -44,22 +44,26 @@ export const ProjectsCTA = ({
         </Heading>
         <Text>{text}</Text>
         <div className={styles.projectsCTA__buttons}>
-          <Button
-            hasIcon
-            icon={IconArrowRight}
-            label={firstButtonLabel}
-            variant="primary"
-            href={firstButtonHref}
-            isButton={false}
-            useButtonStyle={true}
-          />
-          <Button
-            label={secondButtonLabel}
-            variant="secondary"
-            href={secondButtonHref}
-            isButton={false}
-            useButtonStyle={true}
-          />
+          {firstButtonLabel && (
+            <Button
+              hasIcon
+              icon={IconArrowRight}
+              label={firstButtonLabel}
+              variant="primary"
+              href={firstButtonHref}
+              isButton={false}
+              useButtonStyle={true}
+            />
+          )}
+          {secondButtonLabel && (
+            <Button
+              label={secondButtonLabel}
+              variant="secondary"
+              href={secondButtonHref}
+              isButton={false}
+              useButtonStyle={true}
+            />
+          )}
         </div>
       </div>
       <Image

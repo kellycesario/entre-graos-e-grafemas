@@ -21,6 +21,7 @@ interface ButtonProps {
   secondaryColor?: string
   disabled?: boolean
   useButtonStyle?: boolean
+  className?: string
 }
 
 export const Button = ({
@@ -40,12 +41,14 @@ export const Button = ({
   secondaryColor,
   disabled,
   useButtonStyle,
+  className
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,
     styles[`button--${variant}`],
     styles[`button--${iconPosition}`],
     disabled && styles['button--disabled'],
+    className
   ].join(' ')
 
   const linkStyle = [
@@ -55,6 +58,7 @@ export const Button = ({
     !isButton && variant ? styles[`link--${variant}`] : '',
     !isButton && !variant && styles[`link--hover`],
     useButtonStyle && styles[`link--buttonStyle`],
+    className
   ].join(' ')
 
   return (

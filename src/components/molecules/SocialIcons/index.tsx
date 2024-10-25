@@ -20,7 +20,7 @@ const socialLinks = [
 
 export const SocialIcons = () => {
   return (
-    <nav className={styles.socialIcons} aria-label="redes sociais">
+    <nav className={styles.socialIcons} aria-label="Redes Sociais">
       <ul className={styles.socialIcons__list}>
         {socialLinks.map(({ href, icon: Icon, aria }) => (
           <li key={aria} className={styles.socialIcons__item}>

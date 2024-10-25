@@ -1,0 +1,17 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size('tablet') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+    }
+  }
+}

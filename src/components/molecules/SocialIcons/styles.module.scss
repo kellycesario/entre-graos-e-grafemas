@@ -1,0 +1,17 @@
+.socialIcons {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+
+  &__item {
+    padding: 0.6rem;
+    background-color: $cordovan;
+    border-radius: 0.4rem;
+  }
+
+  &__link {
+    display: flex;
+  }
+}

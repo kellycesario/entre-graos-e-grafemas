@@ -29,7 +29,7 @@ export default function Home() {
           image="/images/research/1.webp"
           title="Conheça mais pesquisas"
           text="Embarque no mundo da sintaxe, fonologia, léxico, morfologia, aquisição de linguage  oral e  escrita e muito mais"
-          firstButtonLabel="Mais spesquisas"
+          firstButtonLabel="Mais pesquisas"
           firstButtonHref="/pesquisas"
           direction="row-reverse"
         />

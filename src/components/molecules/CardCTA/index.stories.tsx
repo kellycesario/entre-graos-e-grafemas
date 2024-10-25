@@ -8,7 +8,7 @@ export default {
     layout: 'fullscreen',
   },
   args: {
-    image: '/images/books/books.webp',
+    image: '/images/books/1.webp',
     projectName: 'eLinC',
     link: '',
   },

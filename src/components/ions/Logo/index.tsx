@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export const Logo = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
 
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        setIsSmallScreen(window.innerWidth < 834)
+        setIsMobileScreen(window.innerWidth < 834)
       }
     }
 
@@ -22,7 +22,7 @@ export const Logo = () => {
 
   return (
     <Link href="/" aria-label="Início">
-      {isSmallScreen ? (
+      {isMobileScreen ? (
         <svg
           width="106"
           height="34"

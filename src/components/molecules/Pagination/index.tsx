@@ -30,7 +30,7 @@ export const Pagination = ({
     <div className={styles.pagination}>
       <button
         onClick={() => handlePageChange(currentPage - 1)}
-        aria-label=""
+        aria-label="Página anterior"
         className={`${styles.pagination__button} ${
           isPreviousDisabled ? styles.disabled : styles.active
         }`}
@@ -48,7 +48,7 @@ export const Pagination = ({
 
       <button
         onClick={() => handlePageChange(currentPage + 1)}
-        aria-label=""
+        aria-label="Próxima página"
         className={`${styles.pagination__button} ${
           isNextDisabled ? styles.disabled : styles.active
         }`}

@@ -16,6 +16,7 @@ export const Tag = ({
   const divStyle = [
     styles.tag,
     hasBackgroundColor ? styles[`tag--${backgroundColor}`] : '',
+    hasBackgroundColor ? styles['tag--with-background'] : '', 
   ].join(' ')
 
   const tagStyle = [styles.tag__text, styles[`tag__text--${color}`]].join(' ')

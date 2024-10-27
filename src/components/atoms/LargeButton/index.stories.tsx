@@ -5,7 +5,8 @@ export default {
   component: LargeButton,
   tags: ['autodocs'],
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
+    backgrounds: { default: 'dark-mode' },
   },
   args: {
     title: 'A origem da Teoria Gerativa',

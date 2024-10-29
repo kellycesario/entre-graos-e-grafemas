@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  margin-top: 4rem;
+
+  @include screen-size('desktop-small') {
+    margin-top: 8rem;
+  }
 
   &__container {
     display: flex;
@@ -10,7 +15,7 @@
     align-items: center;
     gap: 2rem;
 
-    @include screen-size('desktop') {
+    @include screen-size('desktop-small') {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -21,25 +26,22 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.6rem;
+    color: $gunmetal;
+
+    @include screen-size('desktop-small') {
+      gap: 1rem;
+    }
 
     @include screen-size('desktop') {
-      gap: 1.8rem;
+      gap: 2rem;
     }
   }
 
   &__item {
     font-size: 1.6rem;
 
-    @include screen-size('desktop') {
+    @include screen-size('desktop-small') {
       font-size: 2rem;
     }
-  }
-}
-
-.footerWithCTA {
-  margin-top: 4rem;
-
-  @include screen-size('desktop') {
-    margin-top: 7.7rem;
   }
 }

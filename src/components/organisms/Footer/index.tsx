@@ -26,7 +26,7 @@ export const Footer = ({
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        setIsMobileScreen(window.innerWidth < 834)
+        setIsMobileScreen(window.innerWidth < 1024)
       }
     }
 
@@ -39,12 +39,8 @@ export const Footer = ({
     }
   }, [])
 
-  const footerStyle = hasCTA
-    ? `${styles.footer} ${styles.footerWithCTA}`
-    : styles.footer
-
   return (
-    <footer className={footerStyle}>
+    <footer className={styles.footer}>
       {!isMobileScreen && hasCTA && (
         <ContactMeCTA
           backgroundImage={backgroundImage}
@@ -61,17 +57,19 @@ export const Footer = ({
         )}
         <nav aria-label="Páginas">
           <ul className={styles.footer__list}>
-            {navigationItems.map(({ item, href }) => (
-              <li key={item} className={styles.footer__item}>
-                <Link
-                  href={href}
-                  rel="noopener noreferrer"
-                  style={{ fontWeight: pathname === href ? '700' : '400' }}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+            {navigationItems
+              .slice(0, navigationItems.length - 1)
+              .map(({ item, href }) => (
+                <li key={item} className={styles.footer__item}>
+                  <Link
+                    href={href}
+                    rel="noopener noreferrer"
+                    style={{ fontWeight: pathname === href ? '700' : '400' }}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </nav>
         <SocialIcons />

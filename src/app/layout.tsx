@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import '@/styles/main.scss'
+import { Header } from '@/organisms/Header'
 import styles from './layout.module.scss'
 
 const poppins = Poppins({
@@ -23,7 +24,10 @@ export default function RootLayout({
   const layoutStyle = [poppins.className, styles.layout].join(' ')
   return (
     <html lang="en">
-      <body className={layoutStyle}>{children}</body>
+      <body className={layoutStyle}>
+        <Header />
+        {children}
+        </body>
     </html>
   )
 }

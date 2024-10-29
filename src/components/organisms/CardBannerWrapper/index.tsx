@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 
 export const CardBannerWrapper = () => {
   return (
-    <section aria-label="a" className={styles.cards}>
+    <section className={styles.cards}>
       <CardBanner
         icon={IconPencil}
         link="/sobre-mim"

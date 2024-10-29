@@ -1,6 +1,7 @@
 import { ProjectsCTA } from '@/organisms/ProjectsCTA'
 import { Hero } from '@/organisms/Hero'
 import { Footer } from '@/organisms/Footer'
+import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
 import styles from './homepage.module.scss'
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
           firstButtonHref="/pesquisas"
           direction="row-reverse"
         />
+        <CardBannerWrapper />
       </main>
       <Footer
         hasCTA={true}

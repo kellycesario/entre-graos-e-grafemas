@@ -3,7 +3,6 @@ import { AccordionItem } from './index'
 export default {
   title: 'Molecules/AccordionItem',
   component: AccordionItem,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

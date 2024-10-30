@@ -3,7 +3,6 @@ import { ContactMeCTA } from './index'
 export default {
   title: 'Organisms/ContactMeCTA',
   component: ContactMeCTA,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

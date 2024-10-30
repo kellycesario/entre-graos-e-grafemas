@@ -9,7 +9,6 @@ import {
 export default {
   title: 'Atoms/Heading',
   component: Heading,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

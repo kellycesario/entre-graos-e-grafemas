@@ -4,7 +4,6 @@ import { colorArgTypes, backgroundColorArgTypes } from '@/stories/argTypes'
 export default {
   title: 'Atoms/Tag',
   component: Tag,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

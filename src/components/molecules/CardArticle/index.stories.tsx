@@ -3,7 +3,6 @@ import { CardArticle } from './index'
 export default {
   title: 'Molecules/CardArticle',
   component: CardArticle,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

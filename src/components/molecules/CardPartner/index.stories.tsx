@@ -3,7 +3,6 @@ import { CardPartner } from './index'
 export default {
   title: 'Molecules/CardPartner',
   component: CardPartner,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

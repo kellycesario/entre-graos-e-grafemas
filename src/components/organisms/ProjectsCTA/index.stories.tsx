@@ -3,7 +3,6 @@ import { ProjectsCTA } from './index'
 export default {
   title: 'Organisms/ProjectsCTA',
   component: ProjectsCTA,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

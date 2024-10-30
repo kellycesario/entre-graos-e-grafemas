@@ -3,7 +3,6 @@ import { PartnersWrapper } from './index'
 export default {
   title: 'Organisms/PartnersWrapper',
   component: PartnersWrapper,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

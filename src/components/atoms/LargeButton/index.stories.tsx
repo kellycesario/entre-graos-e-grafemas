@@ -3,7 +3,6 @@ import { LargeButton } from './index'
 export default {
   title: 'Atoms/LargeButton',
   component: LargeButton,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     backgrounds: { default: 'dark-mode' },

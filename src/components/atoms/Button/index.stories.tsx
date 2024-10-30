@@ -5,7 +5,6 @@ import { weightArgTypes } from '@/stories/argTypes'
 export default {
   title: 'Atoms/Button',
   component: Button,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

@@ -5,7 +5,6 @@ import { backgroundColorArgTypes } from '@/stories/argTypes'
 export default {
   title: 'Molecules/CardBanner',
   component: CardBanner,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

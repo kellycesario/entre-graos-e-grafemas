@@ -3,7 +3,6 @@ import { CardVideo } from './index'
 export default {
   title: 'Molecules/CardVideo',
   component: CardVideo,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

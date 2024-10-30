@@ -4,7 +4,6 @@ import { IconBrain, IconBooks, IconLayoutGridAdd } from '@tabler/icons-react'
 export default {
   title: 'Organisms/CardArticleWrapper',
   component: CardArticleWrapper,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

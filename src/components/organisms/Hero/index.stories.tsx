@@ -3,7 +3,6 @@ import { Hero } from './index'
 export default {
   title: 'Organisms/Hero',
   component: Hero,
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },

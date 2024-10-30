@@ -3,7 +3,6 @@ import { RecentVideosWrapper } from './index'
 export default {
   title: 'Organisms/RecentVideosWrapper',
   component: RecentVideosWrapper,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

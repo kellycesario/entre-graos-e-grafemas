@@ -8,7 +8,6 @@ import {
 export default {
   title: 'Atoms/Text',
   component: Text,
-  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

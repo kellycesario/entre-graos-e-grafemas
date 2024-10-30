@@ -86,7 +86,7 @@ export const Header = () => {
                   useButtonStyle={true}
                 />
                 <Button
-                  href=""
+                  href="/contato"
                   label="Entre em contato"
                   variant="secondary"
                   isButton={false}

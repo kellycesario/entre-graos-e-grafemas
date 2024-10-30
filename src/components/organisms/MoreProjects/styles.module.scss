@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @include layoutDefault();
 
   &__container {
     display: flex;

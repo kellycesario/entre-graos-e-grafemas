@@ -2,8 +2,4 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-
-  @include screen-size('desktop') {
-    gap: 8rem;
-  }
 }

@@ -3,10 +3,7 @@
   flex-direction: column;
   gap: 4rem;
   margin-top: 4rem;
-
-  @include screen-size('desktop-small') {
-    margin-top: 8rem;
-  }
+  @include layoutDefault();
 
   &__container {
     display: flex;

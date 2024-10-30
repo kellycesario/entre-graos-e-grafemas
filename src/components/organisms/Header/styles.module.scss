@@ -3,10 +3,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4rem;
-
-  @include screen-size('desktop-small') {
-    margin-bottom: 8rem;
-  }
+  @include layoutDefault();
 
   &__open {
     flex-direction: column;

@@ -1,0 +1,47 @@
+.recentVideos {
+  background-color: $dim-gray;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include screen-size('tablet') {
+      align-items: flex-start;
+    }
+
+    @include layoutDefault();
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size('desktop-small') {
+      gap: 3rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include screen-size('tablet') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+    }
+
+    @include screen-size('desktop') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.firstCard {
+  @include screen-size('desktop') {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+}

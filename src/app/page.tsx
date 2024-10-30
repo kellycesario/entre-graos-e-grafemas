@@ -2,6 +2,7 @@ import { ProjectsCTA } from '@/organisms/ProjectsCTA'
 import { Hero } from '@/organisms/Hero'
 import { Footer } from '@/organisms/Footer'
 import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
+import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import styles from './homepage.module.scss'
 
 export default function Home() {
@@ -13,6 +14,10 @@ export default function Home() {
           text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificaçãocom um café"
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={false}
+        />
+        <RecentVideosWrapper
+          title="Parcerias que transformam"
+          text="A vida é mais rica quando dividimos uma xícara de café - porque compartilhar é o melhor ingrediente para nossos sucessos!"
         />
         <ProjectsCTA
           alt=""

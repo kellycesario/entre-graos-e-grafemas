@@ -9,6 +9,8 @@ interface CardProps {
   title?: string
   text?: string
   link?: string
+  project?: 'elinc' | 'alegria' | 'pesquisas'
+  className?: string
 }
 
 export const CardArticle = ({
@@ -17,9 +19,12 @@ export const CardArticle = ({
   title,
   text,
   link = '#',
+  project,
+  className
 }: CardProps) => {
+  const cardStyle = [styles.card, project, className].join(' ')
   return (
-    <Link href={link} className={styles.card}>
+    <Link href={link} className={cardStyle}>
       <article
         className={styles.card__image}
         style={{ backgroundImage: `url(${image})` }}

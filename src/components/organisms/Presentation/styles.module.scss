@@ -1,0 +1,44 @@
+.presentation {
+  display: flex;
+  flex-direction: column;
+  @include layoutDefault();
+
+  @include screen-size('desktop-small') {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+
+    @include screen-size('desktop-small') {
+      border-radius: 0 0.8rem 0.8rem 0;
+      height: 44rem;
+    }
+
+    @include screen-size('desktop') {
+      height: auto;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 4rem 1.6rem;
+    @include backgroundColor();
+
+    @include screen-size('desktop-small') {
+      padding: 10.2rem 4rem;
+      margin-left: -60rem;
+      max-width: 95rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

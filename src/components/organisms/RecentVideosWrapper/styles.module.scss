@@ -10,6 +10,10 @@
       align-items: flex-start;
     }
 
+    @include screen-size('desktop') {
+      padding: 8rem 4rem !important;
+    }
+
     @include layoutDefault();
   }
 
@@ -35,7 +39,7 @@
     }
 
     @include screen-size('desktop') {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, auto);
     }
   }
 }

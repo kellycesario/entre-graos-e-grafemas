@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   padding: 2.4rem;
+  max-width: 72.7rem;
 
   &__image {
     @include cardAnimation();

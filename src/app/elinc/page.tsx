@@ -1,5 +1,6 @@
 import { IconBrain } from '@tabler/icons-react'
 import { Hero } from '@/organisms/Hero'
+import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
@@ -14,6 +15,13 @@ export default function Elinc() {
           text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificaçãocom um café"
           video="/videos/coffee.mp4"
           hasBreadcrumb={true}
+        />
+        <Presentation
+          backgroundColor="cordovan"
+          title="O eLinC"
+          text="O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa. O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa."
+          image="/images/elinc/1.jpg"
+          alt={''}
         />
         <CardArticleWrapper
           project="elinc"

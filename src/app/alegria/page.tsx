@@ -1,5 +1,6 @@
 import { IconBooks } from '@tabler/icons-react'
 import { Hero } from '@/organisms/Hero'
+import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
@@ -14,6 +15,13 @@ export default function Alegria() {
           text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificaçãocom um café"
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={true}
+        />
+        <Presentation
+          backgroundColor="light-blue"
+          title="Alegria"
+          text="O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado. O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado."
+          image="/images/alegria/5.png"
+          alt=''
         />
         <CardArticleWrapper
           project="alegria"

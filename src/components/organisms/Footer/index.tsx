@@ -72,7 +72,7 @@ export const Footer = ({
               ))}
           </ul>
         </nav>
-        <SocialIcons />
+        <SocialIcons backgroundColor="cordovan" />
       </div>
     </footer>
   )

@@ -1,0 +1,90 @@
+.hero {
+  padding-bottom: 4rem;
+  border-bottom: 0.1rem solid $cordovan;
+
+  &__imageContainer {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(7, 11, 27, 0.5),
+        rgba(41, 47, 54, 0)
+      );
+      pointer-events: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+
+    @include screen-size('desktop-small') {
+      height: 64.1rem;
+    }
+  }
+
+  &__svg {
+    margin-left: -8.5rem;
+    margin-bottom: 28rem;
+
+    @include screen-size('desktop-small') {
+      margin-bottom: 48rem;
+    }
+  }
+
+  &__heading {
+    color: $gunmetal;
+
+    @include screen-size('desktop-small') {
+      position: absolute;
+      top: 50rem;
+      padding-left: 4.2rem;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 2rem;
+  }
+
+  &__infoContainer {
+    @include screen-size('desktop-small') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0;
+
+    @include screen-size('desktop-small') {
+      margin: 5.2rem 0;
+      gap: 4rem;
+    }
+  }
+
+  &__author {
+    @include inter();
+  }
+
+  &__author,
+  &__date {
+    max-width: 15rem;
+
+    @include screen-size('tablet') {
+      max-width: unset;
+    }
+  }
+}

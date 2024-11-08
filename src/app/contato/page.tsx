@@ -1,4 +1,5 @@
 import { Hero } from '@/organisms/Hero'
+import { Accordion } from '@/organisms/Accordion'
 import { Footer } from '@/organisms/Footer'
 
 export default function Contato() {
@@ -11,6 +12,7 @@ export default function Contato() {
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={true}
         />
+        <Accordion title="Perguntas frequentes" />
       </main>
       <Footer />
     </>

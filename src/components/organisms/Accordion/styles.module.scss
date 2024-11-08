@@ -1,0 +1,16 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  @include layoutDefault();
+
+  @include screen-size('desktop-small') {
+    gap: 4rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

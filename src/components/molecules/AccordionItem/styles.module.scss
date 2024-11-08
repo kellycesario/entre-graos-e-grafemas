@@ -1,4 +1,8 @@
 .accordion {
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid $gunmetal;
+  cursor: pointer;
+  
   &__summary {
     display: flex;
     align-items: center;
@@ -25,7 +29,7 @@
     }
   }
 
-  &__title {
+  &__question {
     font-size: 1.6rem;
     font-weight: 600;
     color: $gunmetal;
@@ -36,7 +40,7 @@
     }
   }
 
-  &__description {
+  &__answer {
     font-size: 1.4rem;
     color: $gunmetal;
     padding-left: 2.9rem;

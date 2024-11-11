@@ -4,7 +4,11 @@ import { Icon as CustomIcon } from '@/ions/Icon'
 
 interface ButtonProps {
   hasIcon?: boolean
-  icon?: React.ComponentType<{ color?: string; size?: number | string; stroke?: number | string }>
+  icon?: React.ComponentType<{
+    color?: string
+    size?: number | string
+    stroke?: number | string
+  }>
   iconColor?: string
   iconSize?: number | string
   iconPosition?: 'left' | 'right'
@@ -22,6 +26,7 @@ interface ButtonProps {
   disabled?: boolean
   useButtonStyle?: boolean
   className?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
 export const Button = ({
@@ -41,14 +46,15 @@ export const Button = ({
   secondaryColor,
   disabled,
   useButtonStyle,
-  className
+  className,
+  type,
 }: ButtonProps) => {
   const buttonStyle = [
     styles.button,
     styles[`button--${variant}`],
     styles[`button--${iconPosition}`],
     disabled && styles['button--disabled'],
-    className
+    className,
   ].join(' ')
 
   const linkStyle = [
@@ -58,7 +64,7 @@ export const Button = ({
     !isButton && variant ? styles[`link--${variant}`] : '',
     !isButton && !variant && styles[`link--hover`],
     useButtonStyle && styles[`link--buttonStyle`],
-    className
+    className,
   ].join(' ')
 
   return (
@@ -69,6 +75,7 @@ export const Button = ({
           className={buttonStyle}
           aria-label={aria}
           disabled={disabled}
+          type={type}
           style={{
             ...(variant === 'secondary' && {
               color: secondaryColor,

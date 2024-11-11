@@ -1,5 +1,6 @@
 import { Hero } from '@/organisms/Hero'
 import { Accordion } from '@/organisms/Accordion'
+import { Form } from '@/organisms/Form'
 import { Footer } from '@/organisms/Footer'
 
 export default function Contato() {
@@ -13,6 +14,7 @@ export default function Contato() {
           hasBreadcrumb={true}
         />
         <Accordion title="Perguntas frequentes" />
+        <Form title="Ainda com dúvidas? Escreva-me!" />
       </main>
       <Footer />
     </>

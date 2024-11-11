@@ -316,6 +316,11 @@
   @include inter();
   color: $cordovan;
   font-weight: 600;
+  font-size: 1.4rem;
+
+  @include screen-size('desktop-small') {
+    font-size: 1.6rem;
+  }
 
   .field__container {
     display: flex;

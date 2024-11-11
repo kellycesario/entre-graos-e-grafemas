@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include layoutDefault();
+
+  @include screen-size('desktop-small') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  &__title {
+    @include screen-size('desktop-small') {
+      max-width: 40rem;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size('desktop-small') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+  }
+
+  &__textarea {
+    @include screen-size('desktop-small') {
+      grid-area: 3 / 1 / 5 / 3;
+    }
+  }
+
+  &__button {
+    margin-top: 2rem;
+
+    @include screen-size('desktop-small') {
+      grid-area: 4 / 1 / 5 / 3;
+    }
+  }
+}

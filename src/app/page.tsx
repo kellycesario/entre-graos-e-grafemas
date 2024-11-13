@@ -31,12 +31,22 @@ export default function Home() {
           direction="row-reverse"
         />
         <ProjectsCTA
+          title="Conheça o projeto Alegria"
+          text="O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado"
+          firstButtonLabel="Mais sobre o Alegria"
+          secondButtonLabel="Visite o site oficial"
+          firstButtonHref="/alegria"
+          direction="row"
+          hasAnimation={true}
+        />
+        <ProjectsCTA
           alt=""
           image="/images/research/1.webp"
           title="Conheça mais pesquisas"
           text="Embarque no mundo da sintaxe, fonologia, léxico, morfologia, aquisição de linguage  oral e  escrita e muito mais"
           firstButtonLabel="Mais pesquisas"
           firstButtonHref="/pesquisas"
+          secondButtonHref=""
           direction="row-reverse"
         />
         <CardBannerWrapper />

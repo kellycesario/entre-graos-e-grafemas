@@ -8,7 +8,7 @@
   @include screen-size('desktop-small') {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     @include direction();
   }
 
@@ -19,27 +19,30 @@
     gap: 2rem;
   }
 
-  &__heading {
-    @include screen-size('desktop-small') {
-      max-width: 51.4rem;
-    }
-  }
-
   &__buttons {
     @include screen-size('desktop-small') {
       flex-direction: row;
     }
   }
 
-  &__image {
+  &__container {
     width: 100%;
     height: 36rem;
+    overflow: hidden;
+
+    @include screen-size('desktop-small') {
+      max-width: 66rem;
+      height: 45.2rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
     border-radius: 0.8rem;
     object-fit: cover;
 
     @include screen-size('desktop-small') {
-      max-width: 50%;
-      height: 45.2rem;
+      max-width: 66rem;
     }
   }
 }

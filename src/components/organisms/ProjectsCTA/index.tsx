@@ -5,6 +5,7 @@ import { Text } from '@/atoms/Text'
 import { Heading } from '@/atoms/Heading'
 import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
+import { Animation } from '@/components/molecules/Animation'
 
 interface ProjectsCTAProps {
   alt?: string
@@ -16,6 +17,7 @@ interface ProjectsCTAProps {
   firstButtonHref?: string
   secondButtonHref?: string
   direction?: 'row' | 'row-reverse'
+  hasAnimation?: boolean
 }
 
 export const ProjectsCTA = ({
@@ -28,6 +30,7 @@ export const ProjectsCTA = ({
   firstButtonHref,
   secondButtonHref,
   direction = 'row-reverse',
+  hasAnimation = false,
 }: ProjectsCTAProps) => {
   const id = uuidv4()
 
@@ -66,13 +69,13 @@ export const ProjectsCTA = ({
           )}
         </div>
       </div>
-      <Image
-        src={image}
-        alt={alt}
-        width={542}
-        height={452}
-        className={styles.projectsCTA__image}
-      />
+      <div className={styles.projectsCTA__container}>
+        {hasAnimation ? (
+          <Animation />
+        ) : (
+          <Image src={image} alt={alt} width={542} height={452} className={styles.projectsCTA__image}/>
+        )}
+      </div>
     </section>
   )
 }

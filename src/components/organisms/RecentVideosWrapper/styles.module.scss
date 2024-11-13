@@ -35,17 +35,6 @@
     @include screen-size('tablet') {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.2rem;
     }
-
-    @include screen-size('desktop') {
-      grid-template-columns: repeat(3, auto);
-    }
-  }
-}
-
-.firstCard {
-  @include screen-size('desktop') {
-    grid-area: 1 / 1 / 2 / 3;
   }
 }

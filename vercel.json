@@ -1,26 +1,8 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    {
-      "src": "nextjs/package.json",
-      "use": "@vercel/next"
-    },
-    {
-      "src": "storybook/package.json",
-      "use": "@vercel/static",
-      "config": {
-        "distDir": "storybook-static"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/storybook/(.*)",
-      "dest": "/storybook/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/nextjs/$1"
-    }
-  ]
-}
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "buildCommand": "npm run build-storybook",
+    "devCommand": "npm run storybook",
+    "installCommand": "npm install",
+    "framework": null,
+    "outputDirectory": "./storybook-static"
+  }

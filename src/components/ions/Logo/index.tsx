@@ -7,7 +7,7 @@ export const Logo = () => {
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        setIsMobileScreen(window.innerWidth < 834)
+        setIsMobileScreen(window.innerWidth < 1200)
       }
     }
 

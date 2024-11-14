@@ -21,7 +21,7 @@ export default function Home() {
         />
         <ProjectsCTA
           alt=""
-          image="/images/eLinC/1.jpg"
+          image="/images/elinc/1.jpg"
           title="Conheça o projeto eLinC"
           text="O grupo explora construtos teóricos da Gramática Gerativa e da Linguística Cognitiva de forma colaborativa"
           firstButtonLabel="Mais sobre o eLinC"

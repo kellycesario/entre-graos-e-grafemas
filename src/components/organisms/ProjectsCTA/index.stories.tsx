@@ -9,7 +9,7 @@ export default {
   args: {
     title: 'Conheça o projeto eLinC',
     text: 'O grupo explora construtos teóricos da Gramática Gerativa e da Linguística Cognitiva de forma colaborativa',
-    image: '/images/eLinC/1.jpg',
+    image: '/images/elinc/1.jpg',
     firstButtonLabel: 'Mais sobre o eLinC',
     secondButtonLabel: 'Visite o site oficial',
     alt: 'elinC',

@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={layoutStyle}>
         <Header />
         {children}
-        </body>
+      </body>
     </html>
   )
 }

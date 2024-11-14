@@ -7,11 +7,11 @@ export default {
     layout: 'centered',
   },
   args: {
-    image:
-      '/images/books/1.webp',
+    image: '/images/books/1.webp',
     name: 'eLinC',
     role: 'Gerativismo de Chomsky: a teoria que transformou a linguística',
-    description: 'Neste artigo, vamos explorar o gerativismo de Noam Chomsky, que mudou a forma como entendemos a linguagem',
+    description:
+      'Neste artigo, vamos explorar o gerativismo de Noam Chomsky, que mudou a forma como entendemos a linguagem',
   },
   argTypes: {
     link: {

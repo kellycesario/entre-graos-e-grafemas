@@ -19,7 +19,7 @@ export const CardPartner = ({ name, role, description, image }: CardProps) => {
           height={600}
           className={styles.card__image}
         />
-    )}
+      )}
       <div className={styles.card__container}>
         <div className={styles.card__heading}>
           <p className={styles.card__name}>{name}</p>

@@ -15,10 +15,10 @@ export default {
   argTypes: {
     hasBreadcrumb: {
       table: {
-        disable: true
-      }
-    }
-  }
+        disable: true,
+      },
+    },
+  },
 }
 
 export const Default = {}

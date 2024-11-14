@@ -73,7 +73,13 @@ export const ProjectsCTA = ({
         {hasAnimation ? (
           <Animation />
         ) : (
-          <Image src={image} alt={alt} width={542} height={452} className={styles.projectsCTA__image}/>
+          <Image
+            src={image}
+            alt={alt}
+            width={542}
+            height={452}
+            className={styles.projectsCTA__image}
+          />
         )}
       </div>
     </section>

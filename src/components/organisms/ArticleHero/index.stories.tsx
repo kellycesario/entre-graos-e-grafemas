@@ -11,8 +11,8 @@ export default {
     author: 'Arabie Bezri Hermont',
     date: '25 de dezembro de 2024',
     image: '/images/coffee/8.jpg',
-    alt: ''
-  }
+    alt: '',
+  },
 }
 
 export const Default = {}

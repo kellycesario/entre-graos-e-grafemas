@@ -8,7 +8,7 @@ export default {
   },
   args: {
     title: 'Perguntas frequentes',
-  }
+  },
 }
 
 export const Default = {}

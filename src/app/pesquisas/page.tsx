@@ -21,7 +21,7 @@ export default function Pesquisas() {
           title="Pesquisas"
           text="Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais"
           image="/images/research/2.webp"
-          alt=''
+          alt=""
         />
         <CardArticleWrapper
           project="pesquisas"

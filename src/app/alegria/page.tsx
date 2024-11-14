@@ -21,7 +21,7 @@ export default function Alegria() {
           title="Alegria"
           text="O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado. O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado."
           image="/images/alegria/5.png"
-          alt=''
+          alt=""
         />
         <CardArticleWrapper
           project="alegria"

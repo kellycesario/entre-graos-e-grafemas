@@ -11,7 +11,7 @@ export default {
     text: 'O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa. O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa.',
     backgroundColor: 'cordovan',
     image: '/images/research/2.webp',
-    alt: ''
+    alt: '',
   },
 }
 

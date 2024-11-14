@@ -8,7 +8,7 @@ export default {
   },
   args: {
     backgroundImage: '/images/coffee/8.jpg',
-    backgroundColor: '#8C4949'
+    backgroundColor: '#8C4949',
   },
 }
 

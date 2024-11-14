@@ -28,14 +28,16 @@ export const Presentation = ({
 
   return (
     <section aria-labelledby={id} className={styles.presentation}>
-      { image && <Image
-        src={image}
-        alt={alt}
-        width={360}
-        height={226}
-        className={styles.presentation__image}
-      /> }
-      
+      {image && (
+        <Image
+          src={image}
+          alt={alt}
+          width={360}
+          height={226}
+          className={styles.presentation__image}
+        />
+      )}
+
       <div className={headingStyle}>
         <div className={styles.presentation__title}>
           <Heading color="white" level="2" weight="700" id={id}>

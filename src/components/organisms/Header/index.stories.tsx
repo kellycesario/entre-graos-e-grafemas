@@ -6,12 +6,8 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-   
-  },
-  argTypes: {
-    
-  }
+  args: {},
+  argTypes: {},
 }
 
 export const Default = {}

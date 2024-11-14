@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=",
-    "test": "vitest"
+    "test": "vitest",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss}\""
   },
   "dependencies": {
     "@tabler/icons-react": "^3.18.0",
@@ -43,6 +44,7 @@
     "eslint-config-next": "14.2.13",
     "eslint-plugin-storybook": "^0.8.0",
     "playwright": "^1.47.2",
+    "prettier": "^3.3.3",
     "storybook": "^8.3.2",
     "typescript": "^5",
     "vitest": "^2.1.2"

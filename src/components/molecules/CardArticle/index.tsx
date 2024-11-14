@@ -20,7 +20,7 @@ export const CardArticle = ({
   text,
   link = '#',
   project,
-  className
+  className,
 }: CardProps) => {
   const cardStyle = [styles.card, project, className].join(' ')
   return (

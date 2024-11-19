@@ -20,7 +20,7 @@ export default function Elinc() {
           backgroundColor="cordovan"
           title="O eLinC"
           text="O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa. O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa."
-          image="/images/elinc/1.jpg"
+          image="/images/books/2.jpg"
           alt={''}
         />
         <CardArticleWrapper

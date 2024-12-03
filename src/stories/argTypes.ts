@@ -58,3 +58,9 @@ export const headingsArgTypes = {
     options: ['1', '2', '3', '4', '5', '6'],
   },
 }
+
+export const disableTable = {
+  table: {
+    disable: true,
+  },
+}

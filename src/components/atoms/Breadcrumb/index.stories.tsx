@@ -1,4 +1,5 @@
 import { Breadcrumb } from './index'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Breadcrumb',
@@ -8,6 +9,11 @@ export default {
   },
   args: {
     pathname: 'Elinc',
+  },
+  argTypes: {
+    pathname: {
+      ...disableTable,
+    },
   },
 }
 

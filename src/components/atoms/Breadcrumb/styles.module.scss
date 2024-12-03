@@ -18,8 +18,7 @@
     @include inter();
 
     &:hover {
-      text-decoration: underline $gunmetal 0.2rem;
-      text-underline-offset: 0.4rem;
+      font-weight: 800;
     }
   }
 

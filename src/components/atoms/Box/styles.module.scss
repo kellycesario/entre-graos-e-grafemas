@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-bottom: 2rem !important;
+ 
+  @include colors();
+  @include backgroundColor();
+
+  p {
+    font-weight: 700;
+    color: unset;
+  }
+}

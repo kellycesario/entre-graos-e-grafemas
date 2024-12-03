@@ -3,11 +3,13 @@
   flex-direction: column;
   gap: 4rem;
   @include layoutDefault();
+  padding: 12rem 3.5rem 4rem 3.5rem;
 
   @include screen-size('desktop-small') {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    padding: 18rem 4rem 4rem 4rem;
   }
 
   &__heading {

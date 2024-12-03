@@ -44,59 +44,74 @@ export const Header = () => {
     : navigationItems.slice(0, navigationItems.length - 2)
 
   return (
-    <header
-      className={`${styles.header} ${isNavVisible ? styles.header__open : ''}`}
-    >
-      <div className={styles.header__icons}>
-        <Logo />
-        {isMobileScreen && isNavVisible && (
-          <IconX stroke={2} color="#8C4949" onClick={toggleNav} />
-        )}
-        {isMobileScreen && !isNavVisible && (
-          <IconMenu2 stroke={2} color="#8C4949" onClick={toggleNav} />
-        )}
+    <header className={styles.headerContainer}>
+      <div
+        className={`${styles.header} ${isNavVisible ? styles.header__open : ''}`}
+      >
+        <div className={styles.header__icons}>
+          <Logo />
+          {isMobileScreen && isNavVisible && (
+            <IconX
+              stroke={2}
+              color="#8C4949"
+              onClick={toggleNav}
+              className={styles.header__icon}
+            />
+          )}
+          {isMobileScreen && !isNavVisible && (
+            <IconMenu2
+              stroke={2}
+              color="#8C4949"
+              onClick={toggleNav}
+              className={styles.header__icon}
+            />
+          )}
+        </div>
+        <nav aria-label="Páginas" className={styles.header__navigation}>
+          {(!isMobileScreen || isNavVisible) && (
+            <>
+              <ul className={styles.header__list}>
+                {itemsToDisplay.map(({ item, href }) => (
+                  <li key={item} className={styles.header__item}>
+                    <Link
+                      href={href}
+                      rel="noopener noreferrer"
+                      style={{ fontWeight: pathname === href ? '700' : '400' }}
+                      className={styles.header__link}
+                      onClick={() => {
+                        if (isMobileScreen) setIsNavVisible(false)
+                      }}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {!isMobileScreen && (
+                <>
+                  <Button
+                    hasIcon={true}
+                    icon={IconArrowRight}
+                    iconSize={24}
+                    label="Sobre mim"
+                    variant="primary"
+                    isButton={false}
+                    href="/sobre-mim"
+                    useButtonStyle={true}
+                  />
+                  <Button
+                    href="/contato"
+                    label="Entre em contato"
+                    variant="secondary"
+                    isButton={false}
+                    useButtonStyle={true}
+                  />
+                </>
+              )}
+            </>
+          )}
+        </nav>
       </div>
-      <nav aria-label="Páginas" className={styles.header__navigation}>
-        {(!isMobileScreen || isNavVisible) && (
-          <>
-            <ul className={styles.header__list}>
-              {itemsToDisplay.map(({ item, href }) => (
-                <li key={item} className={styles.header__item}>
-                  <Link
-                    href={href}
-                    rel="noopener noreferrer"
-                    style={{ fontWeight: pathname === href ? '700' : '400' }}
-                    className={styles.header__link}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {!isMobileScreen && (
-              <>
-                <Button
-                  hasIcon={true}
-                  icon={IconArrowRight}
-                  iconSize={24}
-                  label="Sobre mim"
-                  variant="primary"
-                  isButton={false}
-                  href="/sobre-mim"
-                  useButtonStyle={true}
-                />
-                <Button
-                  href="/contato"
-                  label="Entre em contato"
-                  variant="secondary"
-                  isButton={false}
-                  useButtonStyle={true}
-                />
-              </>
-            )}
-          </>
-        )}
-      </nav>
     </header>
   )
 }

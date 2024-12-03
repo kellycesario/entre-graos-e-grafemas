@@ -3,24 +3,29 @@ import {
   alignmentArgTypes,
   colorArgTypes,
   weightArgTypes,
+  disableTable,
 } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Text',
   component: Text,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   args: {
     align: 'center',
     color: 'dark-gray',
-    children: 'Text example',
+    children:
+      'Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café',
     weight: '600',
   },
   argTypes: {
     ...alignmentArgTypes,
     ...colorArgTypes,
     ...weightArgTypes,
+    className: {
+      ...disableTable,
+    },
   },
 }
 

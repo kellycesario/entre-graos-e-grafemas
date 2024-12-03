@@ -47,14 +47,14 @@ export const Hero = ({
             iconColor="white"
             iconSize={24}
             iconPosition="right"
-            href=""
-            label="Explore projetos"
+            href="/"
+            label="Meu canal no YouTube"
             variant="primary"
             isButton={false}
             useButtonStyle={true}
           />
           <Button
-            href=""
+            href="/contato"
             label="Entre em contato"
             variant="secondary"
             isButton={false}

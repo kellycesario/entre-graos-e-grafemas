@@ -1,11 +1,12 @@
 import { Icon } from './index'
 import { IconBook } from '@tabler/icons-react'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Ions/Icon',
   component: Icon,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   args: {
     Icon: IconBook,
@@ -15,9 +16,10 @@ export default {
   },
   argTypes: {
     Icon: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    className: {
+      ...disableTable,
     },
   },
 }

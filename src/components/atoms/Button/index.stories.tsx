@@ -1,12 +1,12 @@
 import { Button } from './index'
 import { IconArrowRight } from '@tabler/icons-react'
-import { weightArgTypes } from '@/stories/argTypes'
+import { weightArgTypes, disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Button',
   component: Button,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   args: {
     iconSize: 24,
@@ -20,39 +20,31 @@ export default {
       options: ['primary', 'secondary'],
     },
     icon: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     role: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     target: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     onClick: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     href: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     isButton: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     useButtonStyle: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    className: {
+      ...disableTable,
+    },
+    type: {
+      ...disableTable,
     },
   },
 }
@@ -67,19 +59,13 @@ export const PrimaryButton = {
   },
   argTypes: {
     weight: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     aria: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }
@@ -94,14 +80,10 @@ export const SecondaryButton = {
   },
   argTypes: {
     weight: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     aria: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }
@@ -116,29 +98,19 @@ export const IconButton = {
   },
   argTypes: {
     weight: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     hasIcon: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     iconPosition: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     label: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }
@@ -154,29 +126,19 @@ export const Link = {
   argTypes: {
     ...weightArgTypes,
     aria: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     secondaryColor: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     iconPosition: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     variant: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     iconSize: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }

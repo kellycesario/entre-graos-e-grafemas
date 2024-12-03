@@ -37,8 +37,7 @@
   @include weight();
 
   &:hover {
-    text-decoration: underline $cordovan 0.2rem;
-    text-underline-offset: 0.4rem;
+    font-weight: 800;
   }
 
   &--buttonStyle {

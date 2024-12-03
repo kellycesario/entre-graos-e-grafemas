@@ -11,7 +11,7 @@ export default function Home() {
       <main className={styles.homepage}>
         <Hero
           title="Entre grãos e grafemas"
-          text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificaçãocom um café"
+          text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café"
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={false}
         />

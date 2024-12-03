@@ -4,19 +4,20 @@ import {
   colorArgTypes,
   weightArgTypes,
   headingsArgTypes,
+  disableTable,
 } from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Heading',
   component: Heading,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   args: {
     level: '1',
     align: 'center',
     color: 'dark-gray',
-    children: 'Title example',
+    children: 'Entre grãos e grafemas',
   },
   argTypes: {
     ...alignmentArgTypes,
@@ -24,9 +25,10 @@ export default {
     ...weightArgTypes,
     ...headingsArgTypes,
     id: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    className: {
+      ...disableTable,
     },
   },
 }

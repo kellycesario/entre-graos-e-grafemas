@@ -1,19 +1,21 @@
 import { Tag } from './index'
-import { colorArgTypes, backgroundColorArgTypes } from '@/stories/argTypes'
+import {
+  colorArgTypes,
+  backgroundColorArgTypes,
+  disableTable,
+} from '@/stories/argTypes'
 
 export default {
   title: 'Atoms/Tag',
   component: Tag,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   argTypes: {
     ...colorArgTypes,
     ...backgroundColorArgTypes,
     hasBackgroundColor: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }
@@ -21,7 +23,7 @@ export default {
 export const WithBackground = {
   args: {
     color: 'white',
-    children: 'Tag text example',
+    children: 'Aquisição de linguagem',
     backgroundColor: 'cosmos',
     hasBackgroundColor: true,
   },
@@ -30,14 +32,12 @@ export const WithBackground = {
 export const WithoutBackground = {
   args: {
     color: 'black',
-    children: 'Tag text example',
+    children: 'Fonética e fonologia',
     hasBackgroundColor: false,
   },
   argTypes: {
     backgroundColor: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }

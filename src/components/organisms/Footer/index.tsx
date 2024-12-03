@@ -26,7 +26,7 @@ export const Footer = ({
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        setIsMobileScreen(window.innerWidth < 1024)
+        setIsMobileScreen(window.innerWidth < 1200)
       }
     }
 
@@ -60,10 +60,13 @@ export const Footer = ({
             {navigationItems
               .slice(0, navigationItems.length - 1)
               .map(({ item, href }) => (
-                <li key={item} className={styles.footer__item}>
+                <li key={item}  className={`${styles.footer__item} ${
+                  pathname === href ? styles.footer__activeItem : ''
+                }`}>
                   <Link
                     href={href}
                     rel="noopener noreferrer"
+                    className={styles.footer__link}
                     style={{ fontWeight: pathname === href ? '700' : '400' }}
                   >
                     {item}

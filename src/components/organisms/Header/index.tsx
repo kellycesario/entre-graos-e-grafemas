@@ -17,7 +17,7 @@ export const Header = () => {
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        const isMobile = window.innerWidth < 1024
+        const isMobile = window.innerWidth < 1200
         setIsMobileScreen(isMobile)
 
         if (!isMobile) {
@@ -72,7 +72,12 @@ export const Header = () => {
             <>
               <ul className={styles.header__list}>
                 {itemsToDisplay.map(({ item, href }) => (
-                  <li key={item} className={styles.header__item}>
+                  <li
+                    key={item}
+                    className={`${styles.header__item} ${
+                      pathname === href ? styles.header__activeItem : ''
+                    }`}
+                  >
                     <Link
                       href={href}
                       rel="noopener noreferrer"

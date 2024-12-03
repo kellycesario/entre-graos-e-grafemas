@@ -12,7 +12,7 @@
     align-items: center;
     gap: 2rem;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -25,7 +25,7 @@
     gap: 1.6rem;
     color: $gunmetal;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       gap: 1rem;
     }
 
@@ -37,8 +37,19 @@
   &__item {
     font-size: 1.6rem;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       font-size: 2rem;
+    }
+  }
+
+  &__activeItem {
+    color: $cordovan;
+  }
+
+  &__link {
+    &:hover {
+      color: $cosmos;
+      font-weight: 700 !important;
     }
   }
 }

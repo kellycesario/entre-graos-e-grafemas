@@ -39,7 +39,7 @@
     align-items: center;
     width: -webkit-fill-available;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       width: unset;
     }
   }
@@ -49,7 +49,7 @@
   }
 
   &__navigation {
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       display: flex;
       gap: 1rem;
     }
@@ -63,7 +63,7 @@
     color: $gunmetal;
     margin-top: 2rem;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -82,7 +82,7 @@
     padding: 2rem 0;
     transition: all 0.8s;
 
-    @include screen-size('desktop-small') {
+    @include screen-size('desktop-md') {
       border-bottom-color: unset;
       border-bottom-width: unset;
       border-bottom-style: unset;
@@ -91,9 +91,13 @@
     }
   }
 
+  &__activeItem {
+    color: $cordovan;
+  }
+
   &__link {
     &:hover {
-      color: $cordovan;
+      color: $cosmos;
       font-weight: 700 !important;
     }
   }

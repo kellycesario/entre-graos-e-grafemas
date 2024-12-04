@@ -20,12 +20,13 @@
    "baseUrl": "./src/",
     "paths": {
       "@/*": ["./*"],
+      "@/vacuum/*": ["components/vacuum/*"],
       "@/ions/*": ["components/ions/*"],
       "@/atoms/*": ["components/atoms/*"],
       "@/molecules/*": ["components/molecules/*"],
       "@/organisms/*": ["components/organisms/*"],
       "@/styles/*": ["styles/*"],
-      "@/stories/*":["stories/*"],
+      "@/storybook-docs/*":["storybook-docs/*"],
       "@/utils/*": ["utils/*"],
       "@/data/*": ["data/*"]
     }

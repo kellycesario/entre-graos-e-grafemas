@@ -1,6 +1,6 @@
 import { CardArticleWrapper } from './index'
 import { IconBrain, IconBooks, IconLayoutGridAdd } from '@tabler/icons-react'
-import { disableTable } from '@/stories/argTypes'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Organisms/CardArticleWrapper',

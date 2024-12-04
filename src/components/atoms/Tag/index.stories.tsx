@@ -3,7 +3,7 @@ import {
   colorArgTypes,
   backgroundColorArgTypes,
   disableTable,
-} from '@/stories/argTypes'
+} from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Atoms/Tag',

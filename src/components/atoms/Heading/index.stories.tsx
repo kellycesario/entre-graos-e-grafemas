@@ -5,7 +5,7 @@ import {
   weightArgTypes,
   headingsArgTypes,
   disableTable,
-} from '@/stories/argTypes'
+} from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Atoms/Heading',

@@ -1,5 +1,5 @@
 import { ProjectsCTA } from './index'
-import { disableTable } from '@/stories/argTypes'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Organisms/ProjectsCTA',

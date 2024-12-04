@@ -4,7 +4,7 @@ import {
   colorArgTypes,
   weightArgTypes,
   disableTable,
-} from '@/stories/argTypes'
+} from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Atoms/Text',

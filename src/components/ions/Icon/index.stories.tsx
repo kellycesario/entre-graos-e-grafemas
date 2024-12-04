@@ -1,6 +1,6 @@
 import { Icon } from './index'
 import { IconBook } from '@tabler/icons-react'
-import { disableTable } from '@/stories/argTypes'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Ions/Icon',

@@ -1,5 +1,6 @@
 import { CardArticleWrapper } from './index'
 import { IconBrain, IconBooks, IconLayoutGridAdd } from '@tabler/icons-react'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Organisms/CardArticleWrapper',
@@ -9,9 +10,7 @@ export default {
   },
   argTypes: {
     icon: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }

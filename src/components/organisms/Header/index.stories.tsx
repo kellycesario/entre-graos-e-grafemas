@@ -5,9 +5,7 @@ export default {
   component: Header,
   parameters: {
     layout: 'fullscreen',
-  },
-  args: {},
-  argTypes: {},
+  }
 }
 
 export const Default = {}

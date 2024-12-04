@@ -1,4 +1,5 @@
 import { Hero } from './index'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Organisms/Hero',
@@ -14,9 +15,7 @@ export default {
   },
   argTypes: {
     hasBreadcrumb: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }

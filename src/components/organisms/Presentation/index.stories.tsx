@@ -4,7 +4,7 @@ export default {
   title: 'Organisms/Presentation',
   component: Presentation,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
   args: {
     title: 'O eLinC',

@@ -1,4 +1,5 @@
 import { ProjectsCTA } from './index'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Organisms/ProjectsCTA',
@@ -16,19 +17,16 @@ export default {
   },
   argTypes: {
     image: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     firstButtonHref: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
     secondButtonHref: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    hasAnimation: {
+      ...disableTable,
     },
   },
 }

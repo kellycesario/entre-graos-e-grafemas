@@ -1,6 +1,6 @@
 import { CardBanner } from './index'
 import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
-import { backgroundColorArgTypes } from '@/stories/argTypes'
+import { backgroundColorArgTypes, disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Molecules/CardBanner',
@@ -11,9 +11,10 @@ export default {
   argTypes: {
     ...backgroundColorArgTypes,
     link: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    icon: {
+      ...disableTable,
     },
   },
 }

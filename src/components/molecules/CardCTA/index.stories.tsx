@@ -1,4 +1,5 @@
 import { CardCTA } from './index'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Molecules/CardCTA',
@@ -13,9 +14,7 @@ export default {
   },
   argTypes: {
     link: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
     },
   },
 }

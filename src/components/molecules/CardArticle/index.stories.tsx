@@ -1,4 +1,5 @@
 import { CardArticle } from './index'
+import { disableTable } from '@/stories/argTypes'
 
 export default {
   title: 'Molecules/CardArticle',
@@ -15,9 +16,10 @@ export default {
   },
   argTypes: {
     link: {
-      table: {
-        disable: true,
-      },
+      ...disableTable,
+    },
+    className: {
+      ...disableTable,
     },
   },
 }

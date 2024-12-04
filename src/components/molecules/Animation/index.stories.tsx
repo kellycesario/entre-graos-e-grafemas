@@ -6,7 +6,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {},
 }
 
 export const Default = {}

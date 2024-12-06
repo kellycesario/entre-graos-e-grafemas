@@ -1,31 +1,62 @@
+'use client'
+
+import { useState } from 'react'
+import { useSearchParams, usePathname } from 'next/navigation'
 import { v4 as uuidv4 } from 'uuid'
+import { IconBrain, IconBooks, IconLayoutGridAdd } from '@tabler/icons-react'
 import { Icon as CustomIcon } from '@/ions/Icon'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
+import { Search } from '@/molecules/Search'
 import { CardArticle } from '@/molecules/CardArticle'
+import { Pagination } from '@/molecules/Pagination'
 import mock from '@/data/mock.json'
 import styles from './styles.module.scss'
-
 interface CardArticleWrapperProps {
-  icon?: React.ComponentType<{
-    color?: string
-    size?: number | string
-    stroke?: number | string
-  }>
   title?: string
   text?: string
   project: 'elinc' | 'alegria' | 'pesquisas'
+  totalPages: number
 }
 
 export const CardArticleWrapper = ({
-  icon: Icon,
   project,
   title,
   text,
+  totalPages,
 }: CardArticleWrapperProps) => {
   const articles = mock[project] || []
+  const searchParams = useSearchParams()
+  const searchQuery = searchParams.get('query')?.toLowerCase() ?? ''
+
+  const filteredArticles = articles.filter(
+    (article) =>
+      article.title.toLowerCase().includes(searchQuery) ||
+      article.text.toLowerCase().includes(searchQuery)
+  )
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 8
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = Math.min(startIndex + itemsPerPage, filteredArticles.length)
+  const paginatedData = filteredArticles.slice(startIndex, endIndex)
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
 
   const id = uuidv4()
+
+  const pathname = usePathname()
+
+  let dynamicIcon = null
+  if (pathname === '/elinc') {
+    dynamicIcon = IconBrain
+  } else if (pathname === '/alegria') {
+    dynamicIcon = IconBooks
+  } else if (pathname === '/pesquisas') {
+    dynamicIcon = IconLayoutGridAdd
+  }
 
   return (
     <section className={styles.cards} aria-labelledby={id}>
@@ -35,9 +66,9 @@ export const CardArticleWrapper = ({
         </Heading>
         <Text>
           {text}
-          {Icon && (
+          {dynamicIcon && (
             <CustomIcon
-              Icon={Icon}
+              Icon={dynamicIcon}
               color="#481620"
               size={24}
               className={styles.cards__icon}
@@ -45,8 +76,11 @@ export const CardArticleWrapper = ({
           )}
         </Text>
       </div>
+
+      <Search />
+
       <div className={styles.cards__articles}>
-        {articles.map(({ image, tag, title, text, link }, index) => (
+        {paginatedData.map(({ image, tag, title, text, link }, index) => (
           <CardArticle
             key={title}
             image={image}
@@ -59,6 +93,11 @@ export const CardArticleWrapper = ({
           />
         ))}
       </div>
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
     </section>
   )
 }

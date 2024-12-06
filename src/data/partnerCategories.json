@@ -15,23 +15,23 @@
         "image": "/images/research/2.webp"
       },
       {
-        "name": "João Silva",
+        "name": "João Souza",
         "role": "Pesquisador",
         "description": "Especialista em Inteligência Artificial",
         "image": "/images/research/1.webp",
         "icons": [
           {
             "Icon": "YouTube",
-            "href": "https://www.youtube.com/c/redesdeapoio"
+            "link": "https://www.youtube.com/c/redesdeapoio"
           },
           {
             "Icon": "Linkedin",
-            "href": "https://www.linkedin.com/redesdeapoio"
+            "link": "https://www.linkedin.com/redesdeapoio"
           }
         ]
       },
       {
-        "name": "Maria Oliveira",
+        "name": "Maria Cristina",
         "role": "Cientista",
         "description": "Pesquisadora no campo de Biotecnologia",
         "image": "/images/research/2.webp"
@@ -49,11 +49,11 @@
         "icons": [
           {
             "Icon": "Instagram",
-            "href": "https://www.instagram.com/grupoia"
+            "link": "https://www.instagram.com/grupoia"
           },
           {
             "Icon": "Linkedin",
-            "href": "https://www.linkedin.com/grupoia"
+            "link": "https://www.linkedin.com/grupoia"
           }
         ]
       },
@@ -65,22 +65,22 @@
         "icons": [
           {
             "Icon": "Facebook",
-            "href": "https://www.facebook.com/laboratoriobiotec"
+            "link": "https://www.facebook.com/laboratoriobiotec"
           },
           {
             "Icon": "YouTube",
-            "href": "https://www.youtube.com/c/laboratoriobiotec"
+            "link": "https://www.youtube.com/c/laboratoriobiotec"
           }
         ]
       },
       {
-        "name": "Grupo de Estudos em IA",
+        "name": "Grupo de Estudos em AI",
         "role": "Grupo de Pesquisa",
         "description": "Pesquisadores em IA e Machine Learning",
         "image": "/images/research/1.webp"
       },
       {
-        "name": "Laboratório de Biotecnologia",
+        "name": "Laboratório de Biotecnologias",
         "role": "Grupo de Pesquisa",
         "description": "Estudos avançados em Biotecnologia",
         "image": "/images/research/2.webp"
@@ -98,7 +98,7 @@
         "icons": [
           {
             "Icon": "Linkedin",
-            "href": "https://www.linkedin.com/usp"
+            "link": "https://www.linkedin.com/usp"
           }
         ]
       },
@@ -110,18 +110,18 @@
         "icons": [
           {
             "Icon": "Instagram",
-            "href": "https://www.instagram.com/institutobiotec"
+            "link": "https://www.instagram.com/institutobiotec"
           }
         ]
       },
       {
-        "name": "Universidade de São Paulo",
+        "name": "Universidade de Campinas",
         "role": "Instituição Parceira",
         "description": "Parceria em diversos projetos acadêmicos",
         "image": "/images/research/1.webp"
       },
       {
-        "name": "Instituto de Biotecnologia",
+        "name": "Instituto de Ciência e Biotecnologia",
         "role": "Instituição Parceira",
         "description": "Pesquisas em Biotecnologia Aplicada",
         "image": "/images/research/2.webp"
@@ -139,11 +139,11 @@
         "icons": [
           {
             "Icon": "Instagram",
-            "href": "https://www.instagram.com/institutoverde"
+            "link": "https://www.instagram.com/institutoverde"
           },
           {
             "Icon": "Facebook",
-            "href": "https://www.facebook.com/institutoverde"
+            "link": "https://www.facebook.com/institutoverde"
           }
         ]
       },
@@ -155,43 +155,43 @@
         "icons": [
           {
             "Icon": "YouTube",
-            "href": "https://www.youtube.com/c/redesdeapoio"
+            "link": "https://www.youtube.com/c/redesdeapoio"
           },
           {
             "Icon": "Linkedin",
-            "href": "https://www.linkedin.com/redesdeapoio"
+            "link": "https://www.linkedin.com/redesdeapoio"
           }
         ]
       },
       {
-        "name": "Instituto Verde",
+        "name": "Instituto Azul",
         "role": "Organização Parceira",
         "description": "Trabalham com preservação ambiental",
         "image": "/images/research/1.webp",
         "icons": [
           {
             "Icon": "Instagram",
-            "href": "https://www.instagram.com/institutoverde"
+            "link": "https://www.instagram.com/institutoverde"
           },
           {
             "Icon": "Facebook",
-            "href": "https://www.facebook.com/institutoverde"
+            "link": "https://www.facebook.com/institutoverde"
           }
         ]
       },
       {
-        "name": "Redes de Apoio",
+        "name": "Redes de Apoios",
         "role": "Organização Parceira",
         "description": "Organização que apoia comunidades carentes",
         "image": "/images/research/2.webp",
         "icons": [
           {
             "Icon": "YouTube",
-            "href": "https://www.youtube.com/c/redesdeapoio"
+            "link": "https://www.youtube.com/c/redesdeapoio"
           },
           {
             "Icon": "Linkedin",
-            "href": "https://www.linkedin.com/redesdeapoio"
+            "link": "https://www.linkedin.com/redesdeapoio"
           }
         ]
       }

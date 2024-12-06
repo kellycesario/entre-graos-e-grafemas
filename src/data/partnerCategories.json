@@ -1,0 +1,200 @@
+[
+  {
+    "category": "Parceiros Individuais",
+    "partners": [
+      {
+        "name": "João Silva",
+        "role": "Pesquisador",
+        "description": "Especialista em Inteligência Artificial",
+        "image": "/images/research/1.webp"
+      },
+      {
+        "name": "Maria Oliveira",
+        "role": "Cientista",
+        "description": "Pesquisadora no campo de Biotecnologia",
+        "image": "/images/research/2.webp"
+      },
+      {
+        "name": "João Silva",
+        "role": "Pesquisador",
+        "description": "Especialista em Inteligência Artificial",
+        "image": "/images/research/1.webp",
+        "icons": [
+          {
+            "Icon": "YouTube",
+            "href": "https://www.youtube.com/c/redesdeapoio"
+          },
+          {
+            "Icon": "Linkedin",
+            "href": "https://www.linkedin.com/redesdeapoio"
+          }
+        ]
+      },
+      {
+        "name": "Maria Oliveira",
+        "role": "Cientista",
+        "description": "Pesquisadora no campo de Biotecnologia",
+        "image": "/images/research/2.webp"
+      }
+    ]
+  },
+  {
+    "category": "Grupos Acadêmicos e Científicos",
+    "partners": [
+      {
+        "name": "Grupo de Estudos em IA",
+        "role": "Grupo de Pesquisa",
+        "description": "Pesquisadores em IA e Machine Learning",
+        "image": "/images/research/1.webp",
+        "icons": [
+          {
+            "Icon": "Instagram",
+            "href": "https://www.instagram.com/grupoia"
+          },
+          {
+            "Icon": "Linkedin",
+            "href": "https://www.linkedin.com/grupoia"
+          }
+        ]
+      },
+      {
+        "name": "Laboratório de Biotecnologia",
+        "role": "Grupo de Pesquisa",
+        "description": "Estudos avançados em Biotecnologia",
+        "image": "/images/research/2.webp",
+        "icons": [
+          {
+            "Icon": "Facebook",
+            "href": "https://www.facebook.com/laboratoriobiotec"
+          },
+          {
+            "Icon": "YouTube",
+            "href": "https://www.youtube.com/c/laboratoriobiotec"
+          }
+        ]
+      },
+      {
+        "name": "Grupo de Estudos em IA",
+        "role": "Grupo de Pesquisa",
+        "description": "Pesquisadores em IA e Machine Learning",
+        "image": "/images/research/1.webp"
+      },
+      {
+        "name": "Laboratório de Biotecnologia",
+        "role": "Grupo de Pesquisa",
+        "description": "Estudos avançados em Biotecnologia",
+        "image": "/images/research/2.webp"
+      }
+    ]
+  },
+  {
+    "category": "Universidades e Centros de Pesquisa",
+    "partners": [
+      {
+        "name": "Universidade de São Paulo",
+        "role": "Instituição Parceira",
+        "description": "Parceria em diversos projetos acadêmicos",
+        "image": "/images/research/1.webp",
+        "icons": [
+          {
+            "Icon": "Linkedin",
+            "href": "https://www.linkedin.com/usp"
+          }
+        ]
+      },
+      {
+        "name": "Instituto de Biotecnologia",
+        "role": "Instituição Parceira",
+        "description": "Pesquisas em Biotecnologia Aplicada",
+        "image": "/images/research/2.webp",
+        "icons": [
+          {
+            "Icon": "Instagram",
+            "href": "https://www.instagram.com/institutobiotec"
+          }
+        ]
+      },
+      {
+        "name": "Universidade de São Paulo",
+        "role": "Instituição Parceira",
+        "description": "Parceria em diversos projetos acadêmicos",
+        "image": "/images/research/1.webp"
+      },
+      {
+        "name": "Instituto de Biotecnologia",
+        "role": "Instituição Parceira",
+        "description": "Pesquisas em Biotecnologia Aplicada",
+        "image": "/images/research/2.webp"
+      }
+    ]
+  },
+  {
+    "category": "Organizações Não Governamentais",
+    "partners": [
+      {
+        "name": "Instituto Verde",
+        "role": "Organização Parceira",
+        "description": "Trabalham com preservação ambiental",
+        "image": "/images/research/1.webp",
+        "icons": [
+          {
+            "Icon": "Instagram",
+            "href": "https://www.instagram.com/institutoverde"
+          },
+          {
+            "Icon": "Facebook",
+            "href": "https://www.facebook.com/institutoverde"
+          }
+        ]
+      },
+      {
+        "name": "Redes de Apoio",
+        "role": "Organização Parceira",
+        "description": "Organização que apoia comunidades carentes",
+        "image": "/images/research/2.webp",
+        "icons": [
+          {
+            "Icon": "YouTube",
+            "href": "https://www.youtube.com/c/redesdeapoio"
+          },
+          {
+            "Icon": "Linkedin",
+            "href": "https://www.linkedin.com/redesdeapoio"
+          }
+        ]
+      },
+      {
+        "name": "Instituto Verde",
+        "role": "Organização Parceira",
+        "description": "Trabalham com preservação ambiental",
+        "image": "/images/research/1.webp",
+        "icons": [
+          {
+            "Icon": "Instagram",
+            "href": "https://www.instagram.com/institutoverde"
+          },
+          {
+            "Icon": "Facebook",
+            "href": "https://www.facebook.com/institutoverde"
+          }
+        ]
+      },
+      {
+        "name": "Redes de Apoio",
+        "role": "Organização Parceira",
+        "description": "Organização que apoia comunidades carentes",
+        "image": "/images/research/2.webp",
+        "icons": [
+          {
+            "Icon": "YouTube",
+            "href": "https://www.youtube.com/c/redesdeapoio"
+          },
+          {
+            "Icon": "Linkedin",
+            "href": "https://www.linkedin.com/redesdeapoio"
+          }
+        ]
+      }
+    ]
+  }
+]

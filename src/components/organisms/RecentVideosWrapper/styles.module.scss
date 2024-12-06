@@ -1,5 +1,6 @@
 .recentVideos {
   background-color: $dim-gray;
+  position: relative;
 
   &__container {
     display: flex;
@@ -35,6 +36,16 @@
     @include screen-size('tablet') {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__svg {
+    display: none;
+    @include screen-size('desktop-small') {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
     }
   }
 }

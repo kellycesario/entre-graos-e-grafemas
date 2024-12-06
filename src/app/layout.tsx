@@ -1,8 +1,7 @@
+import '@/styles/main.scss'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import '@/styles/main.scss'
 import { Header } from '@/organisms/Header'
-import styles from './layout.module.scss'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -13,7 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Entre grãos e grafemas',
-  description: 'Blog - Entre grãos e grafemas',
+  description:
+    'Um blog dedicado ao estudo da Linguística, com artigos e reflexões sobre aquisição de linguagem, sintaxe, fonética, fonologia e outros temas essenciais para entender os fenômenos da linguagem humana.',
 }
 
 export default function RootLayout({
@@ -21,10 +21,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const layoutStyle = [poppins.className, styles.layout].join(' ')
   return (
     <html lang="en">
-      <body className={layoutStyle}>
+      <body className={poppins.className}>
         <Header />
         {children}
       </body>

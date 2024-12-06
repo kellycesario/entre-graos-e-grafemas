@@ -23,19 +23,20 @@ export default function Home() {
           alt=""
           image="/images/books/2.jpg"
           title="Conheça o projeto eLinC"
-          text="O grupo explora construtos teóricos da Gramática Gerativa e da Linguística Cognitiva de forma colaborativa"
+          text="Mergulhe em uma jornada fascinante pelo universo da Linguística, em que teoria e prática se encontram para explorar a Gramática Gerativa e a Linguística Cognitiva de forma colaborativa e inovadora"
           firstButtonLabel="Mais sobre o eLinC"
           secondButtonLabel="Visite o site oficial"
           firstButtonHref="/elinc"
-          secondButtonHref=""
+          secondButtonHref="https://www.elincpucminas.com/"
           direction="row-reverse"
         />
         <ProjectsCTA
           title="Conheça o projeto Alegria"
           text="O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado"
           firstButtonLabel="Mais sobre o Alegria"
-          secondButtonLabel="Visite o site oficial"
+          secondButtonLabel="Alegria no PROEX da PUC Minas"
           firstButtonHref="/alegria"
+          secondButtonHref='https://proex.pucminas.br/2022/11/07/alegria-aprendizagem-de-leitura-e-escrita-gerando-respeito-inclusao-e-autonomia/'
           direction="row"
           hasAnimation={true}
         />
@@ -43,8 +44,8 @@ export default function Home() {
           alt=""
           image="/images/research/1.webp"
           title="Conheça mais pesquisas"
-          text="Embarque no mundo da sintaxe, fonologia, léxico, morfologia, aquisição de linguage  oral e  escrita e muito mais"
-          firstButtonLabel="Mais pesquisas"
+          text="Embarque em um universo de estudos profundos sobre sintaxe, fonologia, léxico, morfologia e aquisição da linguagem"
+          firstButtonLabel="Mais sobre minhas pesquisas"
           firstButtonHref="/pesquisas"
           secondButtonHref=""
           direction="row-reverse"

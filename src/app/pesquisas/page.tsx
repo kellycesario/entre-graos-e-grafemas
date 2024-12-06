@@ -1,4 +1,3 @@
-import { IconLayoutGridAdd } from '@tabler/icons-react'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
@@ -19,7 +18,7 @@ export default function Pesquisas() {
         <Presentation
           backgroundColor="dim-gray"
           title="Pesquisas"
-          text="Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais. Embarque no mundo da fonética, morfologia e muito mais"
+          text="Embarque no estudo aprofundado da fonética, morfologia e outros campos da Linguística, explorando a articulação dos sons da fala, sua percepção e o impacto dessas estruturas na comunicação. A fonética, ao analisar como os sons são produzidos e percebidos, se conecta à morfologia, que estuda a formação e estrutura das palavras. Ao entender como essas disciplinas se inter-relacionam, é possível compreender como a linguagem é organizada mentalmente, influenciando o entendimento e a interação social"
           image="/images/research/2.webp"
           alt=""
         />
@@ -27,7 +26,7 @@ export default function Pesquisas() {
           project="pesquisas"
           title="Entre palavras e pensamentos"
           text="Confira nossas pílulas sobre fonética, morfologia e muito mais"
-          icon={IconLayoutGridAdd}
+          totalPages={2}
         />
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"

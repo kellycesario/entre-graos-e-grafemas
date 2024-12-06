@@ -1,4 +1,3 @@
-import { IconBrain } from '@tabler/icons-react'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
@@ -19,7 +18,7 @@ export default function Elinc() {
         <Presentation
           backgroundColor="cordovan"
           title="O eLinC"
-          text="O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa. O grupo explora construtos teóricos de campos como Gramática Gerativa e Linguística Cognitiva de forma colaborativa."
+          text="O Grupo de Estudos em Linguagem e Cognição explora, de maneira colaborativa, construtos teóricos oriundos de diferentes abordagens da Linguística, como a Gramática Gerativa e a Linguística Cognitiva. O objetivo é promover uma compreensão aprofundada dos processos envolvidos na aquisição, produção e interpretação da linguagem, investigando como as estruturas cognitivas influenciam e são influenciadas pela linguagem em suas diversas manifestações"
           image="/images/books/2.jpg"
           alt={''}
         />
@@ -27,7 +26,7 @@ export default function Elinc() {
           project="elinc"
           title="Entre palavras e pensamentos"
           text="Confira nossas pílulas sobre linguagem e cognição humana"
-          icon={IconBrain}
+          totalPages={2}
         />
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"

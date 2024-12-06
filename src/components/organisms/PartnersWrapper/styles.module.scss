@@ -1,31 +1,36 @@
 .partners {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  @include layoutDefault();
 
   &__heading {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
+
     gap: 2rem;
 
     @include screen-size('desktop-small') {
+      margin-bottom: 3rem;
       gap: 3rem;
     }
   }
 
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-
-    @include screen-size('tablet') {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.2rem;
-    }
+  &__category {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 
     @include screen-size('desktop-small') {
-      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 3rem;
+      margin-top: 3rem;
     }
+  }
+
+  &__swiper {
+    display: flex !important;
+    flex-direction: column-reverse;
+    margin-bottom: 2rem;
+  }
+
+  &__cards {
+    padding-bottom: 8rem;
   }
 }

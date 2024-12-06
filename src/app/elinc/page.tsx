@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
@@ -22,12 +23,15 @@ export default function Elinc() {
           image="/images/books/2.jpg"
           alt={''}
         />
-        <CardArticleWrapper
-          project="elinc"
-          title="Entre palavras e pensamentos"
-          text="Confira nossas pílulas sobre linguagem e cognição humana"
-          totalPages={2}
-        />
+        <Suspense fallback={<div>Loading articles...</div>}>
+          <CardArticleWrapper
+            project="elinc"
+            title="Entre palavras e pensamentos"
+            text="Confira nossas pílulas sobre linguagem e cognição humana"
+            totalPages={2}
+          />
+        </Suspense>
+
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#8C4949"

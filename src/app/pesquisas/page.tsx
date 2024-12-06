@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
@@ -22,12 +23,14 @@ export default function Pesquisas() {
           image="/images/research/2.webp"
           alt=""
         />
-        <CardArticleWrapper
-          project="pesquisas"
-          title="Entre palavras e pensamentos"
-          text="Confira nossas pílulas sobre fonética, morfologia e muito mais"
-          totalPages={2}
-        />
+        <Suspense fallback={<div>Loading articles...</div>}>
+          <CardArticleWrapper
+            project="pesquisas"
+            title="Entre palavras e pensamentos"
+            text="Confira nossas pílulas sobre fonética, morfologia e muito mais"
+            totalPages={2}
+          />
+        </Suspense>
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#5C6B6B"

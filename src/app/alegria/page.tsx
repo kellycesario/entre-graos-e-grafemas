@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
@@ -22,12 +23,14 @@ export default function Alegria() {
           image="/images/alegria/5.png"
           alt=""
         />
-        <CardArticleWrapper
-          project="alegria"
-          title="Entre palavras e pensamentos"
-          text="Confira nossas pílulas sobre o projeto Alegria"
-          totalPages={2}
-        />
+        <Suspense fallback={<div>Loading articles...</div>}>
+          <CardArticleWrapper
+            project="alegria"
+            title="Entre palavras e pensamentos"
+            text="Confira nossas pílulas sobre o projeto Alegria"
+            totalPages={2}
+          />
+        </Suspense>
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#177F9C"

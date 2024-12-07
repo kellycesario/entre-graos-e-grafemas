@@ -23,6 +23,11 @@
     }
   }
 
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

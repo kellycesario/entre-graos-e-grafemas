@@ -1,0 +1,18 @@
+.curiosities {
+  @include layoutDefault();
+
+  &__container {
+    @include screen-size('desktop') {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 2rem;
+    }
+  }
+
+  &__headings {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+}

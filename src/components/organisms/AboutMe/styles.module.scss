@@ -1,0 +1,35 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include layoutDefault();
+
+  @include screen-size('desktop') {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+  }
+
+  &__imageContainer {
+    background-color: $light-gray;
+    padding: 4rem 3.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @include screen-size('desktop') {
+      padding: 12rem 8rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include screen-size('desktop') {
+      gap: 3rem;
+    }
+  }
+}

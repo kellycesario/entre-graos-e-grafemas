@@ -12,4 +12,15 @@
   @include screen-size('desktop') {
     gap: 3.6rem;
   }
+
+  &__code {
+    @include inter();
+    font-size: 8rem;
+    font-weight: 900;
+    color: $black;
+
+    @include screen-size('desktop') {
+      font-size: 9rem;
+    }
+  }
 }

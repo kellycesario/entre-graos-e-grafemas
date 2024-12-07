@@ -16,8 +16,8 @@ export default function Home() {
           hasBreadcrumb={false}
         />
         <RecentVideosWrapper
-          title="Parcerias que transformam"
-          text="A vida é mais rica quando dividimos uma xícara de café - porque compartilhar é o melhor ingrediente para nossos sucessos!"
+          title="Fique por dentro:"
+          text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
         />
         <ProjectsCTA
           alt=""

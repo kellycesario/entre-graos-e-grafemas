@@ -3,11 +3,11 @@ import { IconMug } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 
 type CuriosityItemProps = {
-  subtopic: string
-  topic: string
+  topic?: string
+  subtopic?: string
 }
 
-export const CuriosityItem = ({ subtopic, topic }: CuriosityItemProps) => {
+export const CuriosityItem = ({ topic, subtopic }: CuriosityItemProps) => {
   return (
     <div className={styles.curiosityItem}>
       <div className={styles.curiosityItem__container}>

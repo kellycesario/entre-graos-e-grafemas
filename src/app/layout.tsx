@@ -1,6 +1,7 @@
 import '@/styles/main.scss'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import { Sprites } from '@/ions/Sprites'
 import { Header } from '@/organisms/Header'
 
 const poppins = Poppins({
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Header />
         {children}
+        <Sprites />
       </body>
     </html>
   )

@@ -1,0 +1,32 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  @include layoutDefault();
+
+  @include screen-size('desktop-small') {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.2rem;
+  }
+
+  :nth-child(3) {
+    grid-area: 2 / 1 / 4 / 3;
+
+    @include screen-size('desktop-small') {
+      grid-area: 1 / 2 / 3 / 4;
+      height: -webkit-fill-available;
+      max-height: unset;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 0.8rem;
+    object-fit: cover;
+    max-height: 17.3rem;
+
+    @include screen-size('desktop-small') {
+      max-height: 26rem;
+    }
+  }
+}

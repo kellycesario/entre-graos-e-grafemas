@@ -9,6 +9,10 @@
     color: $black !important;
   }
 
+  &--gray {
+    color: $gray;
+  }
+
   &--dark-gray {
     color: $dark-gray;
   }
@@ -61,6 +65,10 @@
 
   &--black {
     background-color: $black;
+  }
+
+  &--gray {
+    background-color: $gray;
   }
 
   &--dark-gray {

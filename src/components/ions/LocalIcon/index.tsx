@@ -2,16 +2,25 @@ interface IconProps {
   icon: string
   className?: string
   fill?: string
+  width?: number
+  height?: number
 }
 
-export const LocalIcon = ({ icon, className, fill }: IconProps) => {
+export const LocalIcon = ({
+  icon,
+  className,
+  fill,
+  width,
+  height,
+}: IconProps) => {
   return (
     <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
       fill={fill}
       className={className}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <use href={`#${icon}`} xlinkHref={`#${icon}`} />
     </svg>

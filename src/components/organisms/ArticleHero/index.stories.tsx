@@ -1,6 +1,7 @@
 import { ArticleHero } from './index'
 import { Sprites } from '@/ions/Sprites'
 import { StoryFn } from '@storybook/react'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Organisms/ArticleHero',
@@ -14,6 +15,11 @@ export default {
     date: '25 de dezembro de 2024',
     image: '/images/coffee/8.jpg',
     alt: '',
+  },
+  argTypes: {
+    alt: {
+      ...disableTable,
+    },
   },
   decorators: [
     (Story: StoryFn) => {

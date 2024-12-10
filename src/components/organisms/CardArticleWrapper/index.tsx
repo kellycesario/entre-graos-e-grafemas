@@ -27,7 +27,7 @@ export const CardArticleWrapper = ({
 }: CardArticleWrapperProps) => {
   const articles = mock[project] || []
   const searchParams = useSearchParams()
-  const searchQuery = searchParams.get('query')?.toLowerCase() ?? ''
+  const searchQuery = searchParams?.get('query')?.toLowerCase() ?? ''
 
   const filteredArticles = articles.filter(
     (article) =>

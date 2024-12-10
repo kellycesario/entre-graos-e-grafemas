@@ -1,4 +1,6 @@
 import { ArticleHero } from './index'
+import { Sprites } from '@/ions/Sprites'
+import { StoryFn } from '@storybook/react'
 
 export default {
   title: 'Organisms/ArticleHero',
@@ -13,6 +15,16 @@ export default {
     image: '/images/coffee/8.jpg',
     alt: '',
   },
+  decorators: [
+    (Story: StoryFn) => {
+      return (
+        <div>
+          <Sprites />
+          <Story />
+        </div>
+      )
+    },
+  ],
 }
 
 export const Default = {}

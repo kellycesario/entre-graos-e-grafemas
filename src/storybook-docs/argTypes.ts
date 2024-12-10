@@ -11,6 +11,7 @@ export const colorArgTypes = {
     options: [
       'white',
       'black',
+      'gray',
       'dark-gray',
       'light-gray',
       'dim-gray',
@@ -31,6 +32,7 @@ export const backgroundColorArgTypes = {
     options: [
       'white',
       'black',
+      'gray',
       'dark-gray',
       'light-gray',
       'dim-gray',
@@ -62,5 +64,19 @@ export const headingsArgTypes = {
 export const disableTable = {
   table: {
     disable: true,
+  },
+}
+
+export const sprites = {
+  icon: {
+    control: { type: 'select' },
+    options: [
+      'arrows',
+      'line',
+      'line-02',
+      'logo-mobile',
+      'logo-desktop',
+      'plus-down',
+    ],
   },
 }

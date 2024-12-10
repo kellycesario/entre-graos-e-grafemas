@@ -1,4 +1,5 @@
 import { Presentation } from './index'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Organisms/Presentation',
@@ -12,6 +13,11 @@ export default {
     backgroundColor: 'cordovan',
     image: '/images/research/2.webp',
     alt: '',
+  },
+  argTypes: {
+    alt: {
+      ...disableTable,
+    },
   },
 }
 

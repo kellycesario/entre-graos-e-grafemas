@@ -1,8 +1,9 @@
 import { Textarea } from './index'
-import { InputProps, FormData } from '../Input/index'
+import { InputProps, FormData } from '@/molecules/Input'
 import { IconTableHeart } from '@tabler/icons-react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { Meta, StoryFn } from '@storybook/react'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Molecules/Textarea',
@@ -13,6 +14,29 @@ export default {
     placeholder: 'Gostaria de propor uma parceria',
     name: 'name',
     required: true,
+  },
+  argTypes: {
+    name: {
+      ...disableTable,
+    },
+    icon: {
+      ...disableTable,
+    },
+    required: {
+      ...disableTable,
+    },
+    iconColor: {
+      ...disableTable,
+    },
+    iconSize: {
+      ...disableTable,
+    },
+    register: {
+      ...disableTable,
+    },
+    className: {
+      ...disableTable,
+    },
   },
 } as Meta<typeof Textarea>
 

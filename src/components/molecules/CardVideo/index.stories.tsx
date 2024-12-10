@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/CardVideo',
   component: CardVideo,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
   },
   args: {
     image: '/images/books/1.webp',

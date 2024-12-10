@@ -2,6 +2,7 @@ import { Input, InputProps, FormData } from './index'
 import { IconUser } from '@tabler/icons-react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { Meta, StoryFn } from '@storybook/react'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Molecules/Input',
@@ -12,6 +13,29 @@ export default {
     placeholder: 'Daisy',
     name: 'name',
     required: true,
+  },
+  argTypes: {
+    name: {
+      ...disableTable,
+    },
+    icon: {
+      ...disableTable,
+    },
+    required: {
+      ...disableTable,
+    },
+    iconColor: {
+      ...disableTable,
+    },
+    iconSize: {
+      ...disableTable,
+    },
+    type: {
+      ...disableTable,
+    },
+    register: {
+      ...disableTable,
+    },
   },
 } as Meta<typeof Input>
 

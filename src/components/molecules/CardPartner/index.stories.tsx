@@ -18,6 +18,9 @@ export default {
     link: {
       ...disableTable,
     },
+    icons: {
+      ...disableTable,
+    },
   },
 }
 

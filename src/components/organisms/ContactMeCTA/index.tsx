@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { LocalIcon } from '@/ions/LocalIcon'
 import { Button } from '@/atoms/Button'
 import { IconArrowRight } from '@tabler/icons-react'
 import styles from './styles.module.scss'
@@ -20,12 +20,12 @@ export const ContactMeCTA = ({
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      <Image
-        src="/svgs/PlusUp.svg"
-        alt=""
-        className={styles.contactMe__firstDecorator}
+      <LocalIcon
+        icon="plus-up"
         width={48}
         height={24}
+        fill="white"
+        className={styles.contactMe__firstDecorator}
       />
       <div
         className={styles.contactMe__overlay}
@@ -50,12 +50,12 @@ export const ContactMeCTA = ({
         label="Entre em contato"
         className={styles.contactMe__button}
       />
-      <Image
-        src="/svgs/PlusDown.svg"
-        alt=""
-        className={styles.contactMe__secondDecorator}
+      <LocalIcon
+        icon="plus-down"
         width={48}
         height={24}
+        fill="white"
+        className={styles.contactMe__secondDecorator}
       />
     </section>
   )

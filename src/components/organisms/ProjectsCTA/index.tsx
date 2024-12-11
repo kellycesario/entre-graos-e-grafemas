@@ -76,7 +76,7 @@ export const ProjectsCTA = ({
           <Image
             src={image}
             alt={alt}
-            width={542}
+            width={660}
             height={452}
             className={styles.projectsCTA__image}
           />

@@ -20,7 +20,7 @@ export default function Alegria() {
           backgroundColor="light-blue"
           title="Alegria"
           text="O projeto Alegria visa promover a alfabetização e o letramento de adultos com dificuldades de aprendizado, especialmente aqueles com deficiência intelectual. O principal objetivo é criar oportunidades de aprendizagem nas áreas de leitura, escrita e matemática. Baseado nos princípios de Paulo Freire, o projeto busca desenvolver oficinas que estimulem a autonomia, a inclusão e o respeito, abordando temas sociais relevantes e promovendo a cidadania. As ações são conduzidas por docentes e discentes de cursos como Letras, Pedagogia e Matemática."
-          image="/images/alegria/5.png"
+          image="/images/alegria/6.png"
           alt=""
         />
         <Suspense fallback={<div>Loading articles...</div>}>

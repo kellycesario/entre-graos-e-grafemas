@@ -50,12 +50,17 @@ export const CardArticleWrapper = ({
   const pathname = usePathname()
 
   let dynamicIcon = null
+  let paginationColor = ''
+
   if (pathname === '/elinc') {
     dynamicIcon = IconBrain
+    paginationColor = '#8c4949'
   } else if (pathname === '/alegria') {
     dynamicIcon = IconBooks
+    paginationColor = '#177f9c'
   } else if (pathname === '/pesquisas') {
     dynamicIcon = IconLayoutGridAdd
+    paginationColor = '#5c6b6b'
   }
 
   return (
@@ -97,6 +102,7 @@ export const CardArticleWrapper = ({
         totalPages={totalPages}
         currentPage={currentPage}
         onPageChange={handlePageChange}
+        paginationColor={paginationColor}
       />
     </section>
   )

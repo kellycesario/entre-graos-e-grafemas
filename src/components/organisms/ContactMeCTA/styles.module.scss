@@ -4,12 +4,10 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: 0.8rem;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
 
   @include screen-size('tablet') {
     margin: 0 auto;

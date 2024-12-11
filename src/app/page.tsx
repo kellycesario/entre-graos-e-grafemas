@@ -54,7 +54,7 @@ export default function Home() {
       </main>
       <Footer
         hasCTA={true}
-        backgroundImage="/images/coffee/3.png"
+        backgroundImage="/images/coffee/9.png"
         backgroundColor="#5C6B6B"
       />
     </>

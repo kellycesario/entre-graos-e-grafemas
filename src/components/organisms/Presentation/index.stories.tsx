@@ -1,11 +1,13 @@
 import { Presentation } from './index'
+import { Sprites } from '@/ions/Sprites'
+import { StoryFn } from '@storybook/react'
 import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Organisms/Presentation',
   component: Presentation,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   args: {
     title: 'O eLinC',
@@ -19,6 +21,16 @@ export default {
       ...disableTable,
     },
   },
+  decorators: [
+    (Story: StoryFn) => {
+      return (
+        <div>
+          <Sprites />
+          <Story />
+        </div>
+      )
+    },
+  ],
 }
 
 export const Default = {}

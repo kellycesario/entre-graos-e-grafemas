@@ -31,7 +31,6 @@ export default function Elinc() {
             totalPages={2}
           />
         </Suspense>
-
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#8C4949"

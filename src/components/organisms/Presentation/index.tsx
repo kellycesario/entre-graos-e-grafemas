@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Heading } from '@/atoms/Heading'
@@ -20,6 +23,8 @@ export const Presentation = ({
   title,
   text,
 }: PresentationProps) => {
+  const [windowWidth, setWindowWidth] = useState(0)
+
   const id = uuidv4()
 
   const headingStyle = [
@@ -27,14 +32,42 @@ export const Presentation = ({
     styles[`presentation__heading--${backgroundColor}`],
   ].join(' ')
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined') {
+        setWindowWidth(window.innerWidth)
+      }
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const getImageDimensions = () => {
+    if (windowWidth < 1024) {
+      return { width: 1013, height: 226 }
+    } else if (windowWidth >= 1024) {
+      return { width: 1013, height: 612 }
+    } else {
+      return { width: 300, height: 300 }
+    }
+  }
+
+  const { width, height } = getImageDimensions()
+
   return (
     <section aria-labelledby={id} className={styles.presentation}>
       {image && (
         <Image
           src={image}
           alt={alt}
-          width={360}
-          height={226}
+          width={width}
+          height={height}
           className={styles.presentation__image}
         />
       )}

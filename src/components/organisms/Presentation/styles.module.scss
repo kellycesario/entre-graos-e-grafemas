@@ -14,11 +14,6 @@
 
     @include screen-size('desktop-small') {
       border-radius: 0 0.8rem 0.8rem 0;
-      height: 44rem;
-    }
-
-    @include screen-size('desktop') {
-      height: auto;
     }
   }
 
@@ -32,6 +27,10 @@
     @include screen-size('desktop-small') {
       padding: 10.2rem 4rem;
       margin-left: -60rem;
+      max-width: 75rem;
+    }
+
+    @include screen-size('desktop') {
       max-width: 95rem;
     }
   }

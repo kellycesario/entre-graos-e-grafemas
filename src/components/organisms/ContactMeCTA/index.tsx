@@ -17,7 +17,7 @@ export const ContactMeCTA = ({
       aria-labelledby="title"
       className={styles.contactMe}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        background: `url(${backgroundImage}) no-repeat center center / cover`,
       }}
     >
       <LocalIcon

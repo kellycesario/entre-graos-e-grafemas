@@ -342,7 +342,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0 0 0 1rem;
     border: 0.1rem solid $gunmetal;
     border-radius: 0.8rem;
   }
@@ -350,5 +350,15 @@
   .field__item {
     width: -webkit-fill-available;
     padding: 2rem 1rem;
+  }
+
+  .field__inputError {
+    border: 0.1rem solid $bittersweet;
+  }
+
+  .field__error {
+    color: $bittersweet;
+    font-weight: 500;
+    font-size: 1rem;
   }
 }

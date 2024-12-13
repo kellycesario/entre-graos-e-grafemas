@@ -45,7 +45,7 @@ export const Textarea = ({
         <textarea
           id={name}
           {...register(name, {
-            required: required ? `${label} ${requiredErrorMessage}` : false,
+            required: required ? `${requiredErrorMessage}` : false,
           })}
           placeholder={placeholder}
           className={styles.field__item}

@@ -55,7 +55,7 @@ export const Input = ({
         <input
           id={name}
           {...register(name, {
-            required: required ? `${label} ${requiredErrorMessage}` : false,
+            required: required ? `${requiredErrorMessage}` : false,
             pattern: patternValue
               ? {
                   value: patternValue,

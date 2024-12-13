@@ -60,9 +60,12 @@ export const Footer = ({
             {navigationItems
               .slice(0, navigationItems.length - 1)
               .map(({ item, href }) => (
-                <li key={item}  className={`${styles.footer__item} ${
-                  pathname === href ? styles.footer__activeItem : ''
-                }`}>
+                <li
+                  key={item}
+                  className={`${styles.footer__item} ${
+                    pathname === href ? styles.footer__activeItem : ''
+                  }`}
+                >
                   <Link
                     href={href}
                     rel="noopener noreferrer"

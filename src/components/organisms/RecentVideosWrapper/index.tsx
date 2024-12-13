@@ -42,7 +42,7 @@ export const RecentVideosWrapper = ({
             icon="arrows"
             width={101}
             height={14}
-            fill='white'
+            fill="white"
             className={styles.recentVideos__svg}
           />
         </div>

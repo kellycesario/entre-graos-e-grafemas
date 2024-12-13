@@ -36,7 +36,7 @@ export default function Home() {
           firstButtonLabel="Mais sobre o Alegria"
           secondButtonLabel="Alegria no PROEX da PUC Minas"
           firstButtonHref="/alegria"
-          secondButtonHref='https://proex.pucminas.br/2022/11/07/alegria-aprendizagem-de-leitura-e-escrita-gerando-respeito-inclusao-e-autonomia/'
+          secondButtonHref="https://proex.pucminas.br/2022/11/07/alegria-aprendizagem-de-leitura-e-escrita-gerando-respeito-inclusao-e-autonomia/"
           direction="row"
           hasAnimation={true}
         />

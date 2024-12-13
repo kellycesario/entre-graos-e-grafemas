@@ -1,6 +1,9 @@
 'use client'
 
+import { useState } from 'react'
+import { Modal } from 'antd'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm as useFormspree } from '@formspree/react'
 import {
   IconArrowRight,
   IconUser,
@@ -21,13 +24,34 @@ interface FormProps {
 }
 
 export const Form = ({ title }: FormProps) => {
+  const formspreeCode = process.env.NEXT_PUBLIC_FORMSPREE_TOKEN ?? ''
+  const [state, handleFormSubmit] = useFormspree(formspreeCode)
+  const [modal2Open, setModal2Open] = useState(false)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>()
+    reset,
+  } = useForm<FormData>({
+    mode: 'onBlur',
+  })
 
-  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    const formData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      subject: data.subject,
+      message: data.message,
+    }
+    handleFormSubmit(formData)
+
+    if (state.succeeded) {
+      reset()
+      setModal2Open(true)
+    }
+  }
 
   const id = uuidv4()
 
@@ -42,6 +66,7 @@ export const Form = ({ title }: FormProps) => {
       >
         {title}
       </Heading>
+
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form__fields}>
         <Input
           label="Nome"
@@ -49,7 +74,6 @@ export const Form = ({ title }: FormProps) => {
           placeholder="Mary"
           register={register}
           name="name"
-          required
         />
         <Input
           label="Email"
@@ -58,8 +82,11 @@ export const Form = ({ title }: FormProps) => {
           register={register}
           name="email"
           required
+          requiredErrorMessage="Por favor, insira seu e-mail"
+          patternValue={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
+          patternMessage="Por favor, insira um e-mail válido"
+          error={errors.email?.message}
         />
-
         <Input
           label="Telefone"
           icon={IconPhone}
@@ -67,7 +94,6 @@ export const Form = ({ title }: FormProps) => {
           register={register}
           name="phone"
         />
-
         <Input
           label="Assunto"
           icon={IconTableHeart}
@@ -75,7 +101,6 @@ export const Form = ({ title }: FormProps) => {
           register={register}
           name="subject"
         />
-
         <Textarea
           label="Mensagem"
           icon={IconMessage}
@@ -83,11 +108,10 @@ export const Form = ({ title }: FormProps) => {
           register={register}
           name="message"
           className={styles.form__textarea}
+          required
+          requiredErrorMessage="Por favor, insira uma mensagem"
+          error={errors.message?.message}
         />
-
-        {(errors.name || errors.email || errors.message) && (
-          <span>Preencha todos os campos corretamente</span>
-        )}
 
         <Button
           hasIcon={true}
@@ -97,6 +121,16 @@ export const Form = ({ title }: FormProps) => {
           type="submit"
           variant="primary"
           className={styles.form__button}
+          disabled={state.submitting}
+        />
+
+        <Modal
+          title="Mensagem enviada com sucesso!"
+          centered
+          open={modal2Open}
+          onOk={() => setModal2Open(false)}
+          onCancel={() => setModal2Open(false)}
+          footer={null}
         />
       </form>
     </section>

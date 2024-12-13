@@ -24,6 +24,10 @@ export interface InputProps {
   name: keyof FormData
   type?: string
   required?: boolean
+  error?: string
+  requiredErrorMessage?: string
+  patternValue?: RegExp
+  patternMessage?: string
 }
 
 export const Input = ({
@@ -36,20 +40,35 @@ export const Input = ({
   name,
   type = 'text',
   required = false,
+  error,
+  requiredErrorMessage,
+  patternValue,
+  patternMessage,
 }: InputProps) => {
   return (
     <div className={styles.field}>
       <label htmlFor={name}>{label}</label>
-      <div className={styles.field__container}>
+      <div
+        className={`${styles.field__container} ${error ? styles.field__inputError : ''}`}
+      >
         {Icon && <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />}
         <input
           id={name}
-          {...register(name, { required })}
+          {...register(name, {
+            required: required ? `${label} ${requiredErrorMessage}` : false,
+            pattern: patternValue
+              ? {
+                  value: patternValue,
+                  message: patternMessage ?? 'Invalid input',
+                }
+              : undefined,
+          })}
           type={type}
           placeholder={placeholder}
           className={styles.field__item}
         />
       </div>
+      {error && <span className={styles.field__error}>{error}</span>}
     </div>
   )
 }

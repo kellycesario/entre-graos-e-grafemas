@@ -17,6 +17,8 @@ interface TextareaProps {
   name: keyof FormData
   required?: boolean
   className?: string
+  error?: string
+  requiredErrorMessage?: string
 }
 
 export const Textarea = ({
@@ -29,20 +31,27 @@ export const Textarea = ({
   name,
   required = false,
   className,
+  error,
+  requiredErrorMessage,
 }: TextareaProps) => {
   const textareaStyle = [styles.field, className].join(' ')
   return (
     <div className={textareaStyle}>
       <label htmlFor={name}>{label}</label>
-      <div className={styles.field__container}>
+      <div
+        className={`${styles.field__container} ${error ? styles.field__inputError : ''}`}
+      >
         {Icon && <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />}
         <textarea
           id={name}
-          {...register(name, { required })}
+          {...register(name, {
+            required: required ? `${label} ${requiredErrorMessage}` : false,
+          })}
           placeholder={placeholder}
           className={styles.field__item}
         />
       </div>
+      {error && <span className={styles.field__error}>{error}</span>}
     </div>
   )
 }

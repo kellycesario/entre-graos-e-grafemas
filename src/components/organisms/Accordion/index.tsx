@@ -2,15 +2,18 @@
 
 import { v4 as uuidv4 } from 'uuid'
 import { Heading } from '@/atoms/Heading'
-import { AccordionItem } from '@/molecules/AccordionItem'
-import accordionData from '@/data/accordion.json'
+import { AccordionItem, AccordionItemProps } from '@/molecules/AccordionItem'
 import styles from './styles.module.scss'
 
 interface AccordionProps {
+  frequentlyAskedQuestions: AccordionItemProps[]
   title?: string
 }
 
-export const Accordion = ({ title }: AccordionProps) => {
+export const Accordion = ({
+  title,
+  frequentlyAskedQuestions = [],
+}: AccordionProps) => {
   const id = uuidv4()
 
   return (
@@ -20,18 +23,19 @@ export const Accordion = ({ title }: AccordionProps) => {
       </Heading>
 
       <div className={styles.accordion__wrapper}>
-        {accordionData.map(({ question, answer }, index) => {
-          const number = (index + 1).toString().padStart(2, '0')
-
-          return (
-            <AccordionItem
-              key={question}
-              question={question}
-              answer={answer}
-              number={number}
-            />
-          )
-        })}
+        {frequentlyAskedQuestions.map(
+          (accordion: AccordionItemProps, index) => {
+            const number = (index + 1).toString().padStart(2, '0')
+            return (
+              <AccordionItem
+                key={accordion.question}
+                question={accordion.question}
+                answer={accordion.answer}
+                number={number}
+              />
+            )
+          }
+        )}
       </div>
     </section>
   )

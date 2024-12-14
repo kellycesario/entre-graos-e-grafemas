@@ -1,9 +1,12 @@
+import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { Accordion } from '@/organisms/Accordion'
 import { Form } from '@/organisms/Form'
 import { Footer } from '@/organisms/Footer'
 
-export default function Contato() {
+export default async function Contato() {
+  const questions = await getAllEntries('faq')
+
   return (
     <>
       <main>
@@ -13,7 +16,10 @@ export default function Contato() {
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={true}
         />
-        <Accordion title="Perguntas frequentes" />
+        <Accordion
+          title="Perguntas frequentes"
+          frequentlyAskedQuestions={questions}
+        />
         <Form title="Ainda com dúvidas? Escreva-me!" />
       </main>
       <Footer />

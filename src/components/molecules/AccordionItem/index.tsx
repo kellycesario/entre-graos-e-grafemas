@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { IconPlus, IconX } from '@tabler/icons-react'
+import { RichText } from '@/atoms/RichText'
 import styles from './styles.module.scss'
 
-interface AccordionItemProps {
+export interface AccordionItemProps {
   question?: string
   answer?: string
   number?: string | number
@@ -33,7 +34,7 @@ export const AccordionItem = ({
           )}
         </div>
       </summary>
-      <p className={styles.accordion__answer}>{answer}</p>
+      <RichText content={answer} className={styles.accordion__answer} />
     </details>
   )
 }

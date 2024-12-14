@@ -1,11 +1,14 @@
 'use client'
 
 import { Heading } from '@/atoms/Heading'
-import { CuriosityItem } from '@/molecules/CuriosityItem'
-import curiosities from '@/data/curiosities.json'
+import { CuriosityItem, CuriosityItemProps } from '@/molecules/CuriosityItem'
 import styles from './styles.module.scss'
 
-export const Curiosities = () => {
+interface CuriositiesProps {
+  curiosities: CuriosityItemProps[]
+}
+
+export const Curiosities = ({ curiosities }: CuriositiesProps) => {
   return (
     <section className={styles.curiosities}>
       <article className={styles.curiosities__headings}>
@@ -14,11 +17,11 @@ export const Curiosities = () => {
         </Heading>
       </article>
       <article className={styles.curiosities__container}>
-        {curiosities.map((item) => (
+        {curiosities.map((curiosity: CuriosityItemProps) => (
           <CuriosityItem
-            key={item.topic}
-            topic={item.topic}
-            subtopic={item.subtopic}
+            key={curiosity.topic}
+            topic={curiosity.topic}
+            content={curiosity.content}
           />
         ))}
       </article>

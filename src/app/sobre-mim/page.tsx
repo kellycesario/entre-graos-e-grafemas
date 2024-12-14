@@ -1,10 +1,13 @@
+import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import { Curiosities } from '@/organisms/Curiosities'
 import { Footer } from '@/organisms/Footer'
 import { AboutMe } from '@/organisms/AboutMe'
 
-export default function SobreMim() {
+export default async function SobreMim() {
+  const curiosities = await getAllEntries('curiosity')
+
   return (
     <>
       <main>
@@ -19,7 +22,7 @@ export default function SobreMim() {
           title="Sobre mim e meu trabalho:"
           text="Nesta seção, você vai entender como meu trabalho reflete quem eu sou como profissional. Acompanhe meu conteúdo mais recente e conheça mais sobre minha trajetória e visão."
         />
-        <Curiosities />
+        <Curiosities curiosities={curiosities} />
       </main>
       <Footer
         hasCTA={true}

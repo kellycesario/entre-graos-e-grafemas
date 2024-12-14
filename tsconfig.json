@@ -28,7 +28,8 @@
       "@/styles/*": ["styles/*"],
       "@/storybook-docs/*":["storybook-docs/*"],
       "@/utils/*": ["utils/*"],
-      "@/data/*": ["data/*"]
+      "@/data/*": ["data/*"],
+      "@/api/*": ["api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

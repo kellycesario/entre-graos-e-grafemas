@@ -1,26 +1,26 @@
 [
   {
-    "src": "/images/books/1.webp",
-    "alt": ""
+    "media": "/images/books/1.webp",
+    "imageDescription": ""
   },
   {
-    "src": "/images/books/2.jpg",
-    "alt": ""
+    "media": "/images/books/2.jpg",
+    "imageDescription": ""
   },
   {
-    "src": "/images/books/3.jpg",
-    "alt": ""
+    "media": "/images/books/3.jpg",
+    "imageDescription": ""
   },
   {
-    "src": "/images/books/4.jpg",
-    "alt": ""
+    "media": "/images/books/4.jpg",
+    "imageDescription": ""
   },
   {
-    "src": "/images/books/5.jpg",
-    "alt": ""
+    "media": "/images/books/5.jpg",
+    "imageDescription": ""
   },
   {
-    "src": "/images/books/6.jpg",
-    "alt": ""
+    "media": "/images/books/6.jpg",
+    "imageDescription": ""
   }
 ]

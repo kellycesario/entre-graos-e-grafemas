@@ -1,0 +1,4 @@
+.articleExpanded {
+  @include layoutDefault();
+  overflow-wrap: anywhere;
+}

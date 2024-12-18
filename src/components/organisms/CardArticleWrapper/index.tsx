@@ -8,31 +8,31 @@ import { Icon as CustomIcon } from '@/ions/Icon'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import { Search } from '@/molecules/Search'
-import { CardArticle } from '@/molecules/CardArticle'
+import { CardArticle, CardProps } from '@/molecules/CardArticle'
 import { Pagination } from '@/molecules/Pagination'
-import mock from '@/data/mock.json'
 import styles from './styles.module.scss'
+
 interface CardArticleWrapperProps {
   title?: string
   text?: string
-  project: 'elinc' | 'alegria' | 'pesquisas'
   totalPages: number
+  articles: CardProps[]
 }
 
 export const CardArticleWrapper = ({
-  project,
   title,
   text,
   totalPages,
+  articles,
 }: CardArticleWrapperProps) => {
-  const articles = mock[project] || []
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('query')?.toLowerCase() ?? ''
 
   const filteredArticles = articles.filter(
     (article) =>
-      article.title.toLowerCase().includes(searchQuery) ||
-      article.text.toLowerCase().includes(searchQuery)
+      article.title?.toLowerCase().includes(searchQuery) ||
+      article.text?.toLowerCase().includes(searchQuery) ||
+      article.tag?.toLowerCase().includes(searchQuery)
   )
 
   const [currentPage, setCurrentPage] = useState(1)
@@ -62,6 +62,7 @@ export const CardArticleWrapper = ({
     dynamicIcon = IconLayoutGridAdd
     paginationColor = '#5c6b6b'
   }
+ 
 
   return (
     <section className={styles.cards} aria-labelledby={id}>
@@ -85,25 +86,33 @@ export const CardArticleWrapper = ({
       <Search />
 
       <div className={styles.cards__articles}>
-        {paginatedData.map(({ image, tag, title, text, link }, index) => (
+        {paginatedData.map((article: CardProps, index) => (
           <CardArticle
-            key={title}
-            image={image}
-            tag={tag}
-            title={title}
-            text={text}
-            link={link}
-            project={project}
+            key={article.title}
+            image={
+              article.image
+                ? typeof article.image === 'string'
+                  ? article.image
+                  : article.image.url
+                : ''
+            }
+            tag={article.tag}
+            title={article.title}
+            text={article.text}
+            slug={article.slug}
+            project={article.project}
             className={index === 0 ? styles.firstCard : undefined}
           />
         ))}
       </div>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-        paginationColor={paginationColor}
-      />
+      {totalPages >= 1 && (
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+          paginationColor={paginationColor}
+        />
+      )}
     </section>
   )
 }

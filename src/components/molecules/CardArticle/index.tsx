@@ -3,12 +3,15 @@ import styles from './styles.module.scss'
 import { Tag } from '@/components/atoms/Tag'
 import { limitText } from '@/utils/limitText/limitText'
 
-interface CardProps {
-  image?: string
+interface Image {
+  url?: string
+}
+export interface CardProps {
+  image?: string | Image
   tag?: string
   title?: string
   text?: string
-  link?: string
+  slug?: string
   project?: 'elinc' | 'alegria' | 'pesquisas'
   className?: string
 }
@@ -18,13 +21,13 @@ export const CardArticle = ({
   tag,
   title,
   text,
-  link = '#',
+  slug = '#',
   project,
   className,
 }: CardProps) => {
   const cardStyle = [styles.card, project, className].join(' ')
   return (
-    <Link href={link} className={cardStyle}>
+    <Link href={`${project}/${slug}/`} className={cardStyle}>
       <article
         className={styles.card__image}
         style={{ backgroundImage: `url(${image})` }}

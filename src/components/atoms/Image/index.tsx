@@ -1,12 +1,26 @@
 import Image from 'next/image'
 
 interface ImageProps {
-  alt: string
+  imageDescription: string
   className?: string
-  src: string
+  media: string
+  width?: number
+  height?: number
 }
-export const ImageWrapper = ({ src, className, alt }: ImageProps) => {
+export const ImageWrapper = ({
+  media,
+  className,
+  imageDescription,
+  width,
+  height,
+}: ImageProps) => {
   return (
-    <Image src={src} alt={alt} width={450} height={450} className={className} />
+    <Image
+      src={media}
+      alt={imageDescription}
+      width={width}
+      height={height}
+      className={className}
+    />
   )
 }

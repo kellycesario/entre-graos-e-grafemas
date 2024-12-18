@@ -5,8 +5,20 @@ import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
+import { getAllEntries } from '@/api/contentful'
 
-export default function Elinc() {
+interface ArticleProject {
+  project?: 'elinc' | 'alegria' | 'pesquisas'
+}
+
+export default async function Elinc() {
+  const articles = await getAllEntries('blogPost', 100, false, true)
+  const filteredArticles = articles.filter(
+    (article: ArticleProject) => article.project === 'elinc'
+  )
+
+  const totalPages = Math.ceil(filteredArticles.length / 8)
+
   return (
     <>
       <main>
@@ -25,10 +37,10 @@ export default function Elinc() {
         />
         <Suspense fallback={<div>Loading articles...</div>}>
           <CardArticleWrapper
-            project="elinc"
             title="Entre palavras e pensamentos"
             text="Confira nossas pílulas sobre linguagem e cognição humana"
-            totalPages={2}
+            totalPages={totalPages}
+            articles={filteredArticles}
           />
         </Suspense>
         <ContactMeCTA

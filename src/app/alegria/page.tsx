@@ -5,8 +5,19 @@ import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
+import { getAllEntries } from '@/api/contentful'
 
-export default function Alegria() {
+interface ArticleProject {
+  project?: 'elinc' | 'alegria' | 'pesquisas'
+}
+
+export default async function Alegria() {
+  const articles = await getAllEntries('blogPost', 100, false, true)
+  const filteredArticles = articles.filter(
+    (article: ArticleProject) => article.project === 'alegria'
+  )
+  const totalPages = Math.ceil(filteredArticles.length / 8)
+
   return (
     <>
       <main>
@@ -25,10 +36,10 @@ export default function Alegria() {
         />
         <Suspense fallback={<div>Loading articles...</div>}>
           <CardArticleWrapper
-            project="alegria"
             title="Entre palavras e pensamentos"
             text="Confira nossas pílulas sobre o projeto Alegria"
-            totalPages={2}
+            totalPages={totalPages}
+            articles={filteredArticles}
           />
         </Suspense>
         <ContactMeCTA

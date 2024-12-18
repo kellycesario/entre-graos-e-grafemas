@@ -6,12 +6,21 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import images from '@/data/images.json'
 import styles from './styles.module.scss'
 
-export const GalleryV1 = () => {
-  const id = uuidv4()
+export interface Image {
+  media: string
+  imageDescription: string
+}
 
+interface GalleryProps {
+  images: Image[]
+  hasImages?: boolean
+}
+
+export const GalleryV1 = ({ images, hasImages }: GalleryProps) => {
+  const id = uuidv4()
+  if (!hasImages) return null
   return (
     <section className={styles.gallery} aria-labelledby={id}>
       <Swiper
@@ -48,13 +57,15 @@ export const GalleryV1 = () => {
       >
         {images.map((image) => (
           <SwiperSlide
-            key={image.src}
+            key={image.media}
             className={styles.gallery__imageContainer}
           >
             <ImageWrapper
-              alt={image.alt}
-              src={image.src}
+              imageDescription={image.imageDescription}
+              media={image.media}
               className={styles.gallery__image}
+              width={500}
+              height={500}
             />
           </SwiperSlide>
         ))}

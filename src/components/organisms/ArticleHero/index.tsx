@@ -1,3 +1,6 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 import { LocalIcon } from '@/ions/LocalIcon'
@@ -23,6 +26,7 @@ export const ArticleHero = ({
   alt,
 }: ArticleHeroProps) => {
   const id = uuidv4()
+  const pathname = usePathname()
 
   return (
     <section className={styles.hero} aria-labelledby={id}>
@@ -31,8 +35,8 @@ export const ArticleHero = ({
           <Image
             src={image}
             alt={alt}
-            width={360}
-            height={360}
+            width={1106}
+            height={400}
             className={styles.hero__image}
           />
         )}
@@ -40,11 +44,12 @@ export const ArticleHero = ({
           icon="waves"
           width={85}
           height={41}
+          fill="transparent"
           className={styles.hero__svg}
         />
       </div>
       <div className={styles.hero__heading}>
-        <Breadcrumb pathname={''} />
+        <Breadcrumb pathname={pathname} />
         <Heading level="1" weight="800" id={id} className={styles.hero__title}>
           {title}
         </Heading>

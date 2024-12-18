@@ -1,16 +1,29 @@
 'use client'
-import Image from 'next/image'
+
 import { Heading } from '@/atoms/Heading'
-import { Text } from '@/atoms/Text'
+import { RichText } from '@/atoms/RichText'
+import { ImageWrapper } from '@/atoms/Image'
 import styles from './styles.module.scss'
 
-export const AboutMe = () => {
+interface AboutMeProps {
+  title?: string
+  media: string
+  imageDescription: string
+  content: any
+}
+
+export const AboutMe = ({
+  title,
+  media,
+  imageDescription,
+  content,
+}: AboutMeProps) => {
   return (
     <section className={styles.about}>
       <div className={styles.about__imageContainer}>
-        <Image
-          src="/images/about/Arabie.png"
-          alt=""
+        <ImageWrapper
+          imageDescription={imageDescription}
+          media={media}
           width={450}
           height={450}
           className={styles.about__image}
@@ -18,18 +31,16 @@ export const AboutMe = () => {
       </div>
       <div className={styles.about__content}>
         <Heading level="2" color="cordovan" weight="700">
-          Sobre mim
+          {title}
         </Heading>
-        <Text>
-          Sou professora do Programa de Pós-Graduação em Letras e do curso de
-          Graduação em Letras e Pedagogia da Pontifícia Universidade Católica de
-          Minas Gerais (PUC Minas). Tenho a alegria de fazer parte do
-          Departamento de Letras, onde compartilho meus conhecimentos e paixão
-          pela linguagem com alunos de diversas formações. Além disso, ministro
-          disciplinas de graduação e pós-graduação (tanto lato quanto strictu
-          sensu), sempre com o objetivo de incentivar a reflexão crítica e o
-          desenvolvimento do pensamento linguístico.
-        </Text>
+        <RichText
+          content={content}
+          className={styles.about__text}
+          imagesV1={[]}
+          imagesV2={[]}
+          hasImagesV1={false}
+          hasImagesV2={false}
+        />
       </div>
     </section>
   )

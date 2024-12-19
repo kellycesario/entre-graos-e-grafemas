@@ -1,109 +1,11 @@
-const FAQ_GRAPHQL_FIELDS = `
-sys  {
-  id 
-}
-internalName
-question
-answer {
-  json
-}
-`
-
-const CURIOSITIES_GRAPHQL_FIELDS = `
-sys  {
-  id 
-}
-internalName
-topic
-content {
-  json
-}
-`
-
-const ABOUT_ME_GRAPHQL_FIELDS = `
-sys {
-  id
-}
-title
-media {
-  imageDescription
-  media {
-    url
-  }
-}
-content {
-  content {
-    json
-  }
-}
-`
-const BLOG_POST_GRAPHQL_FIELDS = `
-  sys {
-    id
-  }
-  internalName
-  title
-  author
-  date
-  tag
-  project
-  slug
-  image {
-    url
-  }
-  contentCollection(limit: 3) {
-    items {
-      content {
-        json
-      }
-      gallery {
-        __typename
-        ... on GalleryV1 {
-          sys {
-            id
-          }
-          mediaCollection {
-            items {
-              imageDescription
-              media {
-                url
-              }
-            }
-          }
-        }
-        ... on GalleryV2 {
-          sys {
-            id
-          }
-          mediaCollection {
-            items {
-              imageDescription
-              media {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
-  sys {
-    id
-  }
-  internalName
-  title
-  author
-  date
-  tag
-  project
-  slug
-  image {
-    url
-  }
-`
+import {
+  FAQ_GRAPHQL_FIELDS,
+  CURIOSITIES_GRAPHQL_FIELDS,
+  ABOUT_ME_GRAPHQL_FIELDS,
+  BLOG_POST_GRAPHQL_FIELDS,
+  BLOG_POST_GRAPHQL_FIELDS_SUMMARY,
+  PARTNER_GRAPHQL_FIELDS,
+} from './graphqlFields'
 
 async function getGraphQLFields(contentType, isSummary = false) {
   let graphqlFields
@@ -121,6 +23,9 @@ async function getGraphQLFields(contentType, isSummary = false) {
       graphqlFields = isSummary
         ? BLOG_POST_GRAPHQL_FIELDS_SUMMARY
         : BLOG_POST_GRAPHQL_FIELDS
+      break
+    case 'partner':
+      graphqlFields = PARTNER_GRAPHQL_FIELDS
       break
     default:
       break
@@ -165,6 +70,8 @@ function extractEntries(fetchResponse, contentType) {
       return fetchResponse?.data.aboutMeCollection?.items || []
     case 'blogPost':
       return fetchResponse?.data.blogPostCollection?.items || []
+    case 'partner' :
+      return fetchResponse?.data.partnerCollection?.items || []
     default:
       return []
   }

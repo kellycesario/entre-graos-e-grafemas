@@ -18,17 +18,19 @@ export default async function SobreMim() {
           video="/videos/coffee-06.mp4"
           hasBreadcrumb={true}
         />
-        <AboutMe
-          title={aboutMe.title}
-          media={aboutMe.media.media.url}
-          imageDescription={aboutMe.media.imageDescription}
-          content={aboutMe.content.content}
-        />
+        {aboutMe?.title && aboutMe?.content && (
+          <AboutMe
+            title={aboutMe.title}
+            media={aboutMe?.media?.media?.url}
+            imageDescription={aboutMe?.media?.imageDescription}
+            content={aboutMe?.content?.content}
+          />
+        )}
         <RecentVideosWrapper
           title="Sobre mim e meu trabalho:"
           text="Nesta seção, você vai entender como meu trabalho reflete quem eu sou como profissional. Acompanhe meu conteúdo mais recente e conheça mais sobre minha trajetória e visão."
         />
-        <Curiosities curiosities={curiosities} />
+        {curiosities?.length > 0 && <Curiosities curiosities={curiosities} />}
       </main>
       <Footer
         hasCTA={true}

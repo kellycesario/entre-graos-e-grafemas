@@ -16,10 +16,12 @@ export default async function Contato() {
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={true}
         />
-        <Accordion
-          title="Perguntas frequentes"
-          frequentlyAskedQuestions={questions}
-        />
+        {questions?.length > 0 && (
+          <Accordion
+            title="Perguntas frequentes"
+            frequentlyAskedQuestions={questions}
+          />
+        )}
         <Form title="Ainda com dúvidas? Escreva-me!" />
       </main>
       <Footer />

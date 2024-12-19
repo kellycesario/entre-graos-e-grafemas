@@ -1,24 +1,46 @@
 import { ArticleHero } from '@/organisms/ArticleHero'
 import { ArticleExpanded } from '@/organisms/ArticleExpanded'
-import { getEntry } from '@/api/contentful'
+import { getArticle } from '@/api/contentful'
+import { extractImages, hasImages } from '@/api/contentfulGlobalFunctions'
 
-export default async function Article() {
-  const article = await getEntry('blogPost', 1, false)
-  const content = article.contentCollection.items[0].content
+interface ArticleProps {
+  params: { slug: string }
+}
+
+export default async function Article({ params }: Readonly<ArticleProps>) {
+  const article = await getArticle('blogPost', params.slug)
+  const items = article.contentCollection?.items || []
 
   return (
-    <>
-      <main>
-        <ArticleHero
-          title={article.title}
-          author={article.author}
-          date={article.date}
-          image={article.image?.url}
-          alt=""
-        />
-      </main>
+    <main>
+      <ArticleHero
+        title={article.title}
+        author={article.author}
+        date={article.date}
+        image={article.image?.url}
+        alt={article.image?.imageDescription}
+      />
 
-      <ArticleExpanded content={content} imagesV1={[]} imagesV2={[]} hasImagesV1={false} hasImagesV2={false} />
-    </>
+      {items.map((item: any, index: number) => {
+        const content = item.content || {}
+        const galleryTypeName = item.gallery ? item.gallery.__typename : null
+        const imagesV1 =
+          galleryTypeName === 'GalleryV1' ? extractImages(item.gallery) : []
+        const imagesV2 =
+          galleryTypeName === 'GalleryV2' ? extractImages(item.gallery) : []
+
+        return (
+          <div key={index + 1}>
+            <ArticleExpanded
+              content={content}
+              imagesV1={imagesV1}
+              imagesV2={imagesV2}
+              hasImagesV1={hasImages(item.gallery)}
+              hasImagesV2={hasImages(item.gallery)}
+            />
+          </div>
+        )
+      })}
+    </main>
   )
 }

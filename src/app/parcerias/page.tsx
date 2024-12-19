@@ -1,8 +1,11 @@
+import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { PartnersWrapper } from '@/organisms/PartnersWrapper'
 import { Footer } from '@/organisms/Footer'
 
-export default function Parcerias() {
+export default async function Parcerias() {
+  const partnerships = await getAllEntries('partner')
+
   return (
     <>
       <main>
@@ -12,10 +15,13 @@ export default function Parcerias() {
           video="/videos/coffee-02.mp4"
           hasBreadcrumb={true}
         />
-        <PartnersWrapper
-          title="Parcerias que transformam"
-          text="A vida é mais rica quando dividimos uma xícara de café - porque compartilhar é o melhor ingrediente para nossos sucessos!"
-        />
+        {partnerships?.length > 0 && (
+          <PartnersWrapper
+            title="Parcerias que transformam"
+            text="A vida é mais rica quando dividimos uma xícara de café - porque compartilhar é o melhor ingrediente para nossos sucessos!"
+            partners={partnerships}
+          />
+        )}
       </main>
       <Footer
         hasCTA={true}

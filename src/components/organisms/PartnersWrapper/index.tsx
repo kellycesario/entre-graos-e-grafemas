@@ -7,16 +7,52 @@ import 'swiper/css/pagination'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import { CardPartner } from '@/molecules/CardPartner'
-import partnerCategories from '@/data/partnerCategories.json'
 import styles from './styles.module.scss'
+
+interface SocialNetwork {
+  icon: string
+  link: string
+}
+
+interface Partner {
+  internalName: string
+  category: string
+  name: string
+  role: string
+  description: string
+  media: {
+    media: { url: string }
+    imageDescription: string
+  }
+  socialNetworkCollection: {
+    items: SocialNetwork[]
+  }
+}
 
 interface PartnersWrapperProps {
   title?: string
   text?: string
+  partners: Partner[]
 }
 
-export const PartnersWrapper = ({ title, text }: PartnersWrapperProps) => {
+export const PartnersWrapper = ({
+  title,
+  text,
+  partners,
+}: PartnersWrapperProps) => {
   const sectionId = uuidv4()
+
+  const groupedPartners = partners.reduce(
+    (acc, partner) => {
+      const { category } = partner
+      if (!acc[category]) {
+        acc[category] = []
+      }
+      acc[category].push(partner)
+      return acc
+    },
+    {} as Record<string, Partner[]>
+  )
 
   return (
     <section className={styles.partners} aria-labelledby={sectionId}>
@@ -26,8 +62,11 @@ export const PartnersWrapper = ({ title, text }: PartnersWrapperProps) => {
         </Heading>
         <Text>{text}</Text>
       </div>
-      {partnerCategories.map(({ category, partners }) => {
+
+      {Object.keys(groupedPartners).map((category) => {
         const categoryId = uuidv4()
+        const categoryPartners = groupedPartners[category]
+
         return (
           <Swiper
             className={styles.partners__swiper}
@@ -72,18 +111,20 @@ export const PartnersWrapper = ({ title, text }: PartnersWrapperProps) => {
             >
               {category}
             </Heading>
+
             <div>
-              {partners.map((partner) => (
+              {categoryPartners.map((partner: Partner) => (
                 <SwiperSlide
-                  key={partner.name}
+                  key={partner.internalName}
                   className={styles.partners__cards}
                 >
                   <CardPartner
                     name={partner.name}
                     role={partner.role}
                     description={partner.description}
-                    image={partner.image}
-                    icons={partner.icons}
+                    media={partner.media.media.url}
+                    imageDescription={partner.media.imageDescription}
+                    socialNetwork={partner.socialNetworkCollection.items}
                   />
                 </SwiperSlide>
               ))}

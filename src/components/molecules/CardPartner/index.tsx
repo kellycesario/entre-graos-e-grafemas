@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 import { Icon as CustomIcon } from '@/ions/Icon'
 import {
@@ -6,14 +5,19 @@ import {
   IconBrandYoutube,
   IconBrandLinkedin,
   IconBrandFacebook,
+  IconWorldWww,
+  IconMail,
 } from '@tabler/icons-react'
 import styles from './styles.module.scss'
+import { ImageWrapper } from '@/components/atoms/Image'
+
 interface CardProps {
-  icons?: { Icon: string; link: string }[]
+  socialNetwork?: { icon: string; link: string }[]
   name?: string
   role?: string
   description?: string
-  image?: string
+  media?: string
+  imageDescription: string
 }
 
 const availableIcons = {
@@ -21,21 +25,24 @@ const availableIcons = {
   Youtube: IconBrandYoutube,
   Linkedin: IconBrandLinkedin,
   Facebook: IconBrandFacebook,
+  Website: IconWorldWww,
+  Email: IconMail,
 }
 
 export const CardPartner = ({
   name,
   role,
   description,
-  image,
-  icons,
+  media,
+  imageDescription,
+  socialNetwork,
 }: CardProps) => {
   const id = uuidv4()
 
-  const iconsToRender = icons?.map(({ Icon, link }) => {
-    const IconComponent = availableIcons[Icon as keyof typeof availableIcons]
+  const iconsToRender = socialNetwork?.map(({ icon, link }) => {
+    const IconComponent = availableIcons[icon as keyof typeof availableIcons]
 
-    const ariaLabel = `${Icon}`
+    const ariaLabel = `${icon}`
 
     if (!IconComponent) return null
 
@@ -48,10 +55,10 @@ export const CardPartner = ({
 
   return (
     <article className={styles.card} aria-labelledby={id}>
-      {image && (
-        <Image
-          src={image}
-          alt=""
+      {media && (
+        <ImageWrapper
+          media={media}
+          imageDescription={imageDescription}
           width={500}
           height={600}
           className={styles.card__image}

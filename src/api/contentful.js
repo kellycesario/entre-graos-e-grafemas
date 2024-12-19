@@ -195,6 +195,34 @@ export async function getAllEntries(
   }
 }
 
+export async function getArticle(contentType, slug, limit = 1, isDraftMode = false) {
+  try {
+    const graphqlFields = await getGraphQLFields(contentType)
+    const entry = await fetchGraphQL(
+      `query {
+        ${contentType}Collection(
+        where: { slug: "${slug}" },
+          limit: ${limit},
+          preview: ${isDraftMode ? 'true' : 'false'}
+        ) {
+          items {
+            ${graphqlFields}
+          }
+        }
+      }`,
+      isDraftMode
+    );
+
+    const entryData = extractEntries(entry, contentType)[0];
+    return {
+      ...entryData,
+    }
+  } catch (error) {
+    console.error('Erro ao buscar entrada:', error)
+    return null
+  }
+}
+
 export async function getEntry(contentType, limit = 1, isDraftMode = false) {
   try {
     const graphqlFields = await getGraphQLFields(contentType)

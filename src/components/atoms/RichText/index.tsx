@@ -24,7 +24,9 @@ export const RichText = ({
 
   return (
     <div className={richTextStyle}>
-      {documentToReactComponents(content.json)}
+      <div className={styles.richText__text}>
+        {documentToReactComponents(content.json)}
+      </div>
 
       {hasImagesV1 && <GalleryV1 images={imagesV1} hasImages={hasImagesV1} />}
 

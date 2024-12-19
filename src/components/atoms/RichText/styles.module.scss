@@ -1,0 +1,6 @@
+.richText {
+  &__text {
+    @include layoutDefault();
+    overflow-wrap: anywhere;
+  }
+}

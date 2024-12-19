@@ -16,6 +16,18 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "assets.ctfassets.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "videos.ctfassets.net",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

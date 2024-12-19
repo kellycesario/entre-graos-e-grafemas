@@ -17,7 +17,7 @@ export default async function Pesquisas() {
     (article: ArticleProject) => article.project === 'pesquisas'
   )
   const totalPages = Math.ceil(filteredArticles.length / 8)
-  
+
   return (
     <>
       <main>

@@ -87,7 +87,7 @@ const BLOG_POST_GRAPHQL_FIELDS = `
       }
     }
   }
-`;
+`
 
 const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
   sys {
@@ -103,7 +103,7 @@ const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
   image {
     url
   }
-`;
+`
 
 async function getGraphQLFields(contentType, isSummary = false) {
   let graphqlFields
@@ -117,9 +117,11 @@ async function getGraphQLFields(contentType, isSummary = false) {
     case 'aboutMe':
       graphqlFields = ABOUT_ME_GRAPHQL_FIELDS
       break
-      case 'blogPost':
-        graphqlFields = isSummary ? BLOG_POST_GRAPHQL_FIELDS_SUMMARY : BLOG_POST_GRAPHQL_FIELDS;
-        break;
+    case 'blogPost':
+      graphqlFields = isSummary
+        ? BLOG_POST_GRAPHQL_FIELDS_SUMMARY
+        : BLOG_POST_GRAPHQL_FIELDS
+      break
     default:
       break
   }
@@ -147,10 +149,10 @@ async function fetchGraphQL(query, preview = false) {
       headers,
       body: JSON.stringify({ query }),
     }
-  );
+  )
 
-  const data = await response.json();
-  return data;
+  const data = await response.json()
+  return data
 }
 
 function extractEntries(fetchResponse, contentType) {
@@ -175,7 +177,7 @@ export async function getAllEntries(
   isSummary = false
 ) {
   try {
-    const graphqlFields = await getGraphQLFields(contentType, isSummary);
+    const graphqlFields = await getGraphQLFields(contentType, isSummary)
     const query = `query {
       ${contentType}Collection(
         limit: ${limit},
@@ -185,17 +187,22 @@ export async function getAllEntries(
           ${graphqlFields}
         }
       }
-    }`;
+    }`
 
-    const entries = await fetchGraphQL(query, isDraftMode);
-    return extractEntries(entries, contentType);
+    const entries = await fetchGraphQL(query, isDraftMode)
+    return extractEntries(entries, contentType)
   } catch (error) {
-    console.error('Erro ao buscar entradas:', error);
-    return [];
+    console.error('Erro ao buscar entradas:', error)
+    return []
   }
 }
 
-export async function getArticle(contentType, slug, limit = 1, isDraftMode = false) {
+export async function getArticle(
+  contentType,
+  slug,
+  limit = 1,
+  isDraftMode = false
+) {
   try {
     const graphqlFields = await getGraphQLFields(contentType)
     const entry = await fetchGraphQL(
@@ -211,9 +218,9 @@ export async function getArticle(contentType, slug, limit = 1, isDraftMode = fal
         }
       }`,
       isDraftMode
-    );
+    )
 
-    const entryData = extractEntries(entry, contentType)[0];
+    const entryData = extractEntries(entry, contentType)[0]
     return {
       ...entryData,
     }
@@ -238,9 +245,9 @@ export async function getEntry(contentType, limit = 1, isDraftMode = false) {
         }
       }`,
       isDraftMode
-    );
+    )
 
-    const entryData = extractEntries(entry, contentType)[0];
+    const entryData = extractEntries(entry, contentType)[0]
     return {
       ...entryData,
     }
@@ -249,4 +256,3 @@ export async function getEntry(contentType, limit = 1, isDraftMode = false) {
     return null
   }
 }
-

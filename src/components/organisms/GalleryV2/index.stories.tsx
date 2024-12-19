@@ -5,7 +5,7 @@ export default {
   component: GalleryV2,
   parameters: {
     layout: 'centered',
-  }
+  },
 }
 
 export const Default = {}

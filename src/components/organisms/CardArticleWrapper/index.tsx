@@ -62,7 +62,6 @@ export const CardArticleWrapper = ({
     dynamicIcon = IconLayoutGridAdd
     paginationColor = '#5c6b6b'
   }
- 
 
   return (
     <section className={styles.cards} aria-labelledby={id}>

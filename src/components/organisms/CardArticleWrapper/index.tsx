@@ -88,13 +88,7 @@ export const CardArticleWrapper = ({
         {paginatedData.map((article: CardProps, index) => (
           <CardArticle
             key={article.title}
-            image={
-              article.image
-                ? typeof article.image === 'string'
-                  ? article.image
-                  : article.image.url
-                : ''
-            }
+            image={article.image}
             tag={article.tag}
             title={article.title}
             text={article.text}

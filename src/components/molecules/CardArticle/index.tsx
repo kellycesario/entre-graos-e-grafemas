@@ -3,11 +3,8 @@ import styles from './styles.module.scss'
 import { Tag } from '@/components/atoms/Tag'
 import { limitText } from '@/utils/limitText/limitText'
 
-interface Image {
-  url?: string
-}
 export interface CardProps {
-  image?: string | Image
+  image: { url: string }
   tag?: string
   title?: string
   text?: string
@@ -30,7 +27,7 @@ export const CardArticle = ({
     <Link href={`${project}/${slug}/`} className={cardStyle}>
       <article
         className={styles.card__image}
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${image.url})` }}
       />
       <div className={styles.card__textContainer}>
         <Tag backgroundColor="white" color="gunmetal" hasBackgroundColor={true}>

@@ -51,7 +51,7 @@ const BLOG_POST_GRAPHQL_FIELDS = `
   image {
     url
   }
-  contentCollection {
+  contentCollection(limit: 3) {
     items {
       content {
         json
@@ -195,7 +195,7 @@ export async function getAllEntries(
   }
 }
 
-export async function getEntry(contentType, limit = 3, isDraftMode = false) {
+export async function getEntry(contentType, limit = 1, isDraftMode = false) {
   try {
     const graphqlFields = await getGraphQLFields(contentType)
     const entry = await fetchGraphQL(
@@ -211,9 +211,6 @@ export async function getEntry(contentType, limit = 3, isDraftMode = false) {
       }`,
       isDraftMode
     );
-
-    console.log('GraphQL Fields:', graphqlFields);
-    console.log('GraphQL Response:', entry);
 
     const entryData = extractEntries(entry, contentType)[0];
     return {

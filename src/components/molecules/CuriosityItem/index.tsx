@@ -19,7 +19,7 @@ export const CuriosityItem = ({ topic, content }: CuriosityItemProps) => {
           </Text>
         )}
       </div>
-      <RichText content={content} />
+      <RichText content={content} imagesV1={[]} imagesV2={[]} />
     </div>
   )
 }

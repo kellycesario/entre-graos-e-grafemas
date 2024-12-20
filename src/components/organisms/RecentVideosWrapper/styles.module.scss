@@ -7,10 +7,6 @@
     flex-direction: column;
     gap: 4rem;
 
-    @include screen-size('tablet') {
-      align-items: flex-start;
-    }
-
     @include screen-size('desktop') {
       padding: 8rem 4rem !important;
     }
@@ -47,5 +43,9 @@
       top: 50%;
       right: 0;
     }
+  }
+
+  &__button {
+    align-self: flex-start;
   }
 }

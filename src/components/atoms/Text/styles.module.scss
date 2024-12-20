@@ -1,15 +1,5 @@
 .text {
-  font-size: 1.6rem;
-  line-height: normal;
-  letter-spacing: 0.05rem;
-
-  @include screen-size('tablet') {
-    font-size: 1.8rem;
-  }
-
-  @include screen-size('desktop') {
-    font-size: 2rem;
-  }
+  @include defaultText();
 
   @include colors();
 

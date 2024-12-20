@@ -9,7 +9,12 @@ interface LargeButtonProps {
 
 export const LargeButton = ({ link = '', title }: LargeButtonProps) => {
   return (
-    <Link href={link} className={styles.button} aria-label={title}>
+    <Link
+      href={link}
+      className={styles.button}
+      aria-label={title}
+      target="_blank"
+    >
       <IconBrandYoutube stroke={1} size={48} color="white" aria-hidden="true" />
     </Link>
   )

@@ -1,5 +1,4 @@
 import { RichText } from '@/atoms/RichText'
-import styles from './styles.module.scss'
 
 interface ArticleExpandedProps {
   content: any
@@ -17,14 +16,12 @@ export const ArticleExpanded = ({
   hasImagesV2,
 }: ArticleExpandedProps) => {
   return (
-    <section className={styles.articleExpanded}>
-      <RichText
-        content={content}
-        imagesV1={imagesV1}
-        imagesV2={imagesV2}
-        hasImagesV1={hasImagesV1}
-        hasImagesV2={hasImagesV2}
-      />
-    </section>
+    <RichText
+      content={content}
+      imagesV1={imagesV1}
+      imagesV2={imagesV2}
+      hasImagesV1={hasImagesV1}
+      hasImagesV2={hasImagesV2}
+    />
   )
 }

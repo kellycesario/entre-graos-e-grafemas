@@ -96,6 +96,7 @@ export const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
   }
   internalName
   title
+  description
   author
   date
   tag

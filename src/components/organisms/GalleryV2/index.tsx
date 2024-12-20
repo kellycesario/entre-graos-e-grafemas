@@ -22,16 +22,17 @@ export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
     setVisibleImages((prev) => prev + 5)
   }
   if (!hasImages) return null
+
   return (
     <section className={styles.gallery} aria-label="">
-      {images.slice(0, visibleImages).map((image) => (
+      {images.slice(0, visibleImages).map((image, index) => (
         <ImageWrapper
           key={image.media}
           imageDescription={image.imageDescription}
           media={image.media}
           className={styles.gallery__image}
-          width={500}
-          height={500}
+          width={index === 2 ? 669 : 324}
+          height={index === 2 ? 542 : 260}
         />
       ))}
       {visibleImages < images.length && (

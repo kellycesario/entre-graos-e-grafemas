@@ -23,10 +23,5 @@
     width: 100%;
     border-radius: 0.8rem;
     object-fit: cover;
-    max-height: 17.3rem;
-
-    @include screen-size('desktop-small') {
-      max-height: 26rem;
-    }
   }
 }

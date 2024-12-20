@@ -64,8 +64,8 @@ export const GalleryV1 = ({ images, hasImages }: GalleryProps) => {
               imageDescription={image.imageDescription}
               media={image.media}
               className={styles.gallery__image}
-              width={500}
-              height={500}
+              width={582}
+              height={388}
             />
           </SwiperSlide>
         ))}

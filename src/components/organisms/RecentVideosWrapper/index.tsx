@@ -85,6 +85,10 @@ export const RecentVideosWrapper = ({
           iconSize={24}
           secondaryColor="#FFF"
           label="Acesse o canal"
+          href="https://youtube.com/@arabiebezrihermont"
+          target="_blank"
+          isButton={false}
+          useButtonStyle
           variant="secondary"
           className={styles.recentVideos__button}
         />

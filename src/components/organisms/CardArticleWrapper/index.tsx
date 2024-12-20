@@ -31,7 +31,7 @@ export const CardArticleWrapper = ({
   const filteredArticles = articles.filter(
     (article) =>
       article.title?.toLowerCase().includes(searchQuery) ||
-      article.text?.toLowerCase().includes(searchQuery) ||
+      article.description?.toLowerCase().includes(searchQuery) ||
       article.tag?.toLowerCase().includes(searchQuery)
   )
 
@@ -91,7 +91,7 @@ export const CardArticleWrapper = ({
             image={article.image}
             tag={article.tag}
             title={article.title}
-            text={article.text}
+            description={article.description}
             slug={article.slug}
             project={article.project}
             className={index === 0 ? styles.firstCard : undefined}

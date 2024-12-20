@@ -29,7 +29,6 @@ export const RichText = ({
       </div>
 
       {hasImagesV1 && <GalleryV1 images={imagesV1} hasImages={hasImagesV1} />}
-
       {hasImagesV2 && <GalleryV2 images={imagesV2} hasImages={hasImagesV2} />}
     </div>
   )

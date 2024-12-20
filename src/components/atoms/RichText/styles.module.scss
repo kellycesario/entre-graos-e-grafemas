@@ -1,6 +1,127 @@
 .richText {
+  ul {
+    list-style: circle !important;
+    padding-inline-start: 7rem;
+  }
+
+  ol {
+    list-style: decimal-leading-zero !important;
+    padding-inline-start: 7rem;
+  }
+
+  ul,
+  ol,
+  li {
+    list-style: unset;
+  }
+
+  blockquote {
+    font-size: 2.5rem;
+    quotes: '“' '”' '‘' '’';
+    width: 50%;
+    line-break: anywhere;
+    @include screen-size('desktop') {
+      font-size: 3.5rem;
+    }
+
+    b {
+      color: $dim-gray;
+    }
+  }
+
+  blockquote::before {
+    content: open-quote;
+    font-family: fantasy;
+    font-size: 5rem;
+  }
+
+  blockquote::after {
+    content: close-quote;
+    font-family: fantasy;
+    font-size: 5rem;
+  }
+
+  a {
+    font-weight: 700;
+    color: $cordovan;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 2.6rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.8rem;
+    }
+    @include screen-size('desktop') {
+      font-size: 3rem;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 2.4rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.6rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.8rem;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 2.2rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.4rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.6rem;
+    }
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 2rem;
+
+    @include screen-size('tablet') {
+      font-size: 2.2rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.4rem;
+    }
+  }
+
+  h6 {
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    @include screen-size('tablet') {
+      font-size: 2rem;
+    }
+
+    @include screen-size('desktop') {
+      font-size: 2.2rem;
+    }
+  }
+
   &__text {
-    @include layoutDefault();
+    color: $gunmetal;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 4rem 4rem 4rem !important;
     overflow-wrap: anywhere;
+    @include layoutDefault();
+    @include defaultText();
   }
 }

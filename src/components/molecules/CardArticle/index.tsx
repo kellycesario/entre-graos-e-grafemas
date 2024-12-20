@@ -7,7 +7,7 @@ export interface CardProps {
   image: { url: string }
   tag?: string
   title?: string
-  text?: string
+  description?: string
   slug?: string
   project?: 'elinc' | 'alegria' | 'pesquisas'
   className?: string
@@ -17,7 +17,7 @@ export const CardArticle = ({
   image,
   tag,
   title,
-  text,
+  description,
   slug = '#',
   project,
   className,
@@ -35,7 +35,9 @@ export const CardArticle = ({
         </Tag>
         <div className={styles.card__heading}>
           <p className={styles.card__title}>{limitText(title ?? '', 127)}</p>
-          <p className={styles.card__text}>{limitText(text ?? '', 215)}</p>
+          <p className={styles.card__text}>
+            {limitText(description ?? '', 215)}
+          </p>
         </div>
       </div>
     </Link>

@@ -47,11 +47,12 @@ export const Hero = ({
             iconColor="white"
             iconSize={24}
             iconPosition="right"
-            href="/"
+            href="https://youtube.com/@arabiebezrihermont"
             label="Meu canal no YouTube"
             variant="primary"
             isButton={false}
             useButtonStyle={true}
+            target="_blank"
           />
           <Button
             href="/contato"

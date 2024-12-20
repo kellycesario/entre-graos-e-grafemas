@@ -30,7 +30,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
           galleryTypeName === 'GalleryV2' ? extractImages(item.gallery) : []
 
         return (
-          <div key={index + 1}>
+          <section key={index + 1}>
             <ArticleExpanded
               content={content}
               imagesV1={imagesV1}
@@ -38,7 +38,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
               hasImagesV1={hasImages(item.gallery)}
               hasImagesV2={hasImages(item.gallery)}
             />
-          </div>
+          </section>
         )
       })}
     </main>

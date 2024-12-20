@@ -29,6 +29,7 @@ export default async function SobreMim() {
         <RecentVideosWrapper
           title="Sobre mim e meu trabalho:"
           text="Nesta seção, você vai entender como meu trabalho reflete quem eu sou como profissional. Acompanhe meu conteúdo mais recente e conheça mais sobre minha trajetória e visão."
+          maxResults={6}
         />
         {curiosities?.length > 0 && <Curiosities curiosities={curiosities} />}
       </main>

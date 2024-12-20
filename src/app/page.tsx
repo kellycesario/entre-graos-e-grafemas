@@ -5,7 +5,7 @@ import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
 import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import styles from './homepage.module.scss'
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <main className={styles.homepage}>
@@ -18,6 +18,7 @@ export default function Home() {
         <RecentVideosWrapper
           title="Fique por dentro:"
           text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
+          maxResults={2}
         />
         <ProjectsCTA
           alt=""

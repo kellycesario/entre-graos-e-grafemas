@@ -3,7 +3,7 @@ import { Tag } from '@/atoms/Tag'
 import { limitText } from '@/utils/limitText/limitText'
 import styles from './styles.module.scss'
 
-interface CardProps {
+export interface CardProps {
   image?: string
   title?: string
   tag?: string

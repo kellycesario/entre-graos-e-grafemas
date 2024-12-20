@@ -57,7 +57,7 @@ export const GalleryV1 = ({ images, hasImages }: GalleryProps) => {
       >
         {images.map((image) => (
           <SwiperSlide
-            key={image.media}
+            key={uuidv4()}
             className={styles.gallery__imageContainer}
           >
             <ImageWrapper

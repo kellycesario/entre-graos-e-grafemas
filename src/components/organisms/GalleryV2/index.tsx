@@ -1,5 +1,6 @@
 'use client'
 
+import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
 import { ImageWrapper } from '@/atoms/Image'
 import { Button } from '@/atoms/Button'
@@ -27,7 +28,7 @@ export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
     <section className={styles.gallery} aria-label="">
       {images.slice(0, visibleImages).map((image, index) => (
         <ImageWrapper
-          key={image.media}
+          key={uuidv4()}
           imageDescription={image.imageDescription}
           media={image.media}
           className={styles.gallery__image}

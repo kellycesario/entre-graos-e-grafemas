@@ -21,7 +21,7 @@ export const Curiosities = ({ curiosities }: CuriositiesProps) => {
           <CuriosityItem
             key={curiosity.topic}
             topic={curiosity.topic}
-            content={curiosity.content}
+            description={curiosity.description}
           />
         ))}
       </article>

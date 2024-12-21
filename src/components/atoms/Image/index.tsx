@@ -3,12 +3,12 @@ import Image from 'next/image'
 interface ImageProps {
   imageDescription: string
   className?: string
-  media: string
+  image: string
   width?: number
   height?: number
 }
 export const ImageWrapper = ({
-  media,
+  image,
   className,
   imageDescription,
   width,
@@ -16,7 +16,7 @@ export const ImageWrapper = ({
 }: ImageProps) => {
   return (
     <Image
-      src={media}
+      src={image}
       alt={imageDescription}
       width={width}
       height={height}

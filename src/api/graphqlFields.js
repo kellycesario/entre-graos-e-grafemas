@@ -2,7 +2,6 @@ export const FAQ_GRAPHQL_FIELDS = `
 sys  {
   id 
 }
-internalName
 question
 answer {
   json
@@ -13,9 +12,8 @@ export const CURIOSITIES_GRAPHQL_FIELDS = `
 sys  {
   id 
 }
-internalName
 topic
-content {
+description {
   json
 }
 `
@@ -25,16 +23,14 @@ sys {
   id
 }
 title
-media {
+image {
   imageDescription
-  media {
+  image {
     url
   }
 }
 content {
-  content {
-    json
-  }
+  json
 }
 `
 
@@ -42,13 +38,13 @@ export const BLOG_POST_GRAPHQL_FIELDS = `
   sys {
     id
   }
-  internalName
   title
   author
   date
   tag
   project
   slug
+  imageDescription
   image {
     url
   }
@@ -63,12 +59,12 @@ export const BLOG_POST_GRAPHQL_FIELDS = `
           sys {
             id
           }
-          mediaCollection {
+          imageCollection {
             items {
-              imageDescription
-              media {
+              image {
                 url
               }
+              imageDescription
             }
           }
         }
@@ -76,12 +72,12 @@ export const BLOG_POST_GRAPHQL_FIELDS = `
           sys {
             id
           }
-          mediaCollection {
+          imageCollection {
             items {
-              imageDescription
-              media {
+              image {
                 url
               }
+              imageDescription
             }
           }
         }
@@ -94,7 +90,6 @@ export const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
   sys {
     id
   }
-  internalName
   title
   description
   author
@@ -102,6 +97,7 @@ export const BLOG_POST_GRAPHQL_FIELDS_SUMMARY = `
   tag
   project
   slug
+  imageDescription
   image {
     url
   }
@@ -111,14 +107,13 @@ export const PARTNER_GRAPHQL_FIELDS = `
 sys {
   id
 }
-internalName
 category
 name
 role
 description
-media {
+image {
   imageDescription
-  media {
+  image {
     url
   }
 }

@@ -5,10 +5,10 @@ import styles from './styles.module.scss'
 
 export interface CuriosityItemProps {
   topic?: string
-  content?: string
+  description?: string
 }
 
-export const CuriosityItem = ({ topic, content }: CuriosityItemProps) => {
+export const CuriosityItem = ({ topic, description }: CuriosityItemProps) => {
   return (
     <div className={styles.curiosityItem}>
       <div className={styles.curiosityItem__container}>
@@ -19,7 +19,7 @@ export const CuriosityItem = ({ topic, content }: CuriosityItemProps) => {
           </Text>
         )}
       </div>
-      <RichText content={content} imagesV1={[]} imagesV2={[]} />
+      <RichText content={description} imagesV1={[]} imagesV2={[]} />
     </div>
   )
 }

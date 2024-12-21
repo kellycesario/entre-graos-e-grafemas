@@ -7,6 +7,8 @@ import {
   IconBrandFacebook,
   IconWorldWww,
   IconMail,
+  IconBook,
+  IconBookmark
 } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 import { ImageWrapper } from '@/components/atoms/Image'
@@ -16,7 +18,7 @@ interface CardProps {
   name?: string
   role?: string
   description?: string
-  media?: string
+  image?: string
   imageDescription: string
 }
 
@@ -27,13 +29,15 @@ const availableIcons = {
   Facebook: IconBrandFacebook,
   Website: IconWorldWww,
   Email: IconMail,
+  Lattes: IconBook,
+  ResearchGate: IconBookmark
 }
 
 export const CardPartner = ({
   name,
   role,
   description,
-  media,
+  image,
   imageDescription,
   socialNetwork,
 }: CardProps) => {
@@ -55,9 +59,9 @@ export const CardPartner = ({
 
   return (
     <article className={styles.card} aria-labelledby={id}>
-      {media && (
+      {image && (
         <ImageWrapper
-          media={media}
+          image={image}
           imageDescription={imageDescription}
           width={500}
           height={600}

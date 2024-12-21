@@ -20,8 +20,8 @@ interface Partner {
   name: string
   role: string
   description: string
-  media: {
-    media: { url: string }
+  image: {
+    image: { url: string }
     imageDescription: string
   }
   socialNetworkCollection: {
@@ -122,8 +122,8 @@ export const PartnersWrapper = ({
                     name={partner.name}
                     role={partner.role}
                     description={partner.description}
-                    media={partner.media.media.url}
-                    imageDescription={partner.media.imageDescription}
+                    image={partner.image.image.url}
+                    imageDescription={partner.image.imageDescription}
                     socialNetwork={partner.socialNetworkCollection.items}
                   />
                 </SwiperSlide>

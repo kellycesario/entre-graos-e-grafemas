@@ -7,7 +7,7 @@ import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 
 export interface Image {
-  media: string
+  image: string
   imageDescription: string
 }
 
@@ -30,10 +30,10 @@ export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
         <ImageWrapper
           key={uuidv4()}
           imageDescription={image.imageDescription}
-          media={image.media}
+          image={image.image}
           className={styles.gallery__image}
           width={index === 2 ? 669 : 324}
-          height={index === 2 ? 542 : 260}
+          height={325}
         />
       ))}
       {visibleImages < images.length && (

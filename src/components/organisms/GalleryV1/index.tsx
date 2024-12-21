@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 import styles from './styles.module.scss'
 
 export interface Image {
-  media: string
+  image: string
   imageDescription: string
 }
 
@@ -62,7 +62,7 @@ export const GalleryV1 = ({ images, hasImages }: GalleryProps) => {
           >
             <ImageWrapper
               imageDescription={image.imageDescription}
-              media={image.media}
+              image={image.image}
               className={styles.gallery__image}
               width={582}
               height={388}

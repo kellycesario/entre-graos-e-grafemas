@@ -1,6 +1,5 @@
 import { LargeButton } from '@/atoms/LargeButton'
 import { Tag } from '@/atoms/Tag'
-import { limitText } from '@/utils/limitText/limitText'
 import styles from './styles.module.scss'
 
 export interface CardProps {
@@ -19,6 +18,13 @@ export const CardVideo = ({
   className,
 }: CardProps) => {
   const cardStyle = [styles.card, className].join(' ')
+
+  const decodeHtml = (html: string) => {
+    const txt = document.createElement('textarea')
+    txt.innerHTML = html
+    return txt.value
+  }
+
   return (
     <article className={cardStyle} aria-label={title}>
       <div
@@ -27,7 +33,7 @@ export const CardVideo = ({
       />
       <div className={styles.card__heading}>
         {tag && <Tag color="white">{tag}</Tag>}
-        <p className={styles.card__title}>{limitText(title ?? '', 64)}</p>
+        <p className={styles.card__title}>{decodeHtml(title ?? '')}</p>
       </div>
       <div className={styles.card__player}>
         <LargeButton link={link} title={title} />

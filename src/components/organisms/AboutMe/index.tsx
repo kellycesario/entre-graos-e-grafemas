@@ -7,14 +7,14 @@ import styles from './styles.module.scss'
 
 interface AboutMeProps {
   title?: string
-  media: string
+  image: string
   imageDescription: string
   content: any
 }
 
 export const AboutMe = ({
   title,
-  media,
+  image,
   imageDescription,
   content,
 }: AboutMeProps) => {
@@ -23,7 +23,7 @@ export const AboutMe = ({
       <div className={styles.about__imageContainer}>
         <ImageWrapper
           imageDescription={imageDescription}
-          media={media}
+          image={image}
           width={450}
           height={450}
           className={styles.about__image}

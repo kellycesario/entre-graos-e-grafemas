@@ -1,22 +1,22 @@
 type Image = {
-  media: {
+  image: {
     url: string
   }
   imageDescription: string
 }
 
 type Gallery = {
-  mediaCollection?: {
+  imageCollection?: {
     items: Image[]
   }
 }
 
 const extractImages = (
   gallery: Gallery
-): { media: string; imageDescription: string }[] => {
+): { image: string; imageDescription: string }[] => {
   return (
-    gallery?.mediaCollection?.items.map((image) => ({
-      media: image.media.url,
+    gallery?.imageCollection?.items.map((image) => ({
+      image: image.image.url,
       imageDescription: image.imageDescription,
     })) || []
   )

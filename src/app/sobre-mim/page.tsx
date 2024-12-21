@@ -21,9 +21,9 @@ export default async function SobreMim() {
         {aboutMe?.title && aboutMe?.content && (
           <AboutMe
             title={aboutMe.title}
-            media={aboutMe?.media?.media?.url}
-            imageDescription={aboutMe?.media?.imageDescription}
-            content={aboutMe?.content?.content}
+            image={aboutMe?.image?.image?.url}
+            imageDescription={aboutMe?.image?.imageDescription}
+            content={aboutMe?.content}
           />
         )}
         <RecentVideosWrapper

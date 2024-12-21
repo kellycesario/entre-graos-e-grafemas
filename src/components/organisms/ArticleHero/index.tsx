@@ -28,6 +28,17 @@ export const ArticleHero = ({
   const id = uuidv4()
   const pathname = usePathname()
 
+  const currentUrl = `${window.location.origin}${pathname}`
+
+  const shareData = {
+    title,
+    url: currentUrl,
+  }
+
+  const shareUrls = {
+    whatsapp: `https://api.whatsapp.com/send?text=${encodeURIComponent('Oi! 😊 Encontrei um artigo interessante que acho que você vai gostar de ler. Dê uma olhada: ' + shareData.title + ' - ' + shareData.url)}`,
+  }
+
   return (
     <section className={styles.hero} aria-labelledby={id}>
       <div className={styles.hero__imageContainer}>
@@ -64,7 +75,10 @@ export const ArticleHero = ({
             {date}
           </Text>
         </div>
-        <SocialIcons backgroundColor="black" />
+        <SocialIcons
+          backgroundColor="black"
+          whatsappHref={shareUrls.whatsapp}
+        />
       </div>
     </section>
   )

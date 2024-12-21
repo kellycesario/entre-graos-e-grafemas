@@ -78,7 +78,13 @@ export const Footer = ({
               ))}
           </ul>
         </nav>
-        <SocialIcons backgroundColor="cordovan" />
+        <SocialIcons
+          backgroundColor="cordovan"
+          instagramHref="https://www.instagram.com/arabiebezrihermont/"
+          linkedinHref="https://br.linkedin.com/in/arabie-bezri-hermont-7a52a839"
+          facebookHref="https://www.facebook.com/arabie.hermont/"
+          youtubeHref="https://youtube.com/@arabiebezrihermont"
+        />
       </div>
     </footer>
   )

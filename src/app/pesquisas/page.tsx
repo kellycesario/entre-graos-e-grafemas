@@ -30,7 +30,7 @@ export default async function Pesquisas() {
         <Presentation
           backgroundColor="dim-gray"
           title="Pesquisas"
-          text="Embarque no estudo aprofundado da sintaxe, morfologia, léxico, fonologia e outros campos da Linguística, explorando a organização das sentenças e formação de palavras, além da articulação dos sons da fala e da lingua, sua percepção e o impacto dessas estruturas nas várias modalidades de interação. Esses estudos são relacionados à cognicao e/ou à área de ensino. Além disso, há vários trabalhos relacionados à alfabetização em condições típicas e atípicas. Ao entender como essas disciplinas se inter-relacionam, é possível compreender como a linguagem é organizada mentalmente, influenciando o entendimento e a interação social"
+          text="Embarque no estudo aprofundado da sintaxe, morfologia, léxico, fonologia e outros campos da Linguística, explorando a organização das sentenças e formação de palavras, além da articulação dos sons da fala e da lingua, sua percepção e o impacto dessas estruturas nas várias modalidades de interação. Esses estudos são relacionados à cognicao e/ou à área de ensino. Além disso, há vários trabalhos relacionados à alfabetização em condições típicas e atípicas. Ao entender como essas disciplinas se inter-relacionam, é possível compreender como a linguagem é organizada mentalmente, influenciando o entendimento e a interação social."
           image="/images/research/2.webp"
           alt=""
         />

@@ -8,7 +8,7 @@ import {
   IconWorldWww,
   IconMail,
   IconBook,
-  IconBookmark
+  IconBookmark,
 } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 import { ImageWrapper } from '@/components/atoms/Image'
@@ -30,7 +30,7 @@ const availableIcons = {
   Website: IconWorldWww,
   Email: IconMail,
   Lattes: IconBook,
-  ResearchGate: IconBookmark
+  ResearchGate: IconBookmark,
 }
 
 export const CardPartner = ({

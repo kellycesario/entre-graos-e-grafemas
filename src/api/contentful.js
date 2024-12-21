@@ -70,7 +70,7 @@ function extractEntries(fetchResponse, contentType) {
       return fetchResponse?.data.aboutMeCollection?.items || []
     case 'blogPost':
       return fetchResponse?.data.blogPostCollection?.items || []
-    case 'partner' :
+    case 'partner':
       return fetchResponse?.data.partnerCollection?.items || []
     default:
       return []

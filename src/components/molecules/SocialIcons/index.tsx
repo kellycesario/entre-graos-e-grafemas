@@ -4,7 +4,7 @@ import {
   IconBrandYoutube,
   IconBrandLinkedin,
   IconBrandFacebook,
-  IconBrandWhatsapp
+  IconBrandWhatsapp,
 } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 
@@ -58,7 +58,7 @@ export const SocialIcons = ({
       href: whatsappHref,
       icon: IconBrandWhatsapp,
       aria: 'WhatsApp',
-    }
+    },
   ]
   const filteredLinks = socialLinks.filter(({ href }) => href !== '')
 

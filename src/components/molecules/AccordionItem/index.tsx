@@ -34,7 +34,12 @@ export const AccordionItem = ({
           )}
         </div>
       </summary>
-      <RichText content={answer} className={styles.accordion__answer} imagesV1={[]} imagesV2={[]} />
+      <RichText
+        content={answer}
+        className={styles.accordion__answer}
+        imagesV1={[]}
+        imagesV2={[]}
+      />
     </details>
   )
 }

@@ -7,10 +7,9 @@ import {
   IconBrandFacebook,
   IconWorldWww,
   IconMail,
-  IconBook,
-  IconBookmark,
 } from '@tabler/icons-react'
 import styles from './styles.module.scss'
+import { LocalIcon } from '@/ions/LocalIcon'
 import { ImageWrapper } from '@/components/atoms/Image'
 
 interface CardProps {
@@ -29,8 +28,6 @@ const availableIcons = {
   Facebook: IconBrandFacebook,
   Website: IconWorldWww,
   Email: IconMail,
-  Lattes: IconBook,
-  ResearchGate: IconBookmark,
 }
 
 export const CardPartner = ({
@@ -44,6 +41,33 @@ export const CardPartner = ({
   const id = uuidv4()
 
   const iconsToRender = socialNetwork?.map(({ icon, link }) => {
+    if (icon === 'ResearchGate') {
+      return (
+        <a href={link} key={uuidv4()} aria-label={icon}>
+          <LocalIcon
+            icon="research-gate"
+            width={24}
+            height={24}
+            viewBox="0 0 240 240"
+          />
+        </a>
+      )
+    }
+
+    if (icon === 'Lattes') {
+      return (
+        <a href={link} key={uuidv4()} aria-label={icon}>
+          <LocalIcon
+            icon="lattes"
+            fill="red"
+            width={24}
+            height={24}
+            viewBox="0 0 200 203"
+          />
+        </a>
+      )
+    }
+
     const IconComponent = availableIcons[icon as keyof typeof availableIcons]
 
     const ariaLabel = `${icon}`
@@ -51,7 +75,7 @@ export const CardPartner = ({
     if (!IconComponent) return null
 
     return (
-      <a href={link} key={link} aria-label={ariaLabel}>
+      <a href={link} key={uuidv4()} aria-label={ariaLabel}>
         <CustomIcon Icon={IconComponent} color="#1c1c1c" size={24} />
       </a>
     )

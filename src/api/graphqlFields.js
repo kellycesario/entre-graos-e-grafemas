@@ -39,6 +39,7 @@ export const BLOG_POST_GRAPHQL_FIELDS = `
     id
   }
   title
+  description
   author
   date
   tag

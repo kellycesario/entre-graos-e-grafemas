@@ -20,7 +20,7 @@ export const Animation = () => {
               src={image.src}
               alt={image.alt}
               className={styles.animation__image}
-              width={168}
+              width={256}
               height={214}
             />
           ))}

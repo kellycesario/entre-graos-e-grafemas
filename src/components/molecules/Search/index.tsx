@@ -13,7 +13,9 @@ export const Search = () => {
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0)
 
   useEffect(() => {
-    setPreviousScrollPosition(window.scrollY)
+    if (typeof window !== 'undefined') {
+      setPreviousScrollPosition(window.scrollY)
+    }
   }, [searchTerm])
 
   const handleSearch = useDebouncedCallback((term: string) => {

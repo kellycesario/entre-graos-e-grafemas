@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Heading } from '@/atoms/Heading'
@@ -28,7 +29,12 @@ export const ArticleHero = ({
   const id = uuidv4()
   const pathname = usePathname()
 
-  const currentUrl = `${window.location.origin}${pathname}`
+  const [currentUrl, setCurrentUrl] = useState<string>('')
+
+  useEffect(() => {
+    const url = `${window.location.origin}${pathname}`
+    setCurrentUrl(url)
+  }, [pathname])
 
   const shareData = {
     title,

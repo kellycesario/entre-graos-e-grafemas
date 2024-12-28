@@ -32,6 +32,11 @@
     @include screen-size('tablet') {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+    }
+
+    @include screen-size('desktop-small') {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -47,5 +52,11 @@
 
   &__button {
     align-self: flex-start;
+  }
+}
+
+.firstCard {
+  @include screen-size('desktop-small') {
+    grid-area: 1 / 1 / 2 / 3;
   }
 }

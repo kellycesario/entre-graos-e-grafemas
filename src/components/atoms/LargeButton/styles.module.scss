@@ -13,10 +13,10 @@
   }
 
   &:hover {
-    border: 0.1rem solid $cordovan;
+    border: 0.1rem solid $dim-gray;
 
     svg {
-      stroke: $cordovan;
+      stroke: $dim-gray;
     }
   }
 }

@@ -61,13 +61,14 @@ export const RecentVideosWrapper = ({
         </div>
         <div className={styles.recentVideos__cards}>
           {videos.length > 0 &&
-            videos.map(({ image, title, tag, link }: CardProps) => (
+            videos.map((video: CardProps, index: number) => (
               <CardVideo
-                key={title}
-                image={image}
-                tag={tag}
-                title={title}
-                link={link}
+                key={video.title}
+                image={video.image}
+                tag={video.tag}
+                title={video.title}
+                link={video.link}
+                className={index === 0 ? styles.firstCard : undefined}
               />
             ))}
           <LocalIcon

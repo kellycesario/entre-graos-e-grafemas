@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { ArticleHero } from '@/organisms/ArticleHero'
 import { ArticleExpanded } from '@/organisms/ArticleExpanded'
 import { Footer } from '@/organisms/Footer'
@@ -6,6 +7,20 @@ import { extractImages, hasImages } from '@/api/contentfulGlobalFunctions'
 
 interface ArticleProps {
   params: { slug: string }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata({
+  params,
+}: ArticleProps): Promise<Metadata> {
+  const article = await getArticle('blogPost', params.slug)
+
+  return {
+    title: article.title,
+    description: article.description,
+    keywords: article.tag,
+    authors: [{ name: article.author }],
+  }
 }
 
 export default async function Article({ params }: Readonly<ArticleProps>) {

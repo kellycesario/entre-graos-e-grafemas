@@ -63,7 +63,7 @@ export const Hero = ({
           />
         </div>
       </div>
-      <video autoPlay loop className={styles.hero__video}>
+      <video autoPlay loop playsInline className={styles.hero__video}>
         <source src={video} type="video/mp4" />
         <track kind="captions" label="no captions" />
       </video>

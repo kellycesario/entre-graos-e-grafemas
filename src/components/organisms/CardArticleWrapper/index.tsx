@@ -17,6 +17,7 @@ interface CardArticleWrapperProps {
   text?: string
   totalPages: number
   articles: CardProps[]
+  mainColor?: string
 }
 
 export const CardArticleWrapper = ({
@@ -24,6 +25,7 @@ export const CardArticleWrapper = ({
   text,
   totalPages,
   articles,
+  mainColor,
 }: CardArticleWrapperProps) => {
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('query')?.toLowerCase() ?? ''
@@ -82,7 +84,7 @@ export const CardArticleWrapper = ({
         </Text>
       </div>
 
-      <Search />
+      <Search mainColor={mainColor} />
 
       <div className={styles.cards__articles}>
         {paginatedData.map((article: CardProps, index) => (

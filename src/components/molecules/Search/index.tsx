@@ -5,7 +5,11 @@ import { useDebouncedCallback } from 'use-debounce'
 import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 
-export const Search = () => {
+interface SearchProps {
+  mainColor?: string
+}
+
+export const Search = ({ mainColor }: SearchProps) => {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const [searchTerm, setSearchTerm] = useState(searchParams.get('query') || '')
@@ -47,7 +51,11 @@ export const Search = () => {
 
   return (
     <div className={styles.searchContainer}>
-      <form className={styles.search} onSubmit={(e) => e.preventDefault()}>
+      <form
+        className={styles.search}
+        onSubmit={(e) => e.preventDefault()}
+        style={{ borderColor: mainColor }}
+      >
         <input
           placeholder="Cognição"
           className={styles.search__input}
@@ -59,17 +67,18 @@ export const Search = () => {
       <Button
         isButton={true}
         label="Buscar"
-        variant="primary"
+        variant="secondary"
         hasIcon={true}
         icon={IconSearch}
-        iconColor="#FFFFFF"
+        iconColor={mainColor}
+        secondaryColor={mainColor}
         onClick={handleButtonClick}
       />
       {searchTerm && (
         <Button
           isButton={true}
           label="Limpar"
-          variant="secondary"
+          variant="tertiary"
           onClick={handleClearSearch}
         />
       )}

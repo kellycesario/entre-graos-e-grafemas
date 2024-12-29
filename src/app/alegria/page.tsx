@@ -40,6 +40,7 @@ export default async function Alegria() {
             text="Confira nossas pílulas sobre o projeto Alegria"
             totalPages={totalPages}
             articles={filteredArticles}
+            mainColor="#177F9C"
           />
         </Suspense>
         <ContactMeCTA

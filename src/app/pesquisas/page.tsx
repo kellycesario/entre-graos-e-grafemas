@@ -40,6 +40,7 @@ export default async function Pesquisas() {
             text="Confira nossas pílulas sobre fonética, morfologia e muito mais"
             totalPages={totalPages}
             articles={filteredArticles}
+            mainColor="#5C6B6B"
           />
         </Suspense>
         <ContactMeCTA

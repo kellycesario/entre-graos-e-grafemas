@@ -1,3 +1,11 @@
 .field {
   @include defaultInput();
+
+  &__container {
+    align-items: unset !important;
+  }
+
+  &__icon {
+    margin-top: 2rem;
+  }
 }

@@ -41,7 +41,14 @@ export const Textarea = ({
       <div
         className={`${styles.field__container} ${error ? styles.field__inputError : ''}`}
       >
-        {Icon && <CustomIcon Icon={Icon} color={iconColor} size={iconSize} />}
+        {Icon && (
+          <CustomIcon
+            Icon={Icon}
+            color={iconColor}
+            size={iconSize}
+            className={styles.field__icon}
+          />
+        )}
         <textarea
           id={name}
           {...register(name, {

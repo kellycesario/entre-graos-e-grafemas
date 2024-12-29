@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
+import { getArticle } from '@/api/contentful'
+import { extractImages, hasImages } from '@/api/contentfulGlobalFunctions'
 import { ArticleHero } from '@/organisms/ArticleHero'
 import { ArticleExpanded } from '@/organisms/ArticleExpanded'
 import { Footer } from '@/organisms/Footer'
-import { getArticle } from '@/api/contentful'
-import { extractImages, hasImages } from '@/api/contentfulGlobalFunctions'
 
 interface ArticleProps {
   params: { slug: string }

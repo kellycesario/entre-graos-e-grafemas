@@ -1,6 +1,6 @@
 import { Button } from './index'
-import { IconArrowRight } from '@tabler/icons-react'
 import { weightArgTypes, disableTable } from '@/storybook-docs/argTypes'
+import { IconArrowRight } from '@tabler/icons-react'
 
 export default {
   title: 'Atoms/Button',

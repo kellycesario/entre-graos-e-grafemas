@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { LocalIcon } from '../LocalIcon'
+import { LocalIcon } from '@/ions/LocalIcon'
 
 export const Logo = () => {
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)

@@ -1,9 +1,9 @@
 import { CardBanner } from './index'
-import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
 import {
   backgroundColorArgTypes,
   disableTable,
 } from '@/storybook-docs/argTypes'
+import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
 
 export default {
   title: 'Molecules/CardBanner',

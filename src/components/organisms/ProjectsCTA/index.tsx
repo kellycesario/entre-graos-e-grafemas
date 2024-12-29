@@ -4,8 +4,8 @@ import { IconArrowRight } from '@tabler/icons-react'
 import { Text } from '@/atoms/Text'
 import { Heading } from '@/atoms/Heading'
 import { Button } from '@/atoms/Button'
+import { Animation } from '@/molecules/Animation'
 import styles from './styles.module.scss'
-import { Animation } from '@/components/molecules/Animation'
 
 interface ProjectsCTAProps {
   alt?: string

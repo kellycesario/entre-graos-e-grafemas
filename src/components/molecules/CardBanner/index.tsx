@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
-import { Icon as CustomIcon } from '@/ions/Icon'
 import { IconArrowRight } from '@tabler/icons-react'
+import { Icon as CustomIcon } from '@/ions/Icon'
 import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 

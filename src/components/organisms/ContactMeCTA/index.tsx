@@ -1,6 +1,6 @@
+import { IconArrowRight } from '@tabler/icons-react'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Button } from '@/atoms/Button'
-import { IconArrowRight } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 
 interface ContactMeCTAProps {

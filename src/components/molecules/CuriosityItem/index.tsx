@@ -1,6 +1,6 @@
+import { IconMug } from '@tabler/icons-react'
 import { Text } from '@/atoms/Text'
 import { RichText } from '@/organisms/RichText'
-import { IconMug } from '@tabler/icons-react'
 import styles from './styles.module.scss'
 
 export interface CuriosityItemProps {

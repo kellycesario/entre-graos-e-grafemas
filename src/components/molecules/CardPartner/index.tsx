@@ -8,9 +8,9 @@ import {
   IconWorldWww,
   IconMail,
 } from '@tabler/icons-react'
-import styles from './styles.module.scss'
 import { LocalIcon } from '@/ions/LocalIcon'
-import { ImageWrapper } from '@/components/atoms/Image'
+import { ImageWrapper } from '@/atoms/Image'
+import styles from './styles.module.scss'
 
 interface CardProps {
   socialNetwork?: { icon: string; link: string }[]

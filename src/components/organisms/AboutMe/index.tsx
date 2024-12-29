@@ -1,8 +1,8 @@
 'use client'
 
 import { Heading } from '@/atoms/Heading'
-import { RichText } from '@/organisms/RichText'
 import { ImageWrapper } from '@/atoms/Image'
+import { RichText } from '@/organisms/RichText'
 import styles from './styles.module.scss'
 
 interface AboutMeProps {

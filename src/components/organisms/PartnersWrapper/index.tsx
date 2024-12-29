@@ -1,9 +1,10 @@
 'use client'
-import { v4 as uuidv4 } from 'uuid'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { v4 as uuidv4 } from 'uuid'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import { CardPartner } from '@/molecules/CardPartner'

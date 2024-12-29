@@ -1,7 +1,7 @@
-import { IconSearch } from '@tabler/icons-react'
 import { useSearchParams, usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
+import { IconSearch } from '@tabler/icons-react'
 import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 
@@ -12,7 +12,7 @@ interface SearchProps {
 export const Search = ({ mainColor }: SearchProps) => {
   const searchParams = useSearchParams()
   const pathname = usePathname()
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('query') || '')
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('query') ?? '')
 
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0)
 

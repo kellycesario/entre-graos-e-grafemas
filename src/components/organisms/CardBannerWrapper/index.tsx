@@ -1,5 +1,5 @@
-import { CardBanner } from '@/molecules/CardBanner'
 import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
+import { CardBanner } from '@/molecules/CardBanner'
 import styles from './styles.module.scss'
 
 export const CardBannerWrapper = () => {

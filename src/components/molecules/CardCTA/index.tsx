@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import styles from './styles.module.scss'
 import { IconArrowRight } from '@tabler/icons-react'
+import styles from './styles.module.scss'
 
 interface CardProps {
   image?: string

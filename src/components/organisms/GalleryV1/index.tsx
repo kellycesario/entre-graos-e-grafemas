@@ -1,11 +1,11 @@
 'use client'
 
 import { v4 as uuidv4 } from 'uuid'
-import { ImageWrapper } from '@/atoms/Image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { ImageWrapper } from '@/atoms/Image'
 import styles from './styles.module.scss'
 
 export interface Image {

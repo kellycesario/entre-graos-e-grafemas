@@ -1,8 +1,8 @@
 import { Input, InputProps, FormData } from './index'
-import { IconUser } from '@tabler/icons-react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { Meta, StoryFn } from '@storybook/react'
 import { disableTable } from '@/storybook-docs/argTypes'
+import { IconUser } from '@tabler/icons-react'
 
 export default {
   title: 'Molecules/Input',

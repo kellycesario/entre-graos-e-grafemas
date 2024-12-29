@@ -1,7 +1,7 @@
-import { v4 as uuidv4 } from 'uuid'
 import Image from 'next/image'
-import styles from './styles.module.scss'
+import { v4 as uuidv4 } from 'uuid'
 import columnsData from '@/data/columnsData.json'
+import styles from './styles.module.scss'
 
 export const Animation = () => {
   return (

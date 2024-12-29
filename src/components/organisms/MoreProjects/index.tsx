@@ -1,4 +1,5 @@
 'use client'
+
 import { usePathname } from 'next/navigation'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'

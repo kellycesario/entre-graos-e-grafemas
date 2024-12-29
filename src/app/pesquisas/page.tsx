@@ -1,11 +1,11 @@
 import { Suspense } from 'react'
+import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { Presentation } from '@/organisms/Presentation'
 import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
-import { getAllEntries } from '@/api/contentful'
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'

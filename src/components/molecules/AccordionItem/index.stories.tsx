@@ -1,5 +1,5 @@
-import { JSX } from 'react';
 import { AccordionItem, AccordionItemProps } from './index'
+import { JSX } from 'react';
 
 export default {
   title: 'Molecules/AccordionItem',

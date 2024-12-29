@@ -1,4 +1,5 @@
 'use client'
+
 import { usePathname } from 'next/navigation'
 import { IconArrowRight, IconCoffee } from '@tabler/icons-react'
 import { Text } from '@/atoms/Text'

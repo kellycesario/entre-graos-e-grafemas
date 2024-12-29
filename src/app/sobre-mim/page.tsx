@@ -1,9 +1,9 @@
 import { getAllEntries, getEntry } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
+import { AboutMe } from '@/organisms/AboutMe'
 import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import { Curiosities } from '@/organisms/Curiosities'
 import { Footer } from '@/organisms/Footer'
-import { AboutMe } from '@/organisms/AboutMe'
 
 export default async function SobreMim() {
   const curiosities = await getAllEntries('curiosity')

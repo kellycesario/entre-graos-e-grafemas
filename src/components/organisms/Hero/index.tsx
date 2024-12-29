@@ -56,7 +56,7 @@ export const Hero = ({
             target="_blank"
           />
           <Button
-            href="/contato"
+            href={pathname === '/contato' ? '#Contact' : '/contato'}
             label="Entre em contato"
             variant="secondary"
             isButton={false}

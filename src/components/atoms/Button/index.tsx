@@ -43,7 +43,7 @@ export const Button = ({
   target,
   weight,
   variant,
-  secondaryColor,
+  secondaryColor = '',
   disabled,
   useButtonStyle,
   className,

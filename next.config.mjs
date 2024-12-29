@@ -9,6 +9,7 @@ const nextConfig = {
     prependData: `@import "./src/styles/index.scss";`,
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: "https",

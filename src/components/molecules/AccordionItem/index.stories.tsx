@@ -1,5 +1,5 @@
 import { AccordionItem, AccordionItemProps } from './index'
-import { JSX } from 'react';
+import { JSX } from 'react'
 
 export default {
   title: 'Molecules/AccordionItem',
@@ -16,7 +16,7 @@ export const Default = {
     number: '01',
   },
   render: (args: JSX.IntrinsicAttributes & AccordionItemProps) => {
-    console.log(args.answer);
-    return <AccordionItem {...args} />;
+    console.log(args.answer)
+    return <AccordionItem {...args} />
   },
-};
+}

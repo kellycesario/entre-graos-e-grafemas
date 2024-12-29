@@ -1,4 +1,4 @@
-import { RichText } from '@/atoms/RichText'
+import { RichText } from '@/organisms/RichText'
 
 interface ArticleExpandedProps {
   content: any

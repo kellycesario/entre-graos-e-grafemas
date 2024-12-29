@@ -1,7 +1,7 @@
 'use client'
 
 import { Heading } from '@/atoms/Heading'
-import { RichText } from '@/atoms/RichText'
+import { RichText } from '@/organisms/RichText'
 import { ImageWrapper } from '@/atoms/Image'
 import styles from './styles.module.scss'
 

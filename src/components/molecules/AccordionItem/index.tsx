@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { IconPlus, IconX } from '@tabler/icons-react'
-import { RichText } from '@/atoms/RichText'
+import { RichText } from '@/organisms/RichText'
 import styles from './styles.module.scss'
 
 export interface AccordionItemProps {

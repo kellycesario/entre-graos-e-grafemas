@@ -21,7 +21,7 @@ export default {
         link: '',
       },
       {
-        icon: 'Linkedin',
+        icon: 'ResearchGate',
         link: '',
       },
     ],

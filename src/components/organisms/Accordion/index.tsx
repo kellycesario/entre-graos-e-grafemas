@@ -13,10 +13,17 @@ export const Accordion = ({
   title,
   frequentlyAskedQuestions = [],
 }: AccordionProps) => {
-
   return (
-    <section aria-labelledby='Frequently asked questions' className={styles.accordion}>
-      <Heading level="2" weight="700" id='Frequently asked questions' color="cordovan">
+    <section
+      aria-labelledby="Frequently asked questions"
+      className={styles.accordion}
+    >
+      <Heading
+        level="2"
+        weight="700"
+        id="Frequently asked questions"
+        color="cordovan"
+      >
         {title}
       </Heading>
 

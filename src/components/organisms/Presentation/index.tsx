@@ -72,7 +72,7 @@ export const Presentation = ({
 
       <div className={headingStyle}>
         <div className={styles.presentation__title}>
-          <Heading color="white" level="2" weight="700" id='Presentation'>
+          <Heading color="white" level="2" weight="700" id="Presentation">
             {title}
           </Heading>
           <LocalIcon icon="line" width={72} height={8} fill="white" />

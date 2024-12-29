@@ -4,7 +4,7 @@ interface IconProps {
   fill?: string
   width?: number
   height?: number
-  viewBox?: string;
+  viewBox?: string
 }
 
 export const LocalIcon = ({
@@ -13,7 +13,7 @@ export const LocalIcon = ({
   fill,
   width,
   height,
-  viewBox
+  viewBox,
 }: IconProps) => {
   return (
     <svg

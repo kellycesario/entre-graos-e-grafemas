@@ -40,7 +40,6 @@ export const PartnersWrapper = ({
   text,
   partners,
 }: PartnersWrapperProps) => {
-
   const groupedPartners = partners.reduce(
     (acc, partner) => {
       const { category } = partner
@@ -68,7 +67,7 @@ export const PartnersWrapper = ({
         return (
           <Swiper
             className={styles.partners__swiper}
-            aria-labelledby='Category'
+            aria-labelledby="Category"
             style={
               {
                 '--swiper-pagination-color': '#8c4949',
@@ -105,7 +104,7 @@ export const PartnersWrapper = ({
               level="3"
               weight="600"
               className={styles.partners__category}
-              id='Category'
+              id="Category"
             >
               {category}
             </Heading>

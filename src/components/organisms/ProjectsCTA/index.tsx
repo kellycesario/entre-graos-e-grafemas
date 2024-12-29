@@ -78,6 +78,7 @@ export const ProjectsCTA = ({
             alt={alt}
             width={660}
             height={452}
+            priority
             className={styles.projectsCTA__image}
           />
         )}

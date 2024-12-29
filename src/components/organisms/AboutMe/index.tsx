@@ -30,7 +30,12 @@ export const AboutMe = ({
         />
       </div>
       <div className={styles.about__content}>
-        <Heading level="2" color="cordovan" weight="700">
+        <Heading
+          level="2"
+          color="cordovan"
+          weight="700"
+          className={styles.about__title}
+        >
           {title}
         </Heading>
         <RichText

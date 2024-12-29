@@ -4,7 +4,7 @@ export default {
   title: 'Organisms/Footer',
   component: Footer,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   args: {
     hasCTA: true,

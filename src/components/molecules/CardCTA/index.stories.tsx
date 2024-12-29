@@ -5,7 +5,7 @@ export default {
   title: 'Molecules/CardCTA',
   component: CardCTA,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   args: {
     image: '/images/books/1.webp',

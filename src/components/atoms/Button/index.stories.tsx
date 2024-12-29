@@ -17,7 +17,7 @@ export default {
   argTypes: {
     variant: {
       control: { type: 'inline-radio' },
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'tertiary'],
     },
     icon: {
       ...disableTable,
@@ -83,6 +83,36 @@ export const SecondaryButton = {
       ...disableTable,
     },
     aria: {
+      ...disableTable,
+    },
+  },
+}
+
+export const TertiaryButton = {
+  args: {
+    label: 'Entre em contato',
+    variant: 'tertiary',
+  },
+  argTypes: {
+    weight: {
+      ...disableTable,
+    },
+    aria: {
+      ...disableTable,
+    },
+    hasIcon: {
+      ...disableTable,
+    },
+    iconColor: {
+      ...disableTable,
+    },
+    iconPosition: {
+      ...disableTable,
+    },
+    iconSize: {
+      ...disableTable,
+    },
+    secondaryColor: {
       ...disableTable,
     },
   },

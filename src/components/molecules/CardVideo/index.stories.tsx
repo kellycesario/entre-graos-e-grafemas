@@ -6,6 +6,7 @@ export default {
   component: CardVideo,
   parameters: {
     layout: 'centered',
+    viewport: { options: 'mobile1' },
   },
   args: {
     image: '/images/books/1.webp',

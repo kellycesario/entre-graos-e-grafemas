@@ -36,6 +36,18 @@ export default {
     register: {
       ...disableTable,
     },
+    error: {
+      ...disableTable,
+    },
+    requiredErrorMessage: {
+      ...disableTable,
+    },
+    patternValue: {
+      ...disableTable,
+    },
+    patternMessage: {
+      ...disableTable,
+    },
   },
 } as Meta<typeof Input>
 

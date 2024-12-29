@@ -1,4 +1,5 @@
-import { AccordionItem } from './index'
+import { JSX } from 'react';
+import { AccordionItem, AccordionItemProps } from './index'
 
 export default {
   title: 'Molecules/AccordionItem',
@@ -6,12 +7,16 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    question: 'How long does a web design project take?',
-    answer:
-      'Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.',
-    number: '01',
-  },
 }
 
-export const Default = {}
+export const Default = {
+  args: {
+    question: 'How long does a web design project take?',
+    answer: '<p>Lorem ipsum dolor sit amet<p>',
+    number: '01',
+  },
+  render: (args: JSX.IntrinsicAttributes & AccordionItemProps) => {
+    console.log(args.answer);
+    return <AccordionItem {...args} />;
+  },
+};

@@ -37,6 +37,12 @@ export default {
     className: {
       ...disableTable,
     },
+    error: {
+      ...disableTable,
+    },
+    requiredErrorMessage: {
+      ...disableTable,
+    },
   },
 } as Meta<typeof Textarea>
 

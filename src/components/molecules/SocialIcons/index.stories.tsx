@@ -1,5 +1,8 @@
 import { SocialIcons } from './index'
-import { backgroundColorArgTypes } from '@/storybook-docs/argTypes'
+import {
+  backgroundColorArgTypes,
+  disableTable,
+} from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Molecules/SocialIcons',
@@ -9,9 +12,25 @@ export default {
   },
   args: {
     backgroundColor: 'red',
+    instagramHref: ''
   },
   argTypes: {
     ...backgroundColorArgTypes,
+    instagramHref: {
+      ...disableTable,
+    },
+    linkedinHref: {
+      ...disableTable,
+    },
+    facebookHref: {
+      ...disableTable,
+    },
+    youtubeHref: {
+      ...disableTable,
+    },
+    whatsappHref: {
+      ...disableTable,
+    },
   },
 }
 

@@ -4,7 +4,7 @@ export default {
   title: 'Organisms/ContactMeCTA',
   component: ContactMeCTA,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   args: {
     backgroundImage: '/images/coffee/8.jpg',

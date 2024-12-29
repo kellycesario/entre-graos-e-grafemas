@@ -6,6 +6,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  args: {
+    curiosities: [{ topic: '', description: '' }],
+  },
 }
 
 export const Default = {}

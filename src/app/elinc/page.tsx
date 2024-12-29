@@ -41,7 +41,7 @@ export default async function Elinc() {
             text="Confira nossas pílulas sobre linguagem e cognição humana"
             totalPages={totalPages}
             articles={filteredArticles}
-            mainColor='#8C4949'
+            mainColor="#8C4949"
           />
         </Suspense>
         <ContactMeCTA

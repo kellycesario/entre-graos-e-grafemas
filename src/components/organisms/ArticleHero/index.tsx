@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
@@ -26,7 +25,6 @@ export const ArticleHero = ({
   image,
   alt,
 }: ArticleHeroProps) => {
-  const id = uuidv4()
   const pathname = usePathname()
 
   const [currentUrl, setCurrentUrl] = useState<string>('')
@@ -46,7 +44,7 @@ export const ArticleHero = ({
   }
 
   return (
-    <section className={styles.hero} aria-labelledby={id}>
+    <section className={styles.hero} aria-labelledby="Article">
       <div className={styles.hero__imageContainer}>
         {image && (
           <Image
@@ -54,6 +52,7 @@ export const ArticleHero = ({
             alt={alt}
             width={1106}
             height={400}
+            priority
             className={styles.hero__image}
           />
         )}
@@ -67,7 +66,12 @@ export const ArticleHero = ({
       </div>
       <div className={styles.hero__heading}>
         <Breadcrumb pathname={pathname} />
-        <Heading level="1" weight="800" id={id} className={styles.hero__title}>
+        <Heading
+          level="1"
+          weight="800"
+          id="Article"
+          className={styles.hero__title}
+        >
           {title}
         </Heading>
       </div>

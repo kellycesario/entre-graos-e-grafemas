@@ -40,7 +40,6 @@ export const PartnersWrapper = ({
   text,
   partners,
 }: PartnersWrapperProps) => {
-  const sectionId = uuidv4()
 
   const groupedPartners = partners.reduce(
     (acc, partner) => {
@@ -55,22 +54,21 @@ export const PartnersWrapper = ({
   )
 
   return (
-    <section className={styles.partners} aria-labelledby={sectionId}>
+    <section className={styles.partners} aria-labelledby="Partners">
       <div className={styles.partners__heading}>
-        <Heading color="cordovan" level="2" weight="700" id={sectionId}>
+        <Heading color="cordovan" level="2" weight="700" id="Partners">
           {title}
         </Heading>
         <Text>{text}</Text>
       </div>
 
       {Object.keys(groupedPartners).map((category) => {
-        const categoryId = uuidv4()
         const categoryPartners = groupedPartners[category]
 
         return (
           <Swiper
             className={styles.partners__swiper}
-            aria-labelledby={categoryId}
+            aria-labelledby='Category'
             style={
               {
                 '--swiper-pagination-color': '#8c4949',
@@ -100,14 +98,14 @@ export const PartnersWrapper = ({
               },
             }}
             modules={[Pagination, Autoplay]}
-            key={categoryId}
+            key={uuidv4()}
           >
             <Heading
               color="cordovan"
               level="3"
               weight="600"
               className={styles.partners__category}
-              id={categoryId}
+              id='Category'
             >
               {category}
             </Heading>

@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
@@ -24,8 +23,6 @@ export const Presentation = ({
   text,
 }: PresentationProps) => {
   const [windowWidth, setWindowWidth] = useState(0)
-
-  const id = uuidv4()
 
   const headingStyle = [
     styles.presentation__heading,
@@ -61,20 +58,21 @@ export const Presentation = ({
   const { width, height } = getImageDimensions()
 
   return (
-    <section aria-labelledby={id} className={styles.presentation}>
+    <section aria-labelledby="Presentation" className={styles.presentation}>
       {image && (
         <Image
           src={image}
           alt={alt}
           width={width}
           height={height}
+          priority
           className={styles.presentation__image}
         />
       )}
 
       <div className={headingStyle}>
         <div className={styles.presentation__title}>
-          <Heading color="white" level="2" weight="700" id={id}>
+          <Heading color="white" level="2" weight="700" id='Presentation'>
             {title}
           </Heading>
           <LocalIcon icon="line" width={72} height={8} fill="white" />

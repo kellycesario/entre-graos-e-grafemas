@@ -16,11 +16,11 @@ export const Animation = () => {
         >
           {column.map((image) => (
             <Image
-              key={image.alt}
+              key={uuidv4()}
               src={image.src}
               alt={image.alt}
               className={styles.animation__image}
-              width={256}
+              width={178}
               height={214}
             />
           ))}

@@ -12,7 +12,6 @@ import {
   IconTableHeart,
   IconMessage,
 } from '@tabler/icons-react'
-import { v4 as uuidv4 } from 'uuid'
 import { Heading } from '@/atoms/Heading'
 import { Button } from '@/atoms/Button'
 import { Input, FormData } from '@/molecules/Input'
@@ -53,14 +52,12 @@ export const Form = ({ title }: FormProps) => {
     }
   }
 
-  const id = uuidv4()
-
   return (
-    <section className={styles.form} aria-labelledby={id}>
+    <section className={styles.form} aria-labelledby="Contact">
       <Heading
         level="2"
         weight="700"
-        id={id}
+        id="Contact"
         color="cordovan"
         className={styles.form__title}
       >

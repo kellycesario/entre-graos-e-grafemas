@@ -13,6 +13,12 @@ interface IconProps {
 
 export const Icon = ({ Icon, color, size, stroke, className }: IconProps) => {
   return (
-    <Icon color={color} size={size} stroke={stroke} className={className} />
+    <Icon
+      color={color}
+      size={size}
+      stroke={stroke}
+      className={className}
+      aria-hidden="true"
+    />
   )
 }

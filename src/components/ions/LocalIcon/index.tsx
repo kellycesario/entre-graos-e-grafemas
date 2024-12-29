@@ -23,6 +23,7 @@ export const LocalIcon = ({
       fill={fill}
       className={className}
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <use href={`#${icon}`} xlinkHref={`#${icon}`} />
     </svg>

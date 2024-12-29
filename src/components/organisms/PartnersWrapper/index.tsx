@@ -15,7 +15,6 @@ interface SocialNetwork {
 }
 
 interface Partner {
-  internalName: string
   category: string
   name: string
   role: string
@@ -112,7 +111,7 @@ export const PartnersWrapper = ({
             <div>
               {categoryPartners.map((partner: Partner) => (
                 <SwiperSlide
-                  key={partner.internalName}
+                  key={partner.name}
                   className={styles.partners__cards}
                 >
                   <CardPartner

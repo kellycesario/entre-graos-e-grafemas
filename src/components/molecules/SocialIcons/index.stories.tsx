@@ -12,7 +12,7 @@ export default {
   },
   args: {
     backgroundColor: 'red',
-    instagramHref: '',
+    instagramHref: '/',
   },
   argTypes: {
     ...backgroundColorArgTypes,

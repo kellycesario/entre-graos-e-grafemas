@@ -1,4 +1,5 @@
 import { CardVideo } from './index'
+import { StoryFn } from '@storybook/react'
 import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
@@ -6,7 +7,6 @@ export default {
   component: CardVideo,
   parameters: {
     layout: 'centered',
-    viewport: { options: 'mobile1' },
   },
   args: {
     image: '/images/books/1.webp',
@@ -23,6 +23,15 @@ export default {
       ...disableTable,
     },
   },
+  decorators: [
+    (Story: StoryFn) => {
+      return (
+        <div style={{ width: '50%', margin: '0 auto' }}>
+          <Story />
+        </div>
+      )
+    },
+  ],
 }
 
 export const Default = {}

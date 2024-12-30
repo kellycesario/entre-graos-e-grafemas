@@ -24,6 +24,9 @@ export default {
     height: {
       ...disableTable,
     },
+    viewBox: {
+      ...disableTable,
+    },
     fill: {
       control: {
         type: 'color',

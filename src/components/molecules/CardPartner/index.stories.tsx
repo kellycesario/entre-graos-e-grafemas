@@ -7,14 +7,14 @@ export default {
   title: 'Molecules/CardPartner',
   component: CardPartner,
   parameters: {
-    layout: 'centered',
+    layout: '',
   },
   args: {
     image: '/images/books/1.webp',
     name: 'eLinC',
     role: 'Gerativismo de Chomsky: a teoria que transformou a linguística',
     description:
-      'Neste artigo, vamos explorar o gerativismo de Noam Chomsky, que mudou a forma como entendemos a linguagem',
+      'Noam Chomsky é um linguista, filósofo, cientista cognitivo, historiador e ativista político norte-americano, amplamente reconhecido por suas contribuições revolucionárias no campo da linguística e por suas análises políticas e críticas sociais.',
     socialNetwork: [
       {
         icon: 'Lattes',
@@ -43,7 +43,7 @@ export default {
   decorators: [
     (Story: StoryFn) => {
       return (
-        <div>
+        <div style={{ width: '375px', margin: '0 auto' }}>
           <Sprites />
           <Story />
         </div>

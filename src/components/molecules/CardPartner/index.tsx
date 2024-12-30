@@ -10,6 +10,7 @@ import {
 } from '@tabler/icons-react'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { ImageWrapper } from '@/atoms/Image'
+import { limitText } from '@/utils/limitText/limitText'
 import styles from './styles.module.scss'
 
 interface CardProps {
@@ -99,7 +100,9 @@ export const CardPartner = ({
           </p>
           <p className={styles.card__role}>{role}</p>
         </div>
-        <p className={styles.card__description}>{description}</p>
+        <p className={styles.card__description}>
+          {limitText(description ?? '', 245)}
+        </p>
         <div className={styles.card__icons}>{iconsToRender}</div>
       </div>
     </article>

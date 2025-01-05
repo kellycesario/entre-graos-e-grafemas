@@ -13,7 +13,7 @@ export default async function Contato() {
         <Hero
           title="Entre grãos e grafemas"
           text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café"
-          video="/videos/coffee-05.mp4"
+          video="/videos/coffee-04.mp4"
           hasBreadcrumb={true}
         />
         {questions?.length > 0 && (

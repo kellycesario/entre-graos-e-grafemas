@@ -22,7 +22,7 @@ export default async function SobreMim() {
         {aboutMe?.title && aboutMe?.content && (
           <AboutMe
             title={aboutMe.title}
-            image={aboutMe?.image?.image?.url}
+            image={aboutMe?.image?.image ? aboutMe.image.image.url : null}
             imageDescription={aboutMe?.image?.imageDescription}
             content={aboutMe?.content}
           />

@@ -18,12 +18,14 @@ export default async function Home() {
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={false}
         />
-        <RecentVideosWrapper
-          title="Fique por dentro:"
-          text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
-          maxResults={2}
-          videos={videos}
-        />
+        {videos?.length > 0 && (
+          <RecentVideosWrapper
+            title="Fique por dentro:"
+            text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
+            maxResults={2}
+            videos={videos}
+          />
+        )}
         <ProjectsCTA
           alt=""
           image="/images/books/2.jpg"

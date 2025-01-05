@@ -1,6 +1,5 @@
 'use client'
 
-import { v4 as uuidv4 } from 'uuid'
 import { IconArrowRight } from '@tabler/icons-react'
 import { LocalIcon } from '@/ions/LocalIcon'
 import { Heading } from '@/atoms/Heading'
@@ -22,13 +21,11 @@ export const RecentVideosWrapper = ({
   text,
   maxResults = 5,
 }: RecentVideosWrapperProps) => {
-  const id = uuidv4()
-
   return (
-    <section aria-labelledby={id} className={styles.recentVideos}>
+    <section aria-labelledby="videos" className={styles.recentVideos}>
       <div className={styles.recentVideos__container}>
         <div className={styles.recentVideos__heading}>
-          <Heading color="white" level="2" weight="700" id={id}>
+          <Heading color="white" level="2" weight="700" id="videos">
             {title}
           </Heading>
           <Text color="white">{text}</Text>

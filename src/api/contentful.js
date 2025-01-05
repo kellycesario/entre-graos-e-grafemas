@@ -5,7 +5,7 @@ import {
   BLOG_POST_GRAPHQL_FIELDS,
   BLOG_POST_GRAPHQL_FIELDS_SUMMARY,
   PARTNER_GRAPHQL_FIELDS,
-  VIDEO_GRAPHQL_FIELDS
+  VIDEO_GRAPHQL_FIELDS,
 } from './graphqlFields'
 
 async function getGraphQLFields(contentType, isSummary = false) {

@@ -34,7 +34,7 @@ export const CardVideo = ({
     <article className={cardStyle} aria-label={decodedTitle}>
       <div
         className={styles.card__image}
-        style={{ backgroundImage: `url(${image.url})` }}
+        style={{ backgroundImage: image?.url ? `url(${image.url})` : 'none' }}
       />
       <div className={styles.card__heading}>
         {tag && <Tag color="white">{tag}</Tag>}

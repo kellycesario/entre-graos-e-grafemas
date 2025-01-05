@@ -7,6 +7,7 @@ import { Footer } from '@/organisms/Footer'
 
 export default async function SobreMim() {
   const curiosities = await getAllEntries('curiosity')
+  const videos = await getAllEntries('video')
   const aboutMe = await getEntry('aboutMe')
 
   return (
@@ -30,6 +31,7 @@ export default async function SobreMim() {
           title="Sobre mim e meu trabalho:"
           text="Nesta seção, você vai entender como meu trabalho reflete quem eu sou como profissional. Acompanhe meu conteúdo mais recente e conheça mais sobre minha trajetória e visão."
           maxResults={5}
+          videos={videos}
         />
         {curiosities?.length > 0 && <Curiosities curiosities={curiosities} />}
       </main>

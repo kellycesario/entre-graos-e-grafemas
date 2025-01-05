@@ -3,7 +3,8 @@ import { Tag } from '@/atoms/Tag'
 import styles from './styles.module.scss'
 
 export interface CardProps {
-  image?: string
+  image: { url: string }
+
   title?: string
   tag?: string
   link?: string
@@ -29,7 +30,7 @@ export const CardVideo = ({
     <article className={cardStyle} aria-label={title}>
       <div
         className={styles.card__image}
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${image.url})` }}
       />
       <div className={styles.card__heading}>
         {tag && <Tag color="white">{tag}</Tag>}

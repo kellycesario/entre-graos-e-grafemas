@@ -5,6 +5,7 @@ import {
   BLOG_POST_GRAPHQL_FIELDS,
   BLOG_POST_GRAPHQL_FIELDS_SUMMARY,
   PARTNER_GRAPHQL_FIELDS,
+  VIDEO_GRAPHQL_FIELDS
 } from './graphqlFields'
 
 async function getGraphQLFields(contentType, isSummary = false) {
@@ -26,6 +27,9 @@ async function getGraphQLFields(contentType, isSummary = false) {
       break
     case 'partner':
       graphqlFields = PARTNER_GRAPHQL_FIELDS
+      break
+    case 'video':
+      graphqlFields = VIDEO_GRAPHQL_FIELDS
       break
     default:
       break
@@ -72,6 +76,8 @@ function extractEntries(fetchResponse, contentType) {
       return fetchResponse?.data.blogPostCollection?.items || []
     case 'partner':
       return fetchResponse?.data.partnerCollection?.items || []
+    case 'video':
+      return fetchResponse?.data.videoCollection?.items || []
     default:
       return []
   }

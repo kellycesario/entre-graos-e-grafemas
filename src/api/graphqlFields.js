@@ -125,3 +125,14 @@ socialNetworkCollection(limit: 8) {
   }
 }
 `
+export const VIDEO_GRAPHQL_FIELDS = `
+sys {
+  id
+}
+title
+link
+tag
+image {
+  url
+}
+`

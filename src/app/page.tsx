@@ -1,11 +1,14 @@
-import { ProjectsCTA } from '@/organisms/ProjectsCTA'
+import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
-import { Footer } from '@/organisms/Footer'
-import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
 import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
+import { ProjectsCTA } from '@/organisms/ProjectsCTA'
+import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
+import { Footer } from '@/organisms/Footer'
 import styles from './homepage.module.scss'
 
 export default async function Home() {
+  const videos = await getAllEntries('video')
+
   return (
     <>
       <main className={styles.homepage}>
@@ -19,6 +22,7 @@ export default async function Home() {
           title="Fique por dentro:"
           text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
           maxResults={2}
+          videos={videos}
         />
         <ProjectsCTA
           alt=""

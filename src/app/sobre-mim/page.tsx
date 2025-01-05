@@ -8,7 +8,7 @@ import { Footer } from '@/organisms/Footer'
 export default async function SobreMim() {
   const curiosities = await getAllEntries('curiosity')
   const videos = await getAllEntries('video')
-  const aboutMe = await getEntry('aboutMe')
+  const aboutMe = await getEntry('aboutMe') || {};
 
   return (
     <>

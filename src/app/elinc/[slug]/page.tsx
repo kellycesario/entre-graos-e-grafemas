@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import { getArticle } from '@/api/contentful'
 import { extractImages, hasImages } from '@/api/contentfulGlobalFunctions'
 import { ArticleHero } from '@/organisms/ArticleHero'
 import { ArticleExpanded } from '@/organisms/ArticleExpanded'
 import { Footer } from '@/organisms/Footer'
+import { getLocale } from '@/utils/getLocale/getLocale'
 
 interface ArticleProps {
   params: { slug: string }
@@ -13,7 +15,9 @@ interface ArticleProps {
 export async function generateMetadata({
   params,
 }: ArticleProps): Promise<Metadata> {
-  const article = await getArticle('blogPost', params.slug)
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders)
+  const article = await getArticle('blogPost', params.slug, 1, false, locale)
 
   return {
     title: article.title,
@@ -24,7 +28,9 @@ export async function generateMetadata({
 }
 
 export default async function Article({ params }: Readonly<ArticleProps>) {
-  const article = await getArticle('blogPost', params.slug)
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders)
+  const article = await getArticle('blogPost', params.slug, 1, false, locale)
   const items = article.contentCollection?.items || []
 
   return (

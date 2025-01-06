@@ -87,14 +87,21 @@ export async function getAllEntries(
   contentType,
   limit = 100,
   isDraftMode = false,
-  isSummary = false
+  isSummary = false,
+  locale = 'pt-BR'
 ) {
+
+  if (typeof window !== 'undefined') {
+    locale = navigator.language || 'pt-BR'; // No cliente, usa o idioma do navegador
+  }
+
   try {
     const graphqlFields = await getGraphQLFields(contentType, isSummary)
     const query = `query {
       ${contentType}Collection(
         limit: ${limit},
-        preview: ${isDraftMode ? 'true' : 'false'}
+        preview: ${isDraftMode ? 'true' : 'false'},
+        locale: "${locale}"
       ) {
         items {
           ${graphqlFields}
@@ -114,8 +121,13 @@ export async function getArticle(
   contentType,
   slug,
   limit = 1,
-  isDraftMode = false
+  isDraftMode = false,
+  locale = 'pt-BR'
 ) {
+
+  if (typeof window !== 'undefined') {
+    locale = navigator.language || 'pt-BR'; // No cliente, usa o idioma do navegador
+  }
   try {
     const graphqlFields = await getGraphQLFields(contentType)
     const entry = await fetchGraphQL(
@@ -124,6 +136,7 @@ export async function getArticle(
         where: { slug: "${slug}" },
           limit: ${limit},
           preview: ${isDraftMode ? 'true' : 'false'}
+          locale: "${locale}"
         ) {
           items {
             ${graphqlFields}

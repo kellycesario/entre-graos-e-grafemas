@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import { Suspense } from 'react'
 import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
@@ -6,13 +7,17 @@ import { CardArticleWrapper } from '@/organisms/CardArticleWrapper'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
+import { getLocale } from '@/utils/getLocale/getLocale'
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
 }
 
 export default async function Pesquisas() {
-  const articles = await getAllEntries('blogPost', 100, false, true)
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders)
+
+  const articles = await getAllEntries('blogPost', 100, false, true, locale)
   const filteredArticles = articles.filter(
     (article: ArticleProject) => article.project === 'pesquisas'
   )

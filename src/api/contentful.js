@@ -90,9 +90,8 @@ export async function getAllEntries(
   isSummary = false,
   locale = 'pt-BR'
 ) {
-
   if (typeof window !== 'undefined') {
-    locale = navigator.language || 'pt-BR'; // No cliente, usa o idioma do navegador
+    locale = navigator.language || 'pt-BR'
   }
 
   try {
@@ -124,9 +123,8 @@ export async function getArticle(
   isDraftMode = false,
   locale = 'pt-BR'
 ) {
-
   if (typeof window !== 'undefined') {
-    locale = navigator.language || 'pt-BR'; // No cliente, usa o idioma do navegador
+    locale = navigator.language || 'pt-BR'
   }
   try {
     const graphqlFields = await getGraphQLFields(contentType)

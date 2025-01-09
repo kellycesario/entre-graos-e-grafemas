@@ -8,10 +8,10 @@ import { Text } from '@/atoms/Text'
 import { CardVideo, CardProps } from '@/molecules/CardVideo'
 import styles from './styles.module.scss'
 
-interface RecentVideosWrapperProps {
+export interface RecentVideosWrapperProps {
   title?: string
   text?: string
-  videos: CardProps[]
+  videos?: CardProps[]
   maxResults?: number
 }
 
@@ -31,7 +31,7 @@ export const RecentVideosWrapper = ({
           <Text color="white">{text}</Text>
         </div>
         <div className={styles.recentVideos__cards}>
-          {videos.length > 0 &&
+          {videos && videos.length > 0 ? (
             videos
               .slice(0, maxResults)
               .map((video: CardProps, index: number) => (
@@ -43,7 +43,10 @@ export const RecentVideosWrapper = ({
                   link={video.link}
                   className={index === 0 ? styles.firstCard : undefined}
                 />
-              ))}
+              ))
+          ) : (
+            <Text color="white">No videos available</Text>
+          )}
           <LocalIcon
             icon="arrows"
             width={101}

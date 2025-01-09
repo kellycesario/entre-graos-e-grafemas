@@ -4,11 +4,13 @@ import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 
 interface ContactMeCTAProps {
+  locale?: 'pt-BR' | 'en-US'
   backgroundImage?: string
   backgroundColor?: string
 }
 
 export const ContactMeCTA = ({
+  locale,
   backgroundImage,
   backgroundColor,
 }: ContactMeCTAProps) => {
@@ -34,7 +36,9 @@ export const ContactMeCTA = ({
         }}
       />
       <p id="title" className={styles.contactMe__title}>
-        Tem algo em mente? Fale comigo!
+        {locale === 'pt-BR'
+          ? 'Tem algo em mente? Fale comigo!'
+          : 'Got something on your mind? Talk to me!'}
       </p>
       <Button
         hasIcon={true}
@@ -47,7 +51,7 @@ export const ContactMeCTA = ({
         variant="secondary"
         secondaryColor="#FFFFFF"
         useButtonStyle={true}
-        label="Entre em contato"
+        label={locale === 'pt-BR' ? 'Entre em contato' : 'Contact me'}
         className={styles.contactMe__button}
       />
       <LocalIcon

@@ -6,19 +6,27 @@ import { useEffect, useState } from 'react'
 import { Logo } from '@/ions/Logo'
 import { SocialIcons } from '@/molecules/SocialIcons'
 import { ContactMeCTA } from '@/organisms/ContactMeCTA'
-import navigationItems from '@/data/navigation.json'
 import styles from './styles.module.scss'
 
-interface FooterProps {
+export interface NavigationItem {
+  item: string
+  href: string
+}
+
+export interface FooterProps {
   hasCTA?: boolean
   backgroundImage?: string
   backgroundColor?: string
+  navigationItems: NavigationItem[]
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const Footer = ({
   hasCTA,
   backgroundImage,
   backgroundColor,
+  navigationItems,
+  locale,
 }: FooterProps) => {
   const pathname = usePathname()
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
@@ -45,6 +53,7 @@ export const Footer = ({
         <ContactMeCTA
           backgroundImage={backgroundImage}
           backgroundColor={backgroundColor}
+          locale={locale}
         />
       )}
       <div className={styles.footer__container}>
@@ -53,6 +62,7 @@ export const Footer = ({
           <ContactMeCTA
             backgroundImage={backgroundImage}
             backgroundColor={backgroundColor}
+            locale={locale}
           />
         )}
         <nav aria-label="Páginas">

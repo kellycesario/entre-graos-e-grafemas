@@ -7,7 +7,7 @@ import { Button } from '@/atoms/Button'
 import { Animation } from '@/molecules/Animation'
 import styles from './styles.module.scss'
 
-interface ProjectsCTAProps {
+export interface ProjectsCTAProps {
   alt?: string
   image?: string
   title?: string

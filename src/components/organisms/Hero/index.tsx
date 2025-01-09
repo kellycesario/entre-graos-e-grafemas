@@ -8,11 +8,13 @@ import { Heading } from '@/atoms/Heading'
 import { Breadcrumb } from '@/atoms/Breadcrumb'
 import styles from './styles.module.scss'
 
-interface HeroProps {
+export interface HeroProps {
   title?: string
   text?: string
   video?: string
   hasBreadcrumb?: boolean
+  firstButtonLabel?: string
+  secondButtonLabel?: string
 }
 
 export const Hero = ({
@@ -20,6 +22,8 @@ export const Hero = ({
   text,
   video,
   hasBreadcrumb = true,
+  firstButtonLabel,
+  secondButtonLabel
 }: HeroProps) => {
   const pathname = usePathname()
 
@@ -49,7 +53,7 @@ export const Hero = ({
             iconSize={24}
             iconPosition="right"
             href="https://youtube.com/@arabiebezrihermont"
-            label="Meu canal no YouTube"
+            label={firstButtonLabel}
             variant="primary"
             isButton={false}
             useButtonStyle={true}
@@ -57,7 +61,7 @@ export const Hero = ({
           />
           <Button
             href={pathname === '/contato' ? '#Contact' : '/contato'}
-            label="Entre em contato"
+            label={secondButtonLabel}
             variant="secondary"
             isButton={false}
             useButtonStyle={true}

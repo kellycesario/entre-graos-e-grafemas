@@ -6,10 +6,15 @@ import { useEffect, useState } from 'react'
 import { IconMenu2, IconArrowRight, IconX } from '@tabler/icons-react'
 import { Logo } from '@/ions/Logo'
 import { Button } from '@/atoms/Button'
-import navigationItems from '@/data/navigation.json'
+import { NavigationItem } from '@/organisms/Footer'
 import styles from './styles.module.scss'
 
-export const Header = () => {
+interface HeaderProps {
+  locale: 'pt-BR' | 'en-US'
+  navigationItems: NavigationItem[]
+}
+
+export const Header = ({ locale, navigationItems }: HeaderProps) => {
   const pathname = usePathname()
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
   const [isNavVisible, setIsNavVisible] = useState<boolean>(false)
@@ -98,7 +103,7 @@ export const Header = () => {
                     hasIcon={true}
                     icon={IconArrowRight}
                     iconSize={24}
-                    label="Sobre mim"
+                    label={locale === 'pt-BR' ? 'Sobre mim' : 'About me'}
                     variant="primary"
                     isButton={false}
                     href="/sobre-mim"
@@ -106,7 +111,9 @@ export const Header = () => {
                   />
                   <Button
                     href="/contato"
-                    label="Entre em contato"
+                    label={
+                      locale === 'pt-BR' ? 'Entre em contato' : 'Contact me'
+                    }
                     variant="secondary"
                     isButton={false}
                     useButtonStyle={true}

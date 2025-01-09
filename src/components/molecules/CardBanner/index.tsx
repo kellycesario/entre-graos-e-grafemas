@@ -4,7 +4,7 @@ import { Icon as CustomIcon } from '@/ions/Icon'
 import { Button } from '@/atoms/Button'
 import styles from './styles.module.scss'
 
-interface CardProps {
+export interface CardProps {
   icon?: React.ComponentType<{
     color?: string
     size?: number | string

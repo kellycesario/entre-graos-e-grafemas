@@ -23,7 +23,7 @@
     justify-content: flex-start;
 
     nav {
-      width: -webkit-fill-available;
+      width: 100%;
     }
 
     a {
@@ -37,7 +37,7 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    width: -webkit-fill-available;
+    width: 100%;
 
     @include screen-size('desktop-md') {
       width: unset;

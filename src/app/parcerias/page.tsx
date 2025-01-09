@@ -1,17 +1,28 @@
+import { headers } from 'next/headers'
 import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { PartnersWrapper } from '@/organisms/PartnersWrapper'
 import { Footer } from '@/organisms/Footer'
+import { getLocale } from '@/utils/getLocale/getLocale'
+import { navigation, heroTranslations } from '@/data/translations/layout'
 
 export default async function Parcerias() {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+
+  const hero = heroTranslations[locale]
+  const navigationItems = navigation[locale]
+
   const partnerships = await getAllEntries('partner')
 
   return (
     <>
       <main>
         <Hero
-          title="Entre grãos e grafemas"
-          text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café"
+          title={hero.title}
+          text={hero.text}
+          firstButtonLabel={hero.firstButtonLabel}
+          secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-07.mp4"
           hasBreadcrumb={true}
         />
@@ -27,6 +38,7 @@ export default async function Parcerias() {
         hasCTA={true}
         backgroundImage="/images/coffee/3.png"
         backgroundColor="#8C4949"
+        navigationItems={navigationItems}
       />
     </>
   )

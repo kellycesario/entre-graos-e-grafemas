@@ -1,27 +1,50 @@
+import { headers } from 'next/headers'
 import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
 import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import { ProjectsCTA } from '@/organisms/ProjectsCTA'
 import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
 import { Footer } from '@/organisms/Footer'
+import { getLocale } from '@/utils/getLocale/getLocale'
+import {
+  recentVideosWrapperTranslations,
+  elincTranslations,
+  alegriaTranslations,
+  pesquisasTranslations,
+  cardBannerTranslations,
+} from '@/data/translations/homepage'
+import { navigation, heroTranslations } from '@/data/translations/layout'
 import styles from './homepage.module.scss'
 
 export default async function Home() {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+
+  const hero = heroTranslations[locale]
+  const videosWrapper = recentVideosWrapperTranslations[locale]
+  const elinc = elincTranslations[locale]
+  const alegria = alegriaTranslations[locale]
+  const pesquisas = pesquisasTranslations[locale]
+  const cardBannerData = cardBannerTranslations[locale]
+  const navigationItems = navigation[locale]
+
   const videos = await getAllEntries('video')
 
   return (
     <>
       <main className={styles.homepage}>
         <Hero
-          title="Entre grãos e grafemas"
-          text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café"
+          title={hero.title}
+          text={hero.text}
+          firstButtonLabel={hero.firstButtonLabel}
+          secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={false}
         />
         {videos?.length > 0 && (
           <RecentVideosWrapper
-            title="Fique por dentro:"
-            text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
+            title={videosWrapper.title}
+            text={videosWrapper.text}
             maxResults={2}
             videos={videos}
           />
@@ -29,19 +52,19 @@ export default async function Home() {
         <ProjectsCTA
           alt=""
           image="/images/books/2.jpg"
-          title="Conheça o projeto eLinC"
-          text="Mergulhe em uma jornada fascinante pelo universo da Linguística, em que teoria e prática se encontram para explorar a Gramática Gerativa e a Linguística Cognitiva de forma colaborativa e inovadora"
-          firstButtonLabel="Mais sobre o eLinC"
-          secondButtonLabel="Visite o site oficial"
+          title={elinc.title}
+          text={elinc.text}
+          firstButtonLabel={elinc.firstButtonLabel}
+          secondButtonLabel={elinc.secondButtonLabel}
           firstButtonHref="/elinc"
           secondButtonHref="https://www.elincpucminas.com/"
           direction="row-reverse"
         />
         <ProjectsCTA
-          title="Conheça o projeto Alegria"
-          text="O projeto promove a alfabetização e o letramento de adultos que possuem dificuldade de aprendizado"
-          firstButtonLabel="Mais sobre o Alegria"
-          secondButtonLabel="Alegria no PROEX da PUC Minas"
+          title={alegria.title}
+          text={alegria.text}
+          firstButtonLabel={alegria.firstButtonLabel}
+          secondButtonLabel={alegria.secondButtonLabel}
           firstButtonHref="/alegria"
           secondButtonHref="https://proex.pucminas.br/2022/11/07/alegria-aprendizagem-de-leitura-e-escrita-gerando-respeito-inclusao-e-autonomia/"
           direction="row"
@@ -50,19 +73,21 @@ export default async function Home() {
         <ProjectsCTA
           alt=""
           image="/images/research/1.webp"
-          title="Conheça mais pesquisas"
-          text="Embarque em um universo de estudos profundos sobre sintaxe, fonologia, léxico, morfologia e aquisição da linguagem"
-          firstButtonLabel="Mais sobre minhas pesquisas"
+          title={pesquisas.title}
+          text={pesquisas.text}
+          firstButtonLabel={pesquisas.firstButtonLabel}
           firstButtonHref="/pesquisas"
           secondButtonHref=""
           direction="row-reverse"
         />
-        <CardBannerWrapper />
+        <CardBannerWrapper cardData={cardBannerData} />
       </main>
       <Footer
         hasCTA={true}
         backgroundImage="/images/coffee/9.png"
         backgroundColor="#5C6B6B"
+        navigationItems={navigationItems}
+        locale={locale}
       />
     </>
   )

@@ -8,6 +8,7 @@ import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
+import { navigation, heroTranslations } from '@/data/translations/layout'
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
@@ -15,7 +16,10 @@ interface ArticleProject {
 
 export default async function Pesquisas() {
   const requestHeaders = headers()
-  const locale = getLocale(requestHeaders)
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+
+  const hero = heroTranslations[locale]
+  const navigationItems = navigation[locale]
 
   const articles = await getAllEntries('blogPost', 100, false, true, locale)
   const filteredArticles = articles.filter(
@@ -27,8 +31,10 @@ export default async function Pesquisas() {
     <>
       <main>
         <Hero
-          title="Entre grãos e grafemas"
-          text="Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café"
+          title={hero.title}
+          text={hero.text}
+          firstButtonLabel={hero.firstButtonLabel}
+          secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-02.mp4"
           hasBreadcrumb={true}
         />
@@ -54,7 +60,7 @@ export default async function Pesquisas() {
         />
         <MoreProjects />
       </main>
-      <Footer />
+      <Footer navigationItems={navigationItems} />
     </>
   )
 }

@@ -6,6 +6,7 @@ import { ArticleHero } from '@/organisms/ArticleHero'
 import { ArticleExpanded } from '@/organisms/ArticleExpanded'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
+import { navigation } from '@/data/translations/layout'
 
 interface ArticleProps {
   params: { slug: string }
@@ -16,7 +17,7 @@ export async function generateMetadata({
   params,
 }: ArticleProps): Promise<Metadata> {
   const requestHeaders = headers()
-  const locale = getLocale(requestHeaders)
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
   const article = await getArticle('blogPost', params.slug, 1, false, locale)
 
   return {
@@ -29,7 +30,9 @@ export async function generateMetadata({
 
 export default async function Article({ params }: Readonly<ArticleProps>) {
   const requestHeaders = headers()
-  const locale = getLocale(requestHeaders)
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+  const navigationItems = navigation[locale]
+
   const article = await getArticle('blogPost', params.slug, 1, false, locale)
   const items = article.contentCollection?.items || []
 
@@ -69,6 +72,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
         hasCTA={true}
         backgroundImage="/images/coffee/9.png"
         backgroundColor="#8c4949"
+        navigationItems={navigationItems}
       />
     </>
   )

@@ -23,7 +23,7 @@ export const Hero = ({
   video,
   hasBreadcrumb = true,
   firstButtonLabel,
-  secondButtonLabel
+  secondButtonLabel,
 }: HeroProps) => {
   const pathname = usePathname()
 

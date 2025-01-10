@@ -7,9 +7,19 @@ import styles from './styles.module.scss'
 
 interface SearchProps {
   mainColor?: string
+  placeholder?: string
+  ariaLabel?: string
+  buttonLabel?: string
+  clearButtonLabel?: string
 }
 
-export const Search = ({ mainColor }: SearchProps) => {
+export const Search = ({
+  mainColor,
+  placeholder,
+  ariaLabel,
+  buttonLabel,
+  clearButtonLabel,
+}: SearchProps) => {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const [searchTerm, setSearchTerm] = useState(searchParams.get('query') ?? '')
@@ -57,16 +67,16 @@ export const Search = ({ mainColor }: SearchProps) => {
         style={{ borderColor: mainColor }}
       >
         <input
-          placeholder="Cognição"
+          placeholder={placeholder}
           className={styles.search__input}
-          aria-label="Buscar artigo"
+          aria-label={ariaLabel}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
       <Button
         isButton={true}
-        label="Buscar"
+        label={buttonLabel}
         variant="secondary"
         hasIcon={true}
         icon={IconSearch}
@@ -77,7 +87,7 @@ export const Search = ({ mainColor }: SearchProps) => {
       {searchTerm && (
         <Button
           isButton={true}
-          label="Limpar"
+          label={clearButtonLabel}
           variant="tertiary"
           onClick={handleClearSearch}
         />

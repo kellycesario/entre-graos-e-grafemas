@@ -12,12 +12,16 @@ import { CardArticle, CardProps } from '@/molecules/CardArticle'
 import { Pagination } from '@/molecules/Pagination'
 import styles from './styles.module.scss'
 
-interface CardArticleWrapperProps {
+export interface CardArticleWrapperProps {
   title?: string
   text?: string
-  totalPages: number
-  articles: CardProps[]
+  totalPages?: number
+  articles?: CardProps[]
   mainColor?: string
+  placeholder?: string
+  ariaLabel?: string
+  buttonLabel?: string
+  clearButtonLabel?: string
 }
 
 export const CardArticleWrapper = ({
@@ -26,11 +30,15 @@ export const CardArticleWrapper = ({
   totalPages,
   articles,
   mainColor,
+  placeholder,
+  ariaLabel,
+  buttonLabel,
+  clearButtonLabel,
 }: CardArticleWrapperProps) => {
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('query')?.toLowerCase() ?? ''
 
-  const filteredArticles = articles.filter(
+  const filteredArticles = articles!.filter(
     (article) =>
       article.title?.toLowerCase().includes(searchQuery) ||
       article.description?.toLowerCase().includes(searchQuery) ||
@@ -84,7 +92,13 @@ export const CardArticleWrapper = ({
         </Text>
       </div>
 
-      <Search mainColor={mainColor} />
+      <Search
+        placeholder={placeholder}
+        aria-label={ariaLabel}
+        mainColor={mainColor}
+        buttonLabel={buttonLabel}
+        clearButtonLabel={clearButtonLabel}
+      />
 
       <div className={styles.cards__articles}>
         {paginatedData.map((article: CardProps, index) => (
@@ -100,9 +114,9 @@ export const CardArticleWrapper = ({
           />
         ))}
       </div>
-      {totalPages >= 1 && (
+      {totalPages! >= 1 && (
         <Pagination
-          totalPages={totalPages}
+          totalPages={totalPages!}
           currentPage={currentPage}
           onPageChange={handlePageChange}
           paginationColor={paginationColor}

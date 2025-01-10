@@ -4,24 +4,38 @@ import { usePathname } from 'next/navigation'
 import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import { CardCTA } from '@/molecules/CardCTA'
-import projects from '@/data/projects.json'
 import styles from './styles.module.scss'
 
-export const MoreProjects = () => {
+export interface ProjectItem {
+  projectName?: string
+  link?: string
+  image?: string
+}
+
+export interface MoreProjectsProps {
+  projectItems?: ProjectItem[]
+  title?: string
+  text?: string
+  cta?: string
+}
+
+export const MoreProjects = ({
+  projectItems,
+  title,
+  text,
+  cta,
+}: MoreProjectsProps) => {
   const pathname = usePathname()
 
   return (
     <section aria-labelledby="Demais projetos" className={styles.projects}>
       <Heading level="2" color="cordovan" weight="700" id="Demais projetos">
-        Entre um gole e outro
+        {title}
       </Heading>
-      <Text>
-        Enquanto você toma um café, continue a jornada pelos demais tópicos do
-        site
-      </Text>
+      <Text>{text}</Text>
 
       <div className={styles.projects__container}>
-        {projects
+        {projectItems!
           .filter(({ link }) => link !== pathname)
           .map(({ image, projectName, link }) => (
             <CardCTA
@@ -29,6 +43,7 @@ export const MoreProjects = () => {
               projectName={projectName}
               link={link}
               key={projectName}
+              cta={cta}
             />
           ))}
       </div>

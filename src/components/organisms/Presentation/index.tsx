@@ -7,8 +7,8 @@ import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import styles from './styles.module.scss'
 
-interface PresentationProps {
-  alt: string
+export interface PresentationProps {
+  alt?: string
   backgroundColor?: 'cordovan' | 'light-blue' | 'dim-gray'
   image?: string
   title?: string
@@ -62,7 +62,7 @@ export const Presentation = ({
       {image && (
         <Image
           src={image}
-          alt={alt}
+          alt={alt!}
           width={width}
           height={height}
           priority

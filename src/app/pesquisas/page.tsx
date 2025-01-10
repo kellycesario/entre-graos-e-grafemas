@@ -8,8 +8,16 @@ import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
-
+import {
+  navigation,
+  heroTranslations,
+  projectsListTranslations,
+  moreProjectsTranslations,
+} from '@/data/translations/layout'
+import {
+  presentationTranslations,
+  cardArticleTranslations,
+} from '@/data/translations/pesquisas'
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
 }
@@ -20,7 +28,10 @@ export default async function Pesquisas() {
 
   const hero = heroTranslations[locale]
   const navigationItems = navigation[locale]
-
+  const presentation = presentationTranslations[locale]
+  const cardArticle = cardArticleTranslations[locale]
+  const projectItems = projectsListTranslations[locale]
+  const moreProjects = moreProjectsTranslations[locale]
   const articles = await getAllEntries('blogPost', 100, false, true, locale)
   const filteredArticles = articles.filter(
     (article: ArticleProject) => article.project === 'pesquisas'
@@ -39,16 +50,20 @@ export default async function Pesquisas() {
           hasBreadcrumb={true}
         />
         <Presentation
-          backgroundColor="dim-gray"
-          title="Pesquisas"
-          text="Embarque no estudo aprofundado da sintaxe, morfologia, léxico, fonologia e outros campos da Linguística, explorando a organização das sentenças e formação de palavras, além da articulação dos sons da fala e da lingua, sua percepção e o impacto dessas estruturas nas várias modalidades de interação. Esses estudos são relacionados à cognicao e/ou à área de ensino. Além disso, há vários trabalhos relacionados à alfabetização em condições típicas e atípicas. Ao entender como essas disciplinas se inter-relacionam, é possível compreender como a linguagem é organizada mentalmente, influenciando o entendimento e a interação social."
+          title={presentation.title}
+          text={presentation.text}
+          alt={presentation.alt}
           image="/images/research/2.webp"
-          alt=""
+          backgroundColor="dim-gray"
         />
         <Suspense fallback={<div>Loading articles...</div>}>
           <CardArticleWrapper
-            title="Entre palavras e pensamentos"
-            text="Confira nossas pílulas sobre fonética, morfologia e muito mais"
+            title={cardArticle.title}
+            text={cardArticle.text}
+            ariaLabel={cardArticle.ariaLabel}
+            placeholder={cardArticle.placeholder}
+            buttonLabel={cardArticle.buttonLabel}
+            clearButtonLabel={cardArticle.clearButtonLabel}
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#5C6B6B"
@@ -58,7 +73,12 @@ export default async function Pesquisas() {
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#5C6B6B"
         />
-        <MoreProjects />
+        <MoreProjects
+          projectItems={projectItems}
+          title={moreProjects.title}
+          text={moreProjects.text}
+          cta={moreProjects.cta}
+        />
       </main>
       <Footer navigationItems={navigationItems} />
     </>

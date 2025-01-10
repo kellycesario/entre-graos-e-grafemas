@@ -8,7 +8,16 @@ import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
+import {
+  navigation,
+  heroTranslations,
+  projectsListTranslations,
+  moreProjectsTranslations,
+} from '@/data/translations/layout'
+import {
+  presentationTranslations,
+  cardArticleTranslations,
+} from '@/data/translations/alegria'
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
@@ -20,6 +29,10 @@ export default async function Alegria() {
 
   const hero = heroTranslations[locale]
   const navigationItems = navigation[locale]
+  const presentation = presentationTranslations[locale]
+  const cardArticle = cardArticleTranslations[locale]
+  const projectItems = projectsListTranslations[locale]
+  const moreProjects = moreProjectsTranslations[locale]
 
   const articles = await getAllEntries('blogPost', 100, false, true, locale)
   const filteredArticles = articles.filter(
@@ -39,16 +52,20 @@ export default async function Alegria() {
           hasBreadcrumb={true}
         />
         <Presentation
-          backgroundColor="light-blue"
-          title="Alegria"
-          text="O projeto Alegria - Aprendizagem de leitura e escrita, gerando respeito, inclusão e autonomia -, visa a promover a alfabetização e o letramento de adultos com deficiência intelectual. O principal objetivo é criar oportunidades de aprendizagem nas áreas de leitura, escrita e matemática. Baseado nos princípios de Paulo Freire e Emilia Ferreiro, o projeto busca desenvolver oficinas que estimulem a autonomia, a inclusão e o respeito, abordando temas sociais relevantes e promovendo a cidadania. As ações são conduzidas por docentes e discentes de cursos como Letras, Pedagogia, Matemática, entre outros."
+          title={presentation.title}
+          text={presentation.text}
+          alt={presentation.alt}
           image="/images/alegria/6.png"
-          alt=""
+          backgroundColor="light-blue"
         />
         <Suspense fallback={<div>Loading articles...</div>}>
           <CardArticleWrapper
-            title="Entre palavras e pensamentos"
-            text="Confira nossas pílulas sobre o projeto Alegria"
+            title={cardArticle.title}
+            text={cardArticle.text}
+            ariaLabel={cardArticle.ariaLabel}
+            placeholder={cardArticle.placeholder}
+            buttonLabel={cardArticle.buttonLabel}
+            clearButtonLabel={cardArticle.clearButtonLabel}
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#177F9C"
@@ -59,7 +76,12 @@ export default async function Alegria() {
           backgroundColor="#177F9C"
           locale={locale}
         />
-        <MoreProjects />
+        <MoreProjects
+          projectItems={projectItems}
+          title={moreProjects.title}
+          text={moreProjects.text}
+          cta={moreProjects.cta}
+        />
       </main>
       <Footer navigationItems={navigationItems} />
     </>

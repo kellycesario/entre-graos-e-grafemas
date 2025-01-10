@@ -8,7 +8,16 @@ import { ContactMeCTA } from '@/organisms/ContactMeCTA'
 import { MoreProjects } from '@/organisms/MoreProjects'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
+import {
+  navigation,
+  heroTranslations,
+  projectsListTranslations,
+  moreProjectsTranslations,
+} from '@/data/translations/layout'
+import {
+  presentationTranslations,
+  cardArticleTranslations,
+} from '@/data/translations/elinc'
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
@@ -20,6 +29,10 @@ export default async function Elinc() {
 
   const hero = heroTranslations[locale]
   const navigationItems = navigation[locale]
+  const presentation = presentationTranslations[locale]
+  const cardArticle = cardArticleTranslations[locale]
+  const projectItems = projectsListTranslations[locale]
+  const moreProjects = moreProjectsTranslations[locale]
 
   const articles = await getAllEntries('blogPost', 100, false, true, locale)
   const filteredArticles = articles.filter(
@@ -40,16 +53,20 @@ export default async function Elinc() {
           hasBreadcrumb={true}
         />
         <Presentation
-          backgroundColor="cordovan"
-          title="O eLinC"
-          text="O Grupo de Estudos em Linguagem e Cognição explora, de maneira colaborativa, construtos teóricos oriundos de diferentes abordagens da Linguística, como a Gramática Gerativa e a Linguística Cognitiva. O objetivo é promover uma compreensão aprofundada dos processos envolvidos na aquisição, produção, compreensão e interpretação da linguagem na modalidade oral ou escrita, investigando como as estruturas cognitivas influenciam e são influenciadas pela linguagem em suas diversas manifestações."
+          title={presentation.title}
+          text={presentation.text}
+          alt={presentation.alt}
           image="/images/books/2.jpg"
-          alt={''}
+          backgroundColor="cordovan"
         />
         <Suspense fallback={<div>Loading articles...</div>}>
           <CardArticleWrapper
-            title="Entre palavras e pensamentos"
-            text="Confira nossas pílulas sobre linguagem e cognição humana"
+            title={cardArticle.title}
+            text={cardArticle.text}
+            ariaLabel={cardArticle.ariaLabel}
+            placeholder={cardArticle.placeholder}
+            buttonLabel={cardArticle.buttonLabel}
+            clearButtonLabel={cardArticle.clearButtonLabel}
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#8C4949"
@@ -59,7 +76,12 @@ export default async function Elinc() {
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#8C4949"
         />
-        <MoreProjects />
+        <MoreProjects
+          projectItems={projectItems}
+          title={moreProjects.title}
+          text={moreProjects.text}
+          cta={moreProjects.cta}
+        />
       </main>
       <Footer navigationItems={navigationItems} />
     </>

@@ -1,7 +1,7 @@
-import { RecentVideosWrapperProps } from '@/organisms/RecentVideosWrapper'
-import { ProjectsCTAProps } from '@/organisms/ProjectsCTA'
 import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
+import { ProjectsCTAProps } from '@/organisms/ProjectsCTA'
 import { CardProps } from '@/molecules/CardBanner'
+import { RecentVideosWrapperProps } from '@/organisms/RecentVideosWrapper'
 
 export const recentVideosWrapperTranslations: Record<
   'pt-BR' | 'en-US',

@@ -1,9 +1,0 @@
-[
-  { "item": "Início", "href": "/" },
-  { "item": "eLinC", "href": "/elinc" },
-  { "item": "Alegria", "href": "/alegria" },
-  { "item": "Pesquisas", "href": "/pesquisas" },
-  { "item": "Parcerias", "href": "/parcerias" },
-  { "item": "Sobre mim", "href": "/sobre-mim" },
-  { "item": "Entre em contato", "href": "/contato" }
-]

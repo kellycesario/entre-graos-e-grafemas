@@ -9,7 +9,7 @@ export function getLocale(headers: Headers): string {
   } else if (allowedLocales.includes(locale)) {
     finalLocale = locale
   } else {
-    finalLocale = 'pt-BR'
+    finalLocale = 'en-US'
   }
 
   return finalLocale

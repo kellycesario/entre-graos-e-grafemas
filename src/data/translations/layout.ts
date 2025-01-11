@@ -13,7 +13,7 @@ export const navigation: Record<'pt-BR' | 'en-US', NavigationItem[]> = {
     { item: 'Entre em contato', href: '/contato' },
   ],
   'en-US': [
-    { item: 'Home', href: '/' },
+    { item: 'Homepage', href: '/' },
     { item: 'eLinC', href: '/elinc' },
     { item: 'Alegria', href: '/alegria' },
     { item: 'Research', href: '/pesquisas' },

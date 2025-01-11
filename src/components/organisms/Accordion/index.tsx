@@ -4,8 +4,8 @@ import { Heading } from '@/atoms/Heading'
 import { AccordionItem, AccordionItemProps } from '@/molecules/AccordionItem'
 import styles from './styles.module.scss'
 
-interface AccordionProps {
-  frequentlyAskedQuestions: AccordionItemProps[]
+export interface AccordionProps {
+  frequentlyAskedQuestions?: AccordionItemProps[]
   title?: string
 }
 

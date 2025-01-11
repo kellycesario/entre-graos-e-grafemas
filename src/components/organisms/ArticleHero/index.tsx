@@ -16,6 +16,7 @@ interface ArticleHeroProps {
   date?: string
   image?: string
   alt: string
+  locale: 'pt-BR' | 'en-US'
 }
 
 export const ArticleHero = ({
@@ -24,6 +25,7 @@ export const ArticleHero = ({
   date,
   image,
   alt,
+  locale,
 }: ArticleHeroProps) => {
   const pathname = usePathname()
 
@@ -39,8 +41,13 @@ export const ArticleHero = ({
     url: currentUrl,
   }
 
+  const shareMessage =
+    locale === 'pt-BR'
+      ? `Oi! 😊 Encontrei um artigo interessante que acho que você vai gostar de ler. Dê uma olhada: ${shareData.title} - ${shareData.url}`
+      : `Hi! 😊 I found an interesting article that I think you will enjoy reading. Check it out: ${shareData.title} - ${shareData.url}`
+
   const shareUrls = {
-    whatsapp: `https://api.whatsapp.com/send?text=${encodeURIComponent('Oi! 😊 Encontrei um artigo interessante que acho que você vai gostar de ler. Dê uma olhada: ' + shareData.title + ' - ' + shareData.url)}`,
+    whatsapp: `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`,
   }
 
   return (
@@ -65,7 +72,7 @@ export const ArticleHero = ({
         />
       </div>
       <div className={styles.hero__heading}>
-        <Breadcrumb pathname={pathname} />
+        <Breadcrumb pathname={pathname} locale={locale} />
         <Heading
           level="1"
           weight="800"
@@ -78,7 +85,9 @@ export const ArticleHero = ({
       <div className={styles.hero__infoContainer}>
         <div className={styles.hero__info}>
           <Text className={styles.hero__author} weight="700" color="gunmetal">
-            Escrito por {author}
+            {locale === 'pt-BR'
+              ? `Escrito por ${author}`
+              : `Written by ${author}`}
           </Text>
           <LocalIcon icon="line-02" width={1} height={40} />
           <Text color="gunmetal" align="right" className={styles.hero__date}>

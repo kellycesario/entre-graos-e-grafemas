@@ -29,10 +29,10 @@ interface Partner {
   }
 }
 
-interface PartnersWrapperProps {
+export interface PartnersWrapperProps {
   title?: string
   text?: string
-  partners: Partner[]
+  partners?: Partner[]
 }
 
 export const PartnersWrapper = ({
@@ -40,7 +40,7 @@ export const PartnersWrapper = ({
   text,
   partners,
 }: PartnersWrapperProps) => {
-  const groupedPartners = partners.reduce(
+  const groupedPartners = partners!.reduce(
     (acc, partner) => {
       const { category } = partner
       if (!acc[category]) {

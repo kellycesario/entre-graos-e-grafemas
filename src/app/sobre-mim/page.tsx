@@ -7,17 +7,19 @@ import { Curiosities } from '@/organisms/Curiosities'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
 import { navigation, heroTranslations } from '@/data/translations/layout'
+import { recentVideosWrapperTranslations } from '@/data/translations/sobre-mim'
 
 export default async function SobreMim() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 
   const hero = heroTranslations[locale]
+  const videosWrapper = recentVideosWrapperTranslations[locale]
   const navigationItems = navigation[locale]
 
   const curiosities = await getAllEntries('curiosity')
-  const videos = await getAllEntries('video')
-  const aboutMe = (await getEntry('aboutMe')) || {}
+  const videos = await getAllEntries('video', 5, false, false, locale)
+  const aboutMe = (await getEntry('aboutMe', 1, false, locale)) || {}
 
   return (
     <>
@@ -40,9 +42,9 @@ export default async function SobreMim() {
         )}
         {videos?.length > 0 && (
           <RecentVideosWrapper
-            title="Fique por dentro:"
-            text="Acompanhe o conteúdo mais recente postado em nosso canal do YouTube"
-            maxResults={2}
+            title={videosWrapper.title}
+            text={videosWrapper.text}
+            maxResults={5}
             videos={videos}
           />
         )}
@@ -53,6 +55,7 @@ export default async function SobreMim() {
         backgroundImage="/images/coffee/3.png"
         backgroundColor="#5C6B6B"
         navigationItems={navigationItems}
+        locale={locale}
       />
     </>
   )

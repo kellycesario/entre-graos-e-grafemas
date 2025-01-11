@@ -45,6 +45,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
           date={article.date}
           image={article.image?.url}
           alt={article.imageDescription}
+          locale={locale}
         />
 
         {items.map((item: any, index: number) => {
@@ -73,6 +74,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
         backgroundImage="/images/coffee/9.png"
         backgroundColor="#8c4949"
         navigationItems={navigationItems}
+        locale={locale}
       />
     </>
   )

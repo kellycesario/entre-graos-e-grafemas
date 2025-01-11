@@ -16,13 +16,15 @@ import { Heading } from '@/atoms/Heading'
 import { Button } from '@/atoms/Button'
 import { Input, FormData } from '@/molecules/Input'
 import { Textarea } from '@/molecules/Textarea'
+import { contactFormTranslations } from '@/data/translations/contato'
 import styles from './styles.module.scss'
 
 interface FormProps {
   title?: string
+  locale: 'pt-BR' | 'en-US'
 }
 
-export const Form = ({ title }: FormProps) => {
+export const Form = ({ title, locale }: FormProps) => {
   const formspreeCode = process.env.NEXT_PUBLIC_FORMSPREE_TOKEN ?? ''
   const [state, handleFormSubmit] = useFormspree(formspreeCode)
   const [modal2Open, setModal2Open] = useState(false)
@@ -61,52 +63,52 @@ export const Form = ({ title }: FormProps) => {
         color="cordovan"
         className={styles.form__title}
       >
-        {title}
+        {title ?? contactFormTranslations[locale].title}
       </Heading>
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form__fields}>
         <Input
-          label="Nome"
+          label={contactFormTranslations[locale].nome}
           icon={IconUser}
-          placeholder="Mary"
+          placeholder={contactFormTranslations[locale].placeholderNome}
           register={register}
           name="name"
         />
         <Input
-          label="Email"
+          label={contactFormTranslations[locale].email}
           icon={IconMail}
-          placeholder="mary@mail.com"
+          placeholder={contactFormTranslations[locale].placeholderEmail}
           register={register}
           name="email"
           required
-          requiredErrorMessage="Por favor, insira seu e-mail"
+          requiredErrorMessage={contactFormTranslations[locale].erroEmail}
           patternValue={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
-          patternMessage="Por favor, insira um e-mail válido"
+          patternMessage={contactFormTranslations[locale].erroEmailInvalido}
           error={errors.email?.message}
         />
         <Input
-          label="Telefone"
+          label={contactFormTranslations[locale].telefone}
           icon={IconPhone}
-          placeholder="+55 31 97777-7777"
+          placeholder={contactFormTranslations[locale].placeholderTelefone}
           register={register}
           name="phone"
         />
         <Input
-          label="Assunto"
+          label={contactFormTranslations[locale].assunto}
           icon={IconTableHeart}
-          placeholder="Colaboração em artigo"
+          placeholder={contactFormTranslations[locale].placeholderAssunto}
           register={register}
           name="subject"
         />
         <Textarea
-          label="Mensagem"
+          label={contactFormTranslations[locale].mensagem}
           icon={IconMessage}
-          placeholder="Colaboração em artigo"
+          placeholder={contactFormTranslations[locale].placeholderMensagem}
           register={register}
           name="message"
           className={styles.form__textarea}
           required
-          requiredErrorMessage="Por favor, insira uma mensagem"
+          requiredErrorMessage={contactFormTranslations[locale].erroMensagem}
           error={errors.message?.message}
         />
 
@@ -114,7 +116,7 @@ export const Form = ({ title }: FormProps) => {
           hasIcon={true}
           icon={IconArrowRight}
           isButton={true}
-          label="Enviar mensagem"
+          label={contactFormTranslations[locale].enviarMensagem}
           type="submit"
           variant="primary"
           className={styles.form__button}
@@ -122,7 +124,7 @@ export const Form = ({ title }: FormProps) => {
         />
 
         <Modal
-          title="Mensagem enviada com sucesso!"
+          title={contactFormTranslations[locale].sucessoMensagem}
           centered
           open={modal2Open}
           onOk={() => setModal2Open(false)}

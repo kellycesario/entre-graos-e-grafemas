@@ -6,15 +6,17 @@ import { Form } from '@/organisms/Form'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
 import { navigation, heroTranslations } from '@/data/translations/layout'
+import { faqTranslations } from '@/data/translations/contato'
 
 export default async function Contato() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 
   const hero = heroTranslations[locale]
+  const faq = faqTranslations[locale]
   const navigationItems = navigation[locale]
 
-  const questions = await getAllEntries('faq')
+  const questions = await getAllEntries('faq', 25, false, false, locale)
 
   return (
     <>
@@ -28,12 +30,9 @@ export default async function Contato() {
           hasBreadcrumb={true}
         />
         {questions?.length > 0 && (
-          <Accordion
-            title="Perguntas frequentes"
-            frequentlyAskedQuestions={questions}
-          />
+          <Accordion title={faq.title} frequentlyAskedQuestions={questions} />
         )}
-        <Form title="Ainda com dúvidas? Escreva-me!" />
+        <Form locale={locale} />
       </main>
       <Footer navigationItems={navigationItems} />
     </>

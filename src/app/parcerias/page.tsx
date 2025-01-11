@@ -5,15 +5,17 @@ import { PartnersWrapper } from '@/organisms/PartnersWrapper'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
 import { navigation, heroTranslations } from '@/data/translations/layout'
+import { partnersTranslations } from '@/data/translations/parcerias'
 
 export default async function Parcerias() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 
   const hero = heroTranslations[locale]
+  const partners = partnersTranslations[locale]
   const navigationItems = navigation[locale]
 
-  const partnerships = await getAllEntries('partner')
+  const partnerships = await getAllEntries('partner', 100, false, false, locale)
 
   return (
     <>
@@ -28,8 +30,8 @@ export default async function Parcerias() {
         />
         {partnerships?.length > 0 && (
           <PartnersWrapper
-            title="Parcerias que transformam"
-            text="A vida é mais rica quando dividimos uma xícara de café - porque compartilhar é o melhor ingrediente para nossos sucessos!"
+            title={partners.title}
+            text={partners.text}
             partners={partnerships}
           />
         )}
@@ -39,6 +41,7 @@ export default async function Parcerias() {
         backgroundImage="/images/coffee/3.png"
         backgroundColor="#8C4949"
         navigationItems={navigationItems}
+        locale={locale}
       />
     </>
   )

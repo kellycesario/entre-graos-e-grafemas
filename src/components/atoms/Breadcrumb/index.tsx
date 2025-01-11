@@ -9,12 +9,18 @@ export interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   pathname: string
+  locale: 'pt-BR' | 'en-US'
 }
 
-export const Breadcrumb = ({ pathname }: BreadcrumbProps) => {
+export const Breadcrumb = ({ pathname, locale }: BreadcrumbProps) => {
   const createBreadcrumbItems = (path: string) => {
     const segments = path.split('/').filter(Boolean)
-    const items: BreadcrumbItem[] = [{ label: 'Início', path: '/' }]
+    const items: BreadcrumbItem[] = [
+      {
+        label: locale === 'pt-BR' ? 'Início' : 'Homepage',
+        path: '/',
+      },
+    ]
 
     segments.forEach((segment, index) => {
       const label = segment.replace(/-/g, ' ')

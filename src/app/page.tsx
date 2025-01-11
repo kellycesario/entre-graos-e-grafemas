@@ -28,7 +28,7 @@ export default async function Home() {
   const cardBannerData = cardBannerTranslations[locale]
   const navigationItems = navigation[locale]
 
-  const videos = await getAllEntries('video')
+  const videos = await getAllEntries('video', 2, false, false, locale)
 
   return (
     <>

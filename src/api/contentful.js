@@ -154,7 +154,15 @@ export async function getArticle(
   }
 }
 
-export async function getEntry(contentType, limit = 1, isDraftMode = false) {
+export async function getEntry(
+  contentType,
+  limit = 1,
+  isDraftMode = false,
+  locale = 'pt-BR'
+) {
+  if (typeof window !== 'undefined') {
+    locale = navigator.language || 'pt-BR'
+  }
   try {
     const graphqlFields = await getGraphQLFields(contentType)
     const entry = await fetchGraphQL(
@@ -162,6 +170,7 @@ export async function getEntry(contentType, limit = 1, isDraftMode = false) {
         ${contentType}Collection(
           limit: ${limit},
           preview: ${isDraftMode ? 'true' : 'false'}
+          locale: "${locale}"
         ) {
           items {
             ${graphqlFields}

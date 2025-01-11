@@ -30,7 +30,7 @@ export const Hero = ({
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.hero__heading}>
-        {hasBreadcrumb && <Breadcrumb pathname={pathname} />}
+        {hasBreadcrumb && <Breadcrumb pathname={pathname} locale={'pt-BR'} />}
 
         <Heading
           align="left"

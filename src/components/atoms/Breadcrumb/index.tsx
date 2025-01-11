@@ -17,7 +17,7 @@ export const Breadcrumb = ({ pathname, locale }: BreadcrumbProps) => {
     const segments = path.split('/').filter(Boolean)
     const items: BreadcrumbItem[] = [
       {
-        label: locale === 'pt-BR' ? 'Início' : 'Homepage',
+        label: locale === 'pt-BR' ? 'Início' : 'Home',
         path: '/',
       },
     ]

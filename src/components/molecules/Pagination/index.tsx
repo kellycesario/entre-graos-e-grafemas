@@ -61,14 +61,15 @@ export const Pagination = ({
   }
 
   const getAriaLabel = (type: 'previous' | 'next') => {
+    const currentLocale = locale ?? 'en-US'
     if (type === 'previous') {
       return isPreviousDisabled
-        ? translations[locale!].noPrevious
-        : translations[locale!].previous
+        ? translations[currentLocale].noPrevious
+        : translations[currentLocale].previous
     }
     return isNextDisabled
-      ? translations[locale!].noNext
-      : translations[locale!].next
+      ? translations[currentLocale].noNext
+      : translations[currentLocale].next
   }
 
   return (

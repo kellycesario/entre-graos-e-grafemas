@@ -25,7 +25,7 @@ export const Footer = ({
   hasCTA,
   backgroundImage,
   backgroundColor,
-  navigationItems,
+  navigationItems = [],
   locale,
 }: FooterProps) => {
   const pathname = usePathname()

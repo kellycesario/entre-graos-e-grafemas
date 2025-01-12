@@ -72,7 +72,10 @@ export const Header = ({ locale, navigationItems }: HeaderProps) => {
             />
           )}
         </div>
-        <nav aria-label={locale === 'pt-BR' ? 'Páginas' : 'Pages'} className={styles.header__navigation}>
+        <nav
+          aria-label={locale === 'pt-BR' ? 'Páginas' : 'Pages'}
+          className={styles.header__navigation}
+        >
           {(!isMobileScreen || isNavVisible) && (
             <>
               <ul className={styles.header__list}>

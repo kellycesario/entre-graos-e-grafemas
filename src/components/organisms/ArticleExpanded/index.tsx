@@ -15,7 +15,7 @@ export const ArticleExpanded = ({
   imagesV2,
   hasImagesV1,
   hasImagesV2,
-  locale
+  locale,
 }: ArticleExpandedProps) => {
   return (
     <RichText

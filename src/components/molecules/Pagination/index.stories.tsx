@@ -1,4 +1,5 @@
 import { Pagination } from './index'
+import { disableTable } from '@/storybook-docs/argTypes'
 
 export default {
   title: 'Molecules/Pagination',
@@ -6,6 +7,12 @@ export default {
   args: {
     totalPages: 6,
     currentPage: 3,
+    locale: 'pt-BR',
+  },
+  argTypes: {
+    locale: {
+      ...disableTable,
+    },
   },
 }
 

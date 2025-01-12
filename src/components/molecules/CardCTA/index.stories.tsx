@@ -11,6 +11,7 @@ export default {
     image: '/images/books/1.webp',
     projectName: 'eLinC',
     link: '',
+    cta: 'Cognition',
   },
   argTypes: {
     link: {

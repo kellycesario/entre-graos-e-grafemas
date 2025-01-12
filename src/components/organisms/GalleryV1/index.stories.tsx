@@ -17,6 +17,9 @@ export default {
     images: {
       ...disableTable,
     },
+    locale: {
+      ...disableTable,
+    },
   },
 }
 

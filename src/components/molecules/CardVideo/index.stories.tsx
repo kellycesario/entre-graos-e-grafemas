@@ -9,7 +9,7 @@ export default {
     layout: 'centered',
   },
   args: {
-    image: '/images/books/1.webp',
+    image: { url: '/images/books/1.webp' },
     tag: 'eLinC',
     title:
       "I'm sorry, this directory is encryptedPlease, enter your cipher to continue",
@@ -20,6 +20,9 @@ export default {
       ...disableTable,
     },
     className: {
+      ...disableTable,
+    },
+    image: {
       ...disableTable,
     },
   },

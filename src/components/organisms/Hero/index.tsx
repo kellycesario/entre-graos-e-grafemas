@@ -28,7 +28,7 @@ export const Hero = ({
   locale,
 }: HeroProps) => {
   const pathname = usePathname()
-  const contactLink = locale === 'en-US' ? '/contact-me' : '/contato'
+  const contactLink = locale === 'pt-BR' ? '/contato' : '/contact-me'
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">

@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import { IconArrowRight } from '@tabler/icons-react'
 import { Icon as CustomIcon } from '@/ions/Icon'
 import { Button } from '@/atoms/Button'
@@ -29,8 +28,6 @@ export const CardBanner = ({
   backgroundColor,
   iconColor,
 }: CardProps) => {
-  const id = uuidv4()
-
   const cardStyle = [styles.card, styles[`card--${backgroundColor}`]].join(' ')
 
   const titleStyle = [
@@ -39,11 +36,11 @@ export const CardBanner = ({
   ].join(' ')
 
   return (
-    <article aria-labelledby={id} className={cardStyle}>
+    <article aria-labelledby={title} className={cardStyle}>
       <div aria-hidden="true" className={styles.card__icon}>
         {Icon && <CustomIcon Icon={Icon} color="#FFFFFF" size={24} />}
       </div>
-      <p id={id} className={titleStyle}>
+      <p id={title} className={titleStyle}>
         {title}
       </p>
       <Button

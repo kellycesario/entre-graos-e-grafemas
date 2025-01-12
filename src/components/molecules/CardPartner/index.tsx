@@ -39,8 +39,6 @@ export const CardPartner = ({
   imageDescription,
   socialNetwork,
 }: CardProps) => {
-  const id = uuidv4()
-
   const iconsToRender = socialNetwork?.map(({ icon, link }) => {
     if (icon === 'ResearchGate') {
       return (
@@ -83,7 +81,7 @@ export const CardPartner = ({
   })
 
   return (
-    <article className={styles.card} aria-labelledby={id}>
+    <article className={styles.card} aria-labelledby={name}>
       {image && (
         <ImageWrapper
           image={image}
@@ -95,7 +93,7 @@ export const CardPartner = ({
       )}
       <div className={styles.card__container}>
         <div className={styles.card__heading}>
-          <p className={styles.card__name} id={id}>
+          <p className={styles.card__name} id={name}>
             {name}
           </p>
           <p className={styles.card__role}>{role}</p>

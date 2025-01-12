@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { v4 as uuidv4 } from 'uuid'
 import { IconArrowRight } from '@tabler/icons-react'
 import { Text } from '@/atoms/Text'
 import { Heading } from '@/atoms/Heading'
@@ -32,17 +31,21 @@ export const ProjectsCTA = ({
   direction = 'row-reverse',
   hasAnimation = false,
 }: ProjectsCTAProps) => {
-  const id = uuidv4()
-
   const CTAStyle = [
     styles.projectsCTA,
     styles[`projectsCTA--${direction}`],
   ].join(' ')
 
   return (
-    <section className={CTAStyle} aria-labelledby={id}>
+    <section className={CTAStyle} aria-labelledby={title}>
       <div className={styles.projectsCTA__heading}>
-        <Heading align="left" color="cordovan" level="2" weight="700" id={id}>
+        <Heading
+          align="left"
+          color="cordovan"
+          level="2"
+          weight="700"
+          id={title}
+        >
           {title}
         </Heading>
         <Text>{text}</Text>

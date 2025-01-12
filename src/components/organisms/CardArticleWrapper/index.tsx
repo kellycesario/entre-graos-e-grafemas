@@ -2,7 +2,6 @@
 
 import { useSearchParams, usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import { IconBrain, IconBooks, IconLayoutGridAdd } from '@tabler/icons-react'
 import { Icon as CustomIcon } from '@/ions/Icon'
 import { Heading } from '@/atoms/Heading'
@@ -10,6 +9,7 @@ import { Text } from '@/atoms/Text'
 import { Search } from '@/molecules/Search'
 import { CardArticle, CardProps } from '@/molecules/CardArticle'
 import { Pagination } from '@/molecules/Pagination'
+
 import styles from './styles.module.scss'
 
 export interface CardArticleWrapperProps {
@@ -57,8 +57,6 @@ export const CardArticleWrapper = ({
     setCurrentPage(page)
   }
 
-  const id = uuidv4()
-
   const pathname = usePathname()
 
   let dynamicIcon = null
@@ -76,9 +74,9 @@ export const CardArticleWrapper = ({
   }
 
   return (
-    <section className={styles.cards} aria-labelledby={id}>
+    <section className={styles.cards} aria-labelledby={title}>
       <div className={styles.cards__heading}>
-        <Heading color="cordovan" level="2" weight="700" id={id}>
+        <Heading color="cordovan" level="2" weight="700" id={title}>
           {title}
         </Heading>
         <Text>

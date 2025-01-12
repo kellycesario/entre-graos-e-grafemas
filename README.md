@@ -1,6 +1,11 @@
-# Projeto Next.js 13 com App Router, SCSS, Storybook, Contentful e Vercel
+# Entre Grãos e Grafemas
 
-Este projeto é uma aplicação **Next.js 13** utilizando o **App Router**, **SCSS** para estilização, **Storybook** para documentação e testes de componentes, **Contentful** como CMS e **Vercel** para hospedagem.
+Este projeto é uma aplicação **Next.js** utilizando o **App Router**, **SCSS** para estilização, **Storybook** para documentação e testes de componentes, **Contentful** como CMS e **Vercel** para hospedagem.
+
+## Em produção
+
+- [Site oficial](https://arabie-bezri-hermont.vercel.app/)
+- [Storybook](https://entre-graos-e-grafemas-storybook.vercel.app)
 
 ## Tecnologias Utilizadas
 

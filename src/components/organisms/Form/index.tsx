@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useForm as useFormspree } from '@formspree/react'
 import { Modal } from 'antd'
@@ -47,12 +47,14 @@ export const Form = ({ title, locale }: FormProps) => {
       message: data.message,
     }
     handleFormSubmit(formData)
+  }
 
+  useEffect(() => {
     if (state.succeeded) {
       reset()
       setModal2Open(true)
     }
-  }
+  }, [state.succeeded, reset])
 
   return (
     <section className={styles.form} aria-labelledby="Contact">

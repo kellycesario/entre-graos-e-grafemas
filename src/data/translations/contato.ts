@@ -23,7 +23,7 @@ export const contactFormTranslations: Record<
     placeholderMensagem: 'Escreva sua mensagem aqui',
   },
   'en-US': {
-    title: 'Still have questions? Write to me!',
+    title: 'Do you still have questions? Write to me!',
     nome: 'Name',
     email: 'Email',
     telefone: 'Phone',

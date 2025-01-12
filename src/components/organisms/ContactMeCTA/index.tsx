@@ -51,7 +51,7 @@ export const ContactMeCTA = ({
         variant="secondary"
         secondaryColor="#FFFFFF"
         useButtonStyle={true}
-        label={locale === 'pt-BR' ? 'Entre em contato' : 'Contact me'}
+        label={locale === 'pt-BR' ? 'Entre em contato' : 'Get in Touch'}
         className={styles.contactMe__button}
       />
       <LocalIcon

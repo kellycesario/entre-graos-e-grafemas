@@ -13,6 +13,7 @@ export interface RecentVideosWrapperProps {
   text?: string
   videos?: CardProps[]
   maxResults?: number
+  buttonLabel?: string
 }
 
 export const RecentVideosWrapper = ({
@@ -20,6 +21,7 @@ export const RecentVideosWrapper = ({
   title,
   text,
   maxResults = 5,
+  buttonLabel
 }: RecentVideosWrapperProps) => {
   return (
     <section aria-labelledby="videos" className={styles.recentVideos}>
@@ -61,7 +63,7 @@ export const RecentVideosWrapper = ({
           iconColor="#FFFFFF"
           iconSize={24}
           secondaryColor="#FFF"
-          label="Acesse o canal"
+          label={buttonLabel}
           href="https://youtube.com/@arabiebezrihermont"
           target="_blank"
           isButton={false}

@@ -6,7 +6,7 @@ export const presentationTranslations: Record<
   PresentationProps
 > = {
   'pt-BR': {
-    title: 'O eLinC:',
+    title: 'eLinC',
     text: 'O Grupo de Estudos em Linguagem e Cognição explora, de maneira colaborativa, construtos teóricos oriundos de diferentes abordagens da Linguística, como a Gramática Gerativa e a Linguística Cognitiva. O objetivo é promover uma compreensão aprofundada dos processos envolvidos na aquisição, produção, compreensão e interpretação da linguagem na modalidade oral ou escrita, investigando como as estruturas cognitivas influenciam e são influenciadas pela linguagem em suas diversas manifestações.',
     alt: '',
   },

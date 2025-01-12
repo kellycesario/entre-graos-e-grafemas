@@ -48,6 +48,7 @@ export default async function SobreMim() {
             text={videosWrapper.text}
             maxResults={5}
             videos={videos}
+            buttonLabel={videosWrapper.buttonLabel}
           />
         )}
         {curiosities?.length > 0 && (

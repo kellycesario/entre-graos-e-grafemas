@@ -19,7 +19,7 @@ export const navigation: Record<'pt-BR' | 'en-US', NavigationItem[]> = {
     { item: 'Research', href: '/research' },
     { item: 'Partnerships', href: '/partnerships' },
     { item: 'About me', href: '/about-me' },
-    { item: 'Contact', href: '/contact-me' },
+    { item: 'Get in Touch', href: '/contact-me' },
   ],
 }
 
@@ -31,7 +31,7 @@ export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
     secondButtonLabel: 'Entre em contato',
   },
   'en-US': {
-    title: 'Between the brew and the word',
+    title: 'Between the brew and words',
     text: 'Join me through the interfaces of linguistics and savor each of its branches with a coffee',
     firstButtonLabel: 'My YouTube channel',
     secondButtonLabel: 'Get in Touch',

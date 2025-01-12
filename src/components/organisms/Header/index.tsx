@@ -115,7 +115,7 @@ export const Header = ({ locale, navigationItems }: HeaderProps) => {
                   <Button
                     href={locale === 'pt-BR' ? '/contato' : '/contact-me'}
                     label={
-                      locale === 'pt-BR' ? 'Entre em contato' : 'Contact me'
+                      locale === 'pt-BR' ? 'Entre em contato' : 'Get in Touch'
                     }
                     variant="secondary"
                     isButton={false}

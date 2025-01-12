@@ -12,19 +12,19 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#8c4949',
     icons: [
       {
-        src: '/pwa/pwa-p.png',
+        src: '/images/pwa/pwa-p.png',
         sizes: '144x144',
         type: 'image/png',
         purpose: 'any',
       },
       {
-        src: '/pwa/pwa-m.png',
+        src: '/images/pwa/pwa-m.png',
         sizes: '256x256',
         type: 'image/png',
         purpose: 'maskable',
       },
       {
-        src: '/pwa/pwa-g.png',
+        src: '/images/pwa/pwa-g.png',
         sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable',

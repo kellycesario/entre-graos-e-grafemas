@@ -15,7 +15,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Entre grãos e grafemas',
+  title: 'Entre grãos e grafemas por Arabie Bezri Hermont',
   description:
     'Um blog, escrito por Arabie Bezri Hermont, dedicado ao estudo da Linguística, com artigos e reflexões sobre aquisição de linguagem, sintaxe, fonética, fonologia e outros temas essenciais para entender os fenômenos da linguagem humana.',
   authors: [{ name: 'Arabie Bezri Hermont' }],

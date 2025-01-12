@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: 'https://arabie-bezri-hermont.vercel.app/',
     images: [
       {
-        url: './thumb.png',
+        url: '/images/thumb.png',
         alt: '',
       },
     ],

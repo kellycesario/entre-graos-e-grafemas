@@ -13,3 +13,27 @@ export const partnersTranslations: Record<
     text: 'Life is richer when we share a cup of coffee – because sharing is the best ingredient for our success!',
   },
 }
+
+export const partnersCategories: Record<
+  'pt-BR' | 'en-US',
+  Record<string, string>
+> = {
+  'pt-BR': {
+    Colegas: 'Colegas',
+    Empresas: 'Empresas',
+    'Ex-orientandos': 'Ex-orientandos',
+    'Grupos de pesquisa': 'Grupos de pesquisa',
+    'Organizações não Governamentais': 'Organizações não Governamentais',
+    Orientandos: 'Orientandos',
+    Universidades: 'Universidades',
+  },
+  'en-US': {
+    Colegas: 'Colleagues',
+    Empresas: 'Companies',
+    'Ex-orientandos': 'Ex-students',
+    'Grupos de pesquisa': 'Research Groups',
+    'Organizações não Governamentais': 'Non-Governmental Organizations',
+    Orientandos: 'Students',
+    Universidades: 'Universities',
+  },
+}

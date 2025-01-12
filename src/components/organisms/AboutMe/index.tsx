@@ -10,6 +10,7 @@ interface AboutMeProps {
   image: string
   imageDescription: string
   content: any
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const AboutMe = ({
@@ -17,6 +18,7 @@ export const AboutMe = ({
   image,
   imageDescription,
   content,
+  locale,
 }: AboutMeProps) => {
   return (
     <section className={styles.about}>
@@ -45,6 +47,7 @@ export const AboutMe = ({
           imagesV2={[]}
           hasImagesV1={false}
           hasImagesV2={false}
+          locale={locale}
         />
       </div>
     </section>

@@ -10,6 +10,7 @@ interface RichTextProps {
   imagesV2: any[]
   hasImagesV1?: boolean
   hasImagesV2?: boolean
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const RichText = ({
@@ -19,6 +20,7 @@ export const RichText = ({
   imagesV2,
   hasImagesV1,
   hasImagesV2,
+  locale,
 }: RichTextProps) => {
   const richTextStyle = [styles.richText, className].join(' ')
 
@@ -28,8 +30,12 @@ export const RichText = ({
         {documentToReactComponents(content.json)}
       </div>
 
-      {hasImagesV1 && <GalleryV1 images={imagesV1} hasImages={hasImagesV1} />}
-      {hasImagesV2 && <GalleryV2 images={imagesV2} hasImages={hasImagesV2} />}
+      {hasImagesV1 && (
+        <GalleryV1 images={imagesV1} hasImages={hasImagesV1} locale={locale} />
+      )}
+      {hasImagesV2 && (
+        <GalleryV2 images={imagesV2} hasImages={hasImagesV2} locale={locale} />
+      )}
     </div>
   )
 }

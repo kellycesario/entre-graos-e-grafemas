@@ -40,6 +40,7 @@ export default async function Home() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-05.mp4"
           hasBreadcrumb={false}
+          locale={locale}
         />
         {videos?.length > 0 && (
           <RecentVideosWrapper
@@ -76,7 +77,7 @@ export default async function Home() {
           title={pesquisas.title}
           text={pesquisas.text}
           firstButtonLabel={pesquisas.firstButtonLabel}
-          firstButtonHref="/pesquisas"
+          firstButtonHref={locale === 'pt-BR' ? '/pesquisas' : '/research'}
           secondButtonHref=""
           direction="row-reverse"
         />

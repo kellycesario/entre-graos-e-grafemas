@@ -7,11 +7,13 @@ import styles from './styles.module.scss'
 export interface AccordionProps {
   frequentlyAskedQuestions?: AccordionItemProps[]
   title?: string
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const Accordion = ({
   title,
   frequentlyAskedQuestions = [],
+  locale,
 }: AccordionProps) => {
   return (
     <section
@@ -37,6 +39,7 @@ export const Accordion = ({
                 question={accordion.question}
                 answer={accordion.answer}
                 number={number}
+                locale={locale}
               />
             )
           }

@@ -2,7 +2,11 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { LocalIcon } from '@/ions/LocalIcon'
 
-export const Logo = () => {
+interface LogoProps {
+  locale?: 'pt-BR' | 'en-US'
+}
+
+export const Logo = ({ locale = 'pt-BR' }: LogoProps) => {
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(false)
 
   useEffect(() => {
@@ -21,8 +25,10 @@ export const Logo = () => {
     }
   }, [])
 
+  const ariaLabel = locale === 'pt-BR' ? 'Início' : 'Homepage'
+
   return (
-    <Link href="/" aria-label="Início">
+    <Link href="/" aria-label={ariaLabel}>
       {isMobileScreen ? (
         <LocalIcon icon="logo-mobile" width={106} height={34} />
       ) : (

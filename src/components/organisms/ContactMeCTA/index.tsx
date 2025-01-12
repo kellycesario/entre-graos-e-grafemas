@@ -46,7 +46,7 @@ export const ContactMeCTA = ({
         iconColor="#FFFFFF"
         iconSize={24}
         iconPosition="right"
-        href="/contato"
+        href={locale === 'pt-BR' ? '/contato' : '/contact-me'}
         isButton={false}
         variant="secondary"
         secondaryColor="#FFFFFF"

@@ -14,9 +14,10 @@ export interface Image {
 interface GalleryProps {
   images: Image[]
   hasImages?: boolean
+  locale?: 'pt-BR' | 'en-US'
 }
 
-export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
+export const GalleryV2 = ({ images, hasImages, locale }: GalleryProps) => {
   const [visibleImages, setVisibleImages] = useState(5)
 
   const loadMoreImages = () => {
@@ -24,8 +25,13 @@ export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
   }
   if (!hasImages) return null
 
+  const ariaLabel = locale === 'pt-BR' ? 'Galeria de imagens' : 'Images gallery'
+
+  const loadMoreText =
+    locale === 'pt-BR' ? 'Carregar mais imagens' : 'Load more images'
+
   return (
-    <section className={styles.gallery} aria-label="">
+    <section className={styles.gallery} aria-label={ariaLabel}>
       {images.slice(0, visibleImages).map((image, index) => (
         <ImageWrapper
           key={uuidv4()}
@@ -38,7 +44,7 @@ export const GalleryV2 = ({ images, hasImages }: GalleryProps) => {
       ))}
       {visibleImages < images.length && (
         <Button
-          label="Carregar mais imagens"
+          label={loadMoreText}
           variant="primary"
           onClick={loadMoreImages}
         />

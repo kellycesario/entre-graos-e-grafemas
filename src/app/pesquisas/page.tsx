@@ -48,6 +48,7 @@ export default async function Pesquisas() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-02.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         <Presentation
           title={presentation.title}
@@ -67,11 +68,13 @@ export default async function Pesquisas() {
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#5C6B6B"
+            locale={locale}
           />
         </Suspense>
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#5C6B6B"
+          locale={locale}
         />
         <MoreProjects
           projectItems={projectItems}

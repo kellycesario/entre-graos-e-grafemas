@@ -31,6 +31,7 @@ export default async function SobreMim() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-06.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         {aboutMe?.title && aboutMe?.content && (
           <AboutMe
@@ -38,6 +39,7 @@ export default async function SobreMim() {
             image={aboutMe?.image?.image ? aboutMe.image.image.url : null}
             imageDescription={aboutMe?.image?.imageDescription}
             content={aboutMe?.content}
+            locale={locale}
           />
         )}
         {videos?.length > 0 && (
@@ -48,7 +50,9 @@ export default async function SobreMim() {
             videos={videos}
           />
         )}
-        {curiosities?.length > 0 && <Curiosities curiosities={curiosities} />}
+        {curiosities?.length > 0 && (
+          <Curiosities curiosities={curiosities} locale={locale} />
+        )}
       </main>
       <Footer
         hasCTA={true}

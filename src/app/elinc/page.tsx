@@ -51,6 +51,7 @@ export default async function Elinc() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         <Presentation
           title={presentation.title}
@@ -70,11 +71,13 @@ export default async function Elinc() {
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#8C4949"
+            locale={locale}
           />
         </Suspense>
         <ContactMeCTA
           backgroundImage="/images/coffee/3.png"
           backgroundColor="#8C4949"
+          locale={locale}
         />
         <MoreProjects
           projectItems={projectItems}

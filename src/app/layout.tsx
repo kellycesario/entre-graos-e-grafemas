@@ -30,7 +30,7 @@ export default function RootLayout({
   const navigationItems = navigation[locale]
 
   return (
-    <html lang="pt-BR">
+    <html lang={locale}>
       <body className={poppins.className}>
         <Header locale={locale} navigationItems={navigationItems} />
         {children}

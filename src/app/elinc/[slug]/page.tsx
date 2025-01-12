@@ -64,6 +64,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
                 imagesV2={imagesV2}
                 hasImagesV1={hasImages(item.gallery)}
                 hasImagesV2={hasImages(item.gallery)}
+                locale={locale}
               />
             </section>
           )

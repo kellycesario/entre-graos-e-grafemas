@@ -35,10 +35,10 @@
   }
 
   &__item {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 
     @include screen-size('desktop-md') {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 

@@ -16,13 +16,16 @@ export interface Image {
 interface GalleryProps {
   images: Image[]
   hasImages?: boolean
+  locale?: 'pt-BR' | 'en-US'
 }
 
-export const GalleryV1 = ({ images, hasImages }: GalleryProps) => {
+export const GalleryV1 = ({ images, hasImages, locale }: GalleryProps) => {
+  const ariaLabel = locale === 'pt-BR' ? 'Galeria de imagens' : 'Images gallery'
+
   const id = uuidv4()
   if (!hasImages) return null
   return (
-    <section className={styles.gallery} aria-labelledby={id}>
+    <section className={styles.gallery} aria-label={ariaLabel}>
       <Swiper
         style={
           {

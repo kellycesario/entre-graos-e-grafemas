@@ -16,10 +16,10 @@ export const navigation: Record<'pt-BR' | 'en-US', NavigationItem[]> = {
     { item: 'Home', href: '/' },
     { item: 'eLinC', href: '/elinc' },
     { item: 'Alegria', href: '/alegria' },
-    { item: 'Research', href: '/pesquisas' },
-    { item: 'Partnerships', href: '/parcerias' },
-    { item: 'About me', href: '/sobre-mim' },
-    { item: 'Contact', href: '/contato' },
+    { item: 'Research', href: '/research' },
+    { item: 'Partnerships', href: '/partnerships' },
+    { item: 'About me', href: '/about-me' },
+    { item: 'Contact', href: '/contact-me' },
   ],
 }
 
@@ -74,17 +74,17 @@ export const projectsListTranslations: Record<
     },
     {
       projectName: 'My research',
-      link: '/pesquisas',
+      link: '/research',
       image: '/images/research/2.webp',
     },
     {
       projectName: 'A little bit more about me',
-      link: '/sobre-mim',
+      link: '/about-me',
       image: '/images/about/1.webp',
     },
     {
       projectName: 'Partnerships',
-      link: '/parcerias',
+      link: '/partnerships',
       image: '/images/partnership/1.webp',
     },
   ],

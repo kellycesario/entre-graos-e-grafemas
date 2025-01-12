@@ -7,12 +7,14 @@ export interface AccordionItemProps {
   question?: string
   answer?: string
   number?: string | number
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const AccordionItem = ({
   question,
   answer,
   number,
+  locale,
 }: AccordionItemProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -39,6 +41,7 @@ export const AccordionItem = ({
         className={styles.accordion__answer}
         imagesV1={[]}
         imagesV2={[]}
+        locale={locale}
       />
     </details>
   )

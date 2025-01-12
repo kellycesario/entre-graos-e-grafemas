@@ -6,9 +6,10 @@ import styles from './styles.module.scss'
 
 interface CuriositiesProps {
   curiosities: CuriosityItemProps[]
+  locale?: 'pt-BR' | 'en-US'
 }
 
-export const Curiosities = ({ curiosities }: CuriositiesProps) => {
+export const Curiosities = ({ curiosities, locale }: CuriositiesProps) => {
   return (
     <section className={styles.curiosities}>
       <article className={styles.curiosities__headings}>
@@ -22,6 +23,7 @@ export const Curiosities = ({ curiosities }: CuriositiesProps) => {
             key={curiosity.topic}
             topic={curiosity.topic}
             description={curiosity.description}
+            locale={locale}
           />
         ))}
       </article>

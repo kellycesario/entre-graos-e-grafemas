@@ -54,7 +54,7 @@ export const Header = ({ locale, navigationItems }: HeaderProps) => {
         className={`${styles.header} ${isNavVisible ? styles.header__open : ''}`}
       >
         <div className={styles.header__icons}>
-          <Logo />
+          <Logo locale={locale} />
           {isMobileScreen && isNavVisible && (
             <IconX
               stroke={2}
@@ -72,7 +72,7 @@ export const Header = ({ locale, navigationItems }: HeaderProps) => {
             />
           )}
         </div>
-        <nav aria-label="Páginas" className={styles.header__navigation}>
+        <nav aria-label={locale === 'pt-BR' ? 'Páginas' : 'Pages'} className={styles.header__navigation}>
           {(!isMobileScreen || isNavVisible) && (
             <>
               <ul className={styles.header__list}>
@@ -106,11 +106,11 @@ export const Header = ({ locale, navigationItems }: HeaderProps) => {
                     label={locale === 'pt-BR' ? 'Sobre mim' : 'About me'}
                     variant="primary"
                     isButton={false}
-                    href="/sobre-mim"
+                    href={locale === 'pt-BR' ? '/sobre-mim' : '/about-me'}
                     useButtonStyle={true}
                   />
                   <Button
-                    href="/contato"
+                    href={locale === 'pt-BR' ? '/contato' : '/contact-me'}
                     label={
                       locale === 'pt-BR' ? 'Entre em contato' : 'Contact me'
                     }

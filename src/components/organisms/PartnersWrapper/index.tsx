@@ -9,6 +9,7 @@ import { Heading } from '@/atoms/Heading'
 import { Text } from '@/atoms/Text'
 import { CardPartner } from '@/molecules/CardPartner'
 import styles from './styles.module.scss'
+import { partnersCategories } from '@/data/translations/parcerias'
 
 interface SocialNetwork {
   icon: string
@@ -33,13 +34,21 @@ export interface PartnersWrapperProps {
   title?: string
   text?: string
   partners?: Partner[]
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const PartnersWrapper = ({
   title,
   text,
   partners,
+  locale,
 }: PartnersWrapperProps) => {
+  const currentLanguage = locale
+
+  const getCategoryTranslation = (category: string): string => {
+    return partnersCategories[currentLanguage!]?.[category] || category
+  }
+
   const groupedPartners = partners!.reduce(
     (acc, partner) => {
       const { category } = partner
@@ -106,7 +115,7 @@ export const PartnersWrapper = ({
               className={styles.partners__category}
               id="Category"
             >
-              {category}
+              {getCategoryTranslation(category)}
             </Heading>
 
             <div>

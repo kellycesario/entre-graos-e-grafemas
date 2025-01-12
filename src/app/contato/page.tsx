@@ -28,9 +28,14 @@ export default async function Contato() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-04.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         {questions?.length > 0 && (
-          <Accordion title={faq.title} frequentlyAskedQuestions={questions} />
+          <Accordion
+            title={faq.title}
+            frequentlyAskedQuestions={questions}
+            locale={locale}
+          />
         )}
         <Form locale={locale} />
       </main>

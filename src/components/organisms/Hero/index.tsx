@@ -15,6 +15,7 @@ export interface HeroProps {
   hasBreadcrumb?: boolean
   firstButtonLabel?: string
   secondButtonLabel?: string
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const Hero = ({
@@ -24,13 +25,15 @@ export const Hero = ({
   hasBreadcrumb = true,
   firstButtonLabel,
   secondButtonLabel,
+  locale,
 }: HeroProps) => {
   const pathname = usePathname()
+  const contactLink = locale === 'en-US' ? '/contact-me' : '/contato'
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.hero__heading}>
-        {hasBreadcrumb && <Breadcrumb pathname={pathname} locale={'pt-BR'} />}
+        {hasBreadcrumb && <Breadcrumb pathname={pathname} locale={locale!} />}
 
         <Heading
           align="left"
@@ -60,7 +63,7 @@ export const Hero = ({
             target="_blank"
           />
           <Button
-            href={pathname === '/contato' ? '#Contact' : '/contato'}
+            href={pathname === contactLink ? '#Contact' : contactLink}
             label={secondButtonLabel}
             variant="secondary"
             isButton={false}

@@ -6,9 +6,10 @@ import styles from './styles.module.scss'
 export interface CuriosityItemProps {
   topic?: string
   description?: string
+  locale?: 'pt-BR' | 'en-US'
 }
 
-export const CuriosityItem = ({ topic, description }: CuriosityItemProps) => {
+export const CuriosityItem = ({ topic, description, locale }: CuriosityItemProps) => {
   return (
     <div className={styles.curiosityItem}>
       <div className={styles.curiosityItem__container}>
@@ -19,7 +20,7 @@ export const CuriosityItem = ({ topic, description }: CuriosityItemProps) => {
           </Text>
         )}
       </div>
-      <RichText content={description} imagesV1={[]} imagesV2={[]} />
+      <RichText content={description} imagesV1={[]} imagesV2={[]} locale={locale} />
     </div>
   )
 }

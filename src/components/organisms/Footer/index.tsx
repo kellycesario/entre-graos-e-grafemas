@@ -57,7 +57,7 @@ export const Footer = ({
         />
       )}
       <div className={styles.footer__container}>
-        <Logo />
+        <Logo locale={locale} />
         {isMobileScreen && hasCTA && (
           <ContactMeCTA
             backgroundImage={backgroundImage}
@@ -65,7 +65,7 @@ export const Footer = ({
             locale={locale}
           />
         )}
-        <nav aria-label="Páginas">
+        <nav aria-label={locale === 'pt-BR' ? 'Navegação' : 'Navigation'}>
           <ul className={styles.footer__list}>
             {navigationItems
               .slice(0, navigationItems.length - 1)

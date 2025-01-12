@@ -22,6 +22,7 @@ export interface CardArticleWrapperProps {
   ariaLabel?: string
   buttonLabel?: string
   clearButtonLabel?: string
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const CardArticleWrapper = ({
@@ -34,6 +35,7 @@ export const CardArticleWrapper = ({
   ariaLabel,
   buttonLabel,
   clearButtonLabel,
+  locale,
 }: CardArticleWrapperProps) => {
   const searchParams = useSearchParams()
   const searchQuery = searchParams?.get('query')?.toLowerCase() ?? ''
@@ -68,7 +70,7 @@ export const CardArticleWrapper = ({
   } else if (pathname === '/alegria') {
     dynamicIcon = IconBooks
     paginationColor = '#177f9c'
-  } else if (pathname === '/pesquisas') {
+  } else if (pathname === '/pesquisas' || pathname === '/research') {
     dynamicIcon = IconLayoutGridAdd
     paginationColor = '#5c6b6b'
   }
@@ -120,6 +122,7 @@ export const CardArticleWrapper = ({
           currentPage={currentPage}
           onPageChange={handlePageChange}
           paginationColor={paginationColor}
+          locale={locale}
         />
       )}
     </section>

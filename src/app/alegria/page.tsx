@@ -50,6 +50,7 @@ export default async function Alegria() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-03.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         <Presentation
           title={presentation.title}
@@ -69,6 +70,7 @@ export default async function Alegria() {
             totalPages={totalPages}
             articles={filteredArticles}
             mainColor="#177F9C"
+            locale={locale}
           />
         </Suspense>
         <ContactMeCTA

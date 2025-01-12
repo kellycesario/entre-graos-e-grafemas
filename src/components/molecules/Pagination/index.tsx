@@ -8,6 +8,7 @@ interface PaginationProps {
   currentPage: number
   onPageChange: (page: number) => void
   paginationColor?: string
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const Pagination = ({
@@ -15,6 +16,7 @@ export const Pagination = ({
   currentPage,
   onPageChange,
   paginationColor,
+  locale,
 }: PaginationProps) => {
   const handlePageChange = (newPage: number, event: React.MouseEvent) => {
     event.preventDefault()
@@ -43,11 +45,37 @@ export const Pagination = ({
     ? '#FFFFFF'
     : paginationColor
 
+  const translations = {
+    'pt-BR': {
+      previous: 'Página anterior',
+      next: 'Próxima página',
+      noPrevious: 'Nenhuma página anterior',
+      noNext: 'Nenhuma página seguinte',
+    },
+    'en-US': {
+      previous: 'Previous page',
+      next: 'Next page',
+      noPrevious: 'No previous page',
+      noNext: 'No next page',
+    },
+  }
+
+  const getAriaLabel = (type: 'previous' | 'next') => {
+    if (type === 'previous') {
+      return isPreviousDisabled
+        ? translations[locale!].noPrevious
+        : translations[locale!].previous
+    }
+    return isNextDisabled
+      ? translations[locale!].noNext
+      : translations[locale!].next
+  }
+
   return (
     <div className={styles.pagination}>
       <button
         onClick={(event) => handlePageChange(currentPage - 1, event)}
-        aria-label="Página anterior"
+        aria-label={getAriaLabel('previous')}
         className={`${styles.pagination__button} ${isPreviousDisabled ? styles.disabled : styles.active}`}
         style={{ backgroundColor: leftButtonBackgroundColor }}
         disabled={isPreviousDisabled}
@@ -64,7 +92,7 @@ export const Pagination = ({
 
       <button
         onClick={(event) => handlePageChange(currentPage + 1, event)}
-        aria-label="Próxima página"
+        aria-label={getAriaLabel('next')}
         className={`${styles.pagination__button} ${isNextDisabled ? styles.disabled : styles.active}`}
         disabled={isNextDisabled}
         style={{ backgroundColor: rightButtonBackgroundColor }}

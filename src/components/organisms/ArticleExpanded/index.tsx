@@ -6,6 +6,7 @@ interface ArticleExpandedProps {
   imagesV2: any[]
   hasImagesV1: boolean
   hasImagesV2: boolean
+  locale?: 'pt-BR' | 'en-US'
 }
 
 export const ArticleExpanded = ({
@@ -14,6 +15,7 @@ export const ArticleExpanded = ({
   imagesV2,
   hasImagesV1,
   hasImagesV2,
+  locale
 }: ArticleExpandedProps) => {
   return (
     <RichText
@@ -22,6 +24,7 @@ export const ArticleExpanded = ({
       imagesV2={imagesV2}
       hasImagesV1={hasImagesV1}
       hasImagesV2={hasImagesV2}
+      locale={locale}
     />
   )
 }

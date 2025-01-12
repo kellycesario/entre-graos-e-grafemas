@@ -27,12 +27,14 @@ export default async function Parcerias() {
           secondButtonLabel={hero.secondButtonLabel}
           video="/videos/coffee-07.mp4"
           hasBreadcrumb={true}
+          locale={locale}
         />
         {partnerships?.length > 0 && (
           <PartnersWrapper
             title={partners.title}
             text={partners.text}
             partners={partnerships}
+            locale={locale}
           />
         )}
       </main>

@@ -57,7 +57,7 @@ export default async function Article({ params }: Readonly<ArticleProps>) {
             galleryTypeName === 'GalleryV2' ? extractImages(item.gallery) : []
 
           return (
-            <section key={index + 1}>
+            <section key={index + 1} aria-labelledby={article.title}>
               <ArticleExpanded
                 content={content}
                 imagesV1={imagesV1}

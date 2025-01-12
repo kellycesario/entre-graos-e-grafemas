@@ -111,6 +111,7 @@ export const CardArticleWrapper = ({
             slug={article.slug}
             project={article.project}
             className={index === 0 ? styles.firstCard : undefined}
+            locale={locale!}
           />
         ))}
       </div>

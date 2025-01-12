@@ -22,6 +22,10 @@ const nextConfig = {
         destination: '/pesquisas',
       },
       {
+        source: '/research/:slug',
+        destination: '/pesquisas/:slug',
+      },
+      {
         source: '/partnerships',
         destination: '/parcerias',
       },

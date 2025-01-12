@@ -11,6 +11,7 @@ export interface CardProps {
   slug?: string
   project?: 'elinc' | 'alegria' | 'pesquisas'
   className?: string
+  locale: 'pt-BR' | 'en-US'
 }
 
 export const CardArticle = ({
@@ -21,10 +22,28 @@ export const CardArticle = ({
   slug = '#',
   project,
   className,
+  locale,
 }: CardProps) => {
   const cardStyle = [styles.card, project, className].join(' ')
+
+  const projectSlug = (project: string | undefined) => {
+    switch (project) {
+      case 'pesquisas':
+        return locale === 'pt-BR' ? 'pesquisas' : 'research'
+      case 'elinc':
+        return 'elinc'
+      case 'alegria':
+        return 'alegria'
+      default:
+        return ''
+    }
+  }
+
+  const projectTranslated = projectSlug(project)
+  console.log(projectTranslated)
+
   return (
-    <Link href={`${project}/${slug}/`} className={cardStyle}>
+    <Link href={`${projectTranslated}/${slug}/`} className={cardStyle}>
       <article
         className={styles.card__image}
         style={{ backgroundImage: `url(${image.url})` }}

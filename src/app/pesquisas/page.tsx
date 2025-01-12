@@ -32,10 +32,23 @@ export default async function Pesquisas() {
   const cardArticle = cardArticleTranslations[locale]
   const projectItems = projectsListTranslations[locale]
   const moreProjects = moreProjectsTranslations[locale]
+
   const articles = await getAllEntries('blogPost', 100, false, true, locale)
-  const filteredArticles = articles.filter(
-    (article: ArticleProject) => article.project === 'pesquisas'
-  )
+  const filteredArticles = articles.filter((article: ArticleProject) => {
+    const project = article.project as
+      | 'pesquisas'
+      | 'research'
+      | 'elinc'
+      | 'alegria'
+      | undefined
+
+    if (locale === 'pt-BR') {
+      return project === 'pesquisas'
+    }
+
+    return project === 'pesquisas' || project === 'research'
+  })
+
   const totalPages = Math.ceil(filteredArticles.length / 8)
 
   return (

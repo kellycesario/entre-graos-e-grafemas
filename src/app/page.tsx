@@ -48,7 +48,8 @@ export default async function Home() {
             text={videosWrapper.text}
             maxResults={2}
             videos={videos}
-            buttonLabel={videosWrapper.buttonLabel}          />
+            buttonLabel={videosWrapper.buttonLabel}
+          />
         )}
         <ProjectsCTA
           alt=""

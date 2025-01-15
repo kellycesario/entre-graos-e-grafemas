@@ -21,7 +21,7 @@ export const RecentVideosWrapper = ({
   title,
   text,
   maxResults = 5,
-  buttonLabel
+  buttonLabel,
 }: RecentVideosWrapperProps) => {
   return (
     <section aria-labelledby="videos" className={styles.recentVideos}>

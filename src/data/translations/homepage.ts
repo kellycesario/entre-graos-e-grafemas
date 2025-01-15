@@ -10,12 +10,12 @@ export const recentVideosWrapperTranslations: Record<
   'pt-BR': {
     title: 'Fique por dentro:',
     text: 'Acompanhe o conteúdo mais recente postado em nosso canal do YouTube',
-    buttonLabel: 'Acesse o canal'
+    buttonLabel: 'Acesse o canal',
   },
   'en-US': {
     title: 'Stay Updated:',
     text: 'Follow the latest content posted on our YouTube channel',
-    buttonLabel: 'Access the channel'
+    buttonLabel: 'Access the channel',
   },
 }
 

@@ -105,3 +105,19 @@ export const moreProjectsTranslations: Record<
     cta: 'Discover more',
   },
 }
+
+export const metadataTranslations: Record<
+  'pt-BR' | 'en-US',
+  Record<string, string>
+> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas por Arabie Bezri Hermont',
+    description:
+      'Um blog, escrito por Arabie Bezri Hermont, dedicado ao estudo da Linguística, com artigos e reflexões sobre aquisição de linguagem, sintaxe, fonética, fonologia e outros temas essenciais para entender os fenômenos da linguagem humana.',
+  },
+  'en-US': {
+    title: 'Between the brew and words by Arabie Bezri Hermont',
+    description:
+      'A blog written by Arabie Bezri Hermont, dedicated to the study of Linguistics, with articles and reflections on language acquisition, syntax, phonetics, phonology, and other essential topics to understand human language phenomena.',
+  },
+}

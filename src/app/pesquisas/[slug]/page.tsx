@@ -19,10 +19,12 @@ export async function generateMetadata({
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
   const article = await getArticle('blogPost', params.slug, 1, false, locale)
+  const pageTitle = `${article.title} - Blog | Research`
+  const pageDescription = `${article.description.substring(0, 160)}`
 
   return {
-    title: article.title,
-    description: article.description,
+    title: pageTitle,
+    description: pageDescription,
     keywords: article.tag,
     authors: [{ name: article.author }],
   }

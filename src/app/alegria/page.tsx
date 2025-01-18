@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { Suspense } from 'react'
 import { getAllEntries } from '@/api/contentful'
@@ -21,6 +22,20 @@ import {
 
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+  const hero = heroTranslations[locale]
+  
+  const pageTitle = `${hero.title} - Blog | Alegria`
+  const pageDescription = `${hero.text!.substring(0, 160)}`
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+  }
 }
 
 export default async function Alegria() {

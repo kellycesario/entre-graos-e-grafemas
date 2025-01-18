@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
@@ -7,6 +8,21 @@ import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
 import { navigation } from '@/data/translations/layout'
 import { faqTranslations, heroTranslations } from '@/data/translations/contato'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+  const hero = heroTranslations[locale]
+
+  const pageSuffix = locale === 'pt-BR' ? 'Entre em contato' : 'Get in Touch'
+  const pageTitle = `${hero.title} - ${pageSuffix}`
+  const pageDescription = `${hero.text!.substring(0, 160)}`
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+  }
+}
 
 export default async function Contato() {
   const requestHeaders = headers()

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { Suspense } from 'react'
 import { getAllEntries } from '@/api/contentful'
@@ -20,6 +21,21 @@ import {
 } from '@/data/translations/pesquisas'
 interface ArticleProject {
   project?: 'elinc' | 'alegria' | 'pesquisas'
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+  const hero = heroTranslations[locale]
+
+  const pageSuffix = locale === 'pt-BR' ? 'Pesquisas' : 'Research'
+  const pageTitle = `${hero.title} - ${pageSuffix}`
+  const pageDescription = `${hero.text!.substring(0, 160)}`
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+  }
 }
 
 export default async function Pesquisas() {

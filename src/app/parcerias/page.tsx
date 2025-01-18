@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { getAllEntries } from '@/api/contentful'
 import { Hero } from '@/organisms/Hero'
@@ -9,6 +10,21 @@ import {
   partnersTranslations,
   heroTranslations,
 } from '@/data/translations/parcerias'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = headers()
+  const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
+  const hero = heroTranslations[locale]
+
+  const pageSuffix = locale === 'pt-BR' ? 'Parcerias' : 'Partnerships'
+  const pageTitle = `${hero.title} - ${pageSuffix}`
+  const pageDescription = `${hero.text!.substring(0, 160)}`
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+  }
+}
 
 export default async function Parcerias() {
   const requestHeaders = headers()

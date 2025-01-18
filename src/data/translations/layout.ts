@@ -1,4 +1,3 @@
-import { HeroProps } from '@/organisms/Hero'
 import { NavigationItem } from '@/organisms/Footer'
 import { ProjectItem, MoreProjectsProps } from '@/organisms/MoreProjects'
 
@@ -21,21 +20,6 @@ export const navigation: Record<'pt-BR' | 'en-US', NavigationItem[]> = {
     { item: 'About me', href: '/about-me' },
     { item: 'Get in Touch', href: '/contact-me' },
   ],
-}
-
-export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
-  'pt-BR': {
-    title: 'Entre grãos e grafemas',
-    text: 'Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café',
-    firstButtonLabel: 'Meu canal no YouTube',
-    secondButtonLabel: 'Entre em contato',
-  },
-  'en-US': {
-    title: 'Between the brew and words',
-    text: 'Join me through the interfaces of linguistics and savor each of its branches with a coffee',
-    firstButtonLabel: 'My YouTube channel',
-    secondButtonLabel: 'Get in Touch',
-  },
 }
 
 export const projectsListTranslations: Record<

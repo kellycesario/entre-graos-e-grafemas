@@ -4,8 +4,11 @@ import { Hero } from '@/organisms/Hero'
 import { PartnersWrapper } from '@/organisms/PartnersWrapper'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
-import { partnersTranslations } from '@/data/translations/parcerias'
+import { navigation } from '@/data/translations/layout'
+import {
+  partnersTranslations,
+  heroTranslations,
+} from '@/data/translations/parcerias'
 
 export default async function Parcerias() {
   const requestHeaders = headers()

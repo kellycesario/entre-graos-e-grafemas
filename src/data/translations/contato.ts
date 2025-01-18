@@ -1,4 +1,20 @@
+import { HeroProps } from '@/organisms/Hero'
 import { AccordionProps } from '@/organisms/Accordion'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Tem algo em mente? Fale comigo!',
+    text: 'Se deseja discutir temas relacionados à linguística ou avaliar possíveis colaborações, entre em contato comigo',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Got something on your mind? Talk to me!',
+    text: 'If you wish to discuss topics related to linguistics or evaluate potential collaborations, get in touch with me',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const contactFormTranslations: Record<
   'pt-BR' | 'en-US',

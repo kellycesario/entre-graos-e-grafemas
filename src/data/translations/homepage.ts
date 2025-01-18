@@ -1,7 +1,23 @@
 import { IconPencil, IconHeartHandshake } from '@tabler/icons-react'
+import { HeroProps } from '@/organisms/Hero'
 import { ProjectsCTAProps } from '@/organisms/ProjectsCTA'
 import { CardProps } from '@/molecules/CardBanner'
 import { RecentVideosWrapperProps } from '@/organisms/RecentVideosWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas',
+    text: 'Navegue comigo pelas interfaces da linguística e saboreie cada ramificação com um café',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Between the brew and words',
+    text: 'Join me through the interfaces of linguistics and savor each of its branches with a coffee',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const recentVideosWrapperTranslations: Record<
   'pt-BR' | 'en-US',

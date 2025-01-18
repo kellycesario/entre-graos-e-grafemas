@@ -1,5 +1,21 @@
+import { HeroProps } from '@/organisms/Hero'
 import { PresentationProps } from '@/organisms/Presentation'
 import { CardArticleWrapperProps } from '@/organisms/CardArticleWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas: conheça o eLinC',
+    text: 'Embarque comigo e com o Grupo de Estudos em Linguagem e Cognição pelas várias interfaces da linguística e saboreie cada ramificação com um café',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Between the brew and words: meet the eLinC project',
+    text: 'Join me and the Language and Cognition Study Group as we navigate through the various interfaces of linguistics and savor every branch with a coffee',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const presentationTranslations: Record<
   'pt-BR' | 'en-US',

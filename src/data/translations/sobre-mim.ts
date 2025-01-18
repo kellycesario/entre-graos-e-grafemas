@@ -1,4 +1,20 @@
+import { HeroProps } from '@/organisms/Hero'
 import { RecentVideosWrapperProps } from '@/organisms/RecentVideosWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Eu, Arabie Bezri Hermont',
+    text: 'Que tal descobrir mais sobre mim e minha trajetória acadêmica? E, claro, não se esqueça do café!',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Me, Arabie Bezri Hermont',
+    text: 'How about learning more about me and my academic journey? And, of course, don’t forget the coffee!',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const recentVideosWrapperTranslations: Record<
   'pt-BR' | 'en-US',

@@ -1,4 +1,20 @@
+import { HeroProps } from '@/organisms/Hero'
 import { PartnersWrapperProps } from '@/organisms/PartnersWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas: parcerias',
+    text: 'No eLinC, no projeto Alegria e em demais pesquisas, as parcerias são o motor da transformação',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Between the brew and words: partnerships',
+    text: 'In eLinC, the Alegria project, and other research, partnerships are the driving force of transformation',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const partnersTranslations: Record<
   'pt-BR' | 'en-US',
@@ -10,7 +26,7 @@ export const partnersTranslations: Record<
   },
   'en-US': {
     title: 'Partnerships that transform',
-    text: 'Life is richer when we share a cup of coffee – because sharing is the best ingredient for our success!',
+    text: 'Life is richer when we share a cup of coffee - because sharing is the best ingredient for our success!',
   },
 }
 

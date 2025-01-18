@@ -10,13 +10,13 @@ import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
 import {
   navigation,
-  heroTranslations,
   projectsListTranslations,
   moreProjectsTranslations,
 } from '@/data/translations/layout'
 import {
   presentationTranslations,
   cardArticleTranslations,
+  heroTranslations,
 } from '@/data/translations/elinc'
 
 interface ArticleProject {

@@ -5,8 +5,8 @@ import { Accordion } from '@/organisms/Accordion'
 import { Form } from '@/organisms/Form'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
-import { faqTranslations } from '@/data/translations/contato'
+import { navigation } from '@/data/translations/layout'
+import { faqTranslations, heroTranslations } from '@/data/translations/contato'
 
 export default async function Contato() {
   const requestHeaders = headers()

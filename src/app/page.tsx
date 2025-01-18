@@ -6,14 +6,15 @@ import { ProjectsCTA } from '@/organisms/ProjectsCTA'
 import { CardBannerWrapper } from '@/organisms/CardBannerWrapper'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
+import { navigation } from '@/data/translations/layout'
 import {
   recentVideosWrapperTranslations,
   elincTranslations,
   alegriaTranslations,
   pesquisasTranslations,
   cardBannerTranslations,
+  heroTranslations
 } from '@/data/translations/homepage'
-import { navigation, heroTranslations } from '@/data/translations/layout'
 import styles from './homepage.module.scss'
 
 export default async function Home() {

@@ -6,8 +6,11 @@ import { RecentVideosWrapper } from '@/organisms/RecentVideosWrapper'
 import { Curiosities } from '@/organisms/Curiosities'
 import { Footer } from '@/organisms/Footer'
 import { getLocale } from '@/utils/getLocale/getLocale'
-import { navigation, heroTranslations } from '@/data/translations/layout'
-import { recentVideosWrapperTranslations } from '@/data/translations/sobre-mim'
+import { navigation } from '@/data/translations/layout'
+import {
+  recentVideosWrapperTranslations,
+  heroTranslations,
+} from '@/data/translations/sobre-mim'
 
 export default async function SobreMim() {
   const requestHeaders = headers()

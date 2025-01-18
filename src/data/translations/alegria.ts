@@ -1,5 +1,21 @@
+import { HeroProps } from '@/organisms/Hero'
 import { PresentationProps } from '@/organisms/Presentation'
 import { CardArticleWrapperProps } from '@/organisms/CardArticleWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas: conheça o Alegria',
+    text: 'Aproveite um café e descubra o Alegria, um projeto que promove leitura, escrita, respeito, inclusão e autonomia',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Between the brew and words: meet the Alegria project',
+    text: 'Enjoy a coffee and discover Alegria, a project that fosters literacy, respect, inclusion, and autonomy',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const presentationTranslations: Record<
   'pt-BR' | 'en-US',

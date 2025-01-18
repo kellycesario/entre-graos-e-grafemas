@@ -1,5 +1,21 @@
+import { HeroProps } from '@/organisms/Hero'
 import { PresentationProps } from '@/organisms/Presentation'
 import { CardArticleWrapperProps } from '@/organisms/CardArticleWrapper'
+
+export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
+  'pt-BR': {
+    title: 'Entre grãos e grafemas: minhas pesquisas',
+    text: 'Aprofunde-se comigo nas interfaces da linguística, percorrendo áreas como sintaxe, morfologia, léxico, fonologia e outras',
+    firstButtonLabel: 'Meu canal no YouTube',
+    secondButtonLabel: 'Entre em contato',
+  },
+  'en-US': {
+    title: 'Between the brew and words: my research',
+    text: 'Delve with me into the interfaces of linguistics, covering areas such as syntax, morphology, lexicon, phonology, and others',
+    firstButtonLabel: 'My YouTube channel',
+    secondButtonLabel: 'Get in Touch',
+  },
+}
 
 export const presentationTranslations: Record<
   'pt-BR' | 'en-US',

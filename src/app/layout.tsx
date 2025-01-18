@@ -24,6 +24,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: metadata.description,
     authors: [{ name: 'Arabie Bezri Hermont' }],
     creator: 'Arabie Bezri Hermont',
+    metadataBase: new URL('https://arabie-bezri-hermont.vercel.app/'),
+    alternates: {
+      canonical: './',
+    },
     openGraph: {
       title: metadata.title,
       description: metadata.description,

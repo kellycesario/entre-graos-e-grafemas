@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
   const hero = heroTranslations[locale]
-  
+
   const pageTitle = `${hero.title} - Blog | eLinC`
   const pageDescription = `${hero.text!.substring(0, 160)}`
 

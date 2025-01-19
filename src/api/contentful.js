@@ -88,10 +88,10 @@ export async function getAllEntries(
   limit = 100,
   isDraftMode = false,
   isSummary = false,
-  locale = 'pt-BR'
+  locale = 'en-US'
 ) {
   if (typeof window !== 'undefined') {
-    locale = navigator.language || 'pt-BR'
+    locale = navigator.language || 'en-US'
   }
 
   try {
@@ -121,10 +121,10 @@ export async function getArticle(
   slug,
   limit = 1,
   isDraftMode = false,
-  locale = 'pt-BR'
+  locale = 'en-US'
 ) {
   if (typeof window !== 'undefined') {
-    locale = navigator.language || 'pt-BR'
+    locale = navigator.language || 'en-US'
   }
   try {
     const graphqlFields = await getGraphQLFields(contentType)
@@ -158,10 +158,10 @@ export async function getEntry(
   contentType,
   limit = 1,
   isDraftMode = false,
-  locale = 'pt-BR'
+  locale = 'en-US'
 ) {
   if (typeof window !== 'undefined') {
-    locale = navigator.language || 'pt-BR'
+    locale = navigator.language || 'en-US'
   }
   try {
     const graphqlFields = await getGraphQLFields(contentType)

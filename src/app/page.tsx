@@ -13,7 +13,7 @@ import {
   alegriaTranslations,
   pesquisasTranslations,
   cardBannerTranslations,
-  heroTranslations
+  heroTranslations,
 } from '@/data/translations/homepage'
 import styles from './homepage.module.scss'
 

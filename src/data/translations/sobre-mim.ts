@@ -10,7 +10,7 @@ export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
   },
   'en-US': {
     title: 'Me, Arabie Bezri Hermont',
-    text: 'How about learning more about me and my academic journey? And, of course, don’t forget the coffee!',
+    text: 'How about learning more about me and my academic journey? And, of course, don’t forget your coffee!',
     firstButtonLabel: 'My YouTube channel',
     secondButtonLabel: 'Get in Touch',
   },

@@ -11,7 +11,7 @@ export const heroTranslations: Record<'pt-BR' | 'en-US', HeroProps> = {
   },
   'en-US': {
     title: 'Between the brew and words: meet the eLinC project',
-    text: 'Join me and the Language and Cognition Study Group as we navigate through the various interfaces of linguistics and savor every branch with a coffee',
+    text: 'Join me and the Language and Cognition Study Group as we explore the many interfaces of linguistics and savor each branch with a cup of coffee',
     firstButtonLabel: 'My YouTube channel',
     secondButtonLabel: 'Get in Touch',
   },

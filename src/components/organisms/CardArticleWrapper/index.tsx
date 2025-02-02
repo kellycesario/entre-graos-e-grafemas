@@ -84,7 +84,7 @@ export const CardArticleWrapper = ({
           {dynamicIcon && (
             <CustomIcon
               Icon={dynamicIcon}
-              color="#481620"
+              color="#f26666"
               size={24}
               className={styles.cards__icon}
             />

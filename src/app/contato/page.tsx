@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Contato() {
+export default async function Contact() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 

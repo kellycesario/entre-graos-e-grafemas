@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Pesquisas() {
+export default async function Research() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 

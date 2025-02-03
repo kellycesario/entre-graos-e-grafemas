@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Parcerias() {
+export default async function Partnerships() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 

@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function SobreMim() {
+export default async function AboutMePage() {
   const requestHeaders = headers()
   const locale = getLocale(requestHeaders) as 'pt-BR' | 'en-US'
 
